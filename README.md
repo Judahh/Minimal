@@ -20,7 +20,7 @@ Language name: Minimal
 ##### Integer(size:Natural=32)
 ##### Rational(pSize:Natural=32,qSize:Natural=32)
 ##### Real
-###### Float
+###### Float(sizeMultiplier:Integer=1) | Float(size:Natural=32, mantissaSize:Natural=23)
 ###### Number(integerSize:Natural=32,decimalSize:Natural=32)
 
 #### Text Types
