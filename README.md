@@ -11,6 +11,14 @@ Language name: Minimal
 
 ## Types
 
+### Basic Types
+
+#### Number
+
+#### Char
+
+#### Array
+
 ## Example:
 ```minimal
 # Variable/Constant/Function declaration
