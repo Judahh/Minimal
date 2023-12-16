@@ -26,7 +26,7 @@ Language name: Minimal
 #### Text Types
 
 ##### Char(encoding:String='utf-8')
-literal: 'c'1 or "c"1 or `c`1
+literal: 'c'1 or "c"1 or \`c\`1
 ##### String<Type=Array>(encoding:String='utf-8')
 literal: 'string' or "string" or `string`
 #### Array<T?>(size?:Natural) (if it doesnot have a size it's growable)
