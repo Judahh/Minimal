@@ -13,16 +13,19 @@ Language name: Minimal
 
 ### Basic Types
 
-#### Number
+#### Numeric Types
 
-#### Boolean
-#### Natural(size:Natural=32)
-#### Integer(size:Natural=32)
-#### Rational(pSize:Natural=32,qSize:Natural=32)
-#### Number
-#### Number
+##### Boolean
+##### Natural(size:Natural=32)
+##### Integer(size:Natural=32)
+##### Rational(pSize:Natural=32,qSize:Natural=32)
+##### Real
+###### Float
+###### Number(integerSize:Natural=32,decimalSize:Natural=32)
 
-#### Char
+#### Text Types
+
+##### Char
 
 #### Array
 
