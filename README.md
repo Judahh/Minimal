@@ -25,7 +25,8 @@ Language name: Minimal
 
 #### Text Types
 
-##### Char
+##### Char(encoding:String='utf-8')
+##### String<Type=Array>(encoding:String='utf-8')
 
 #### Array
 
