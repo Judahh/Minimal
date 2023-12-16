@@ -15,6 +15,13 @@ Language name: Minimal
 
 #### Number
 
+#### Boolean
+#### Natural(size:Natural=32)
+#### Integer(size:Natural=32)
+#### Rational(pSize:Natural=32,qSize:Natural=32)
+#### Number
+#### Number
+
 #### Char
 
 #### Array
