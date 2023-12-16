@@ -57,9 +57,7 @@ SampleClass = {
       y: const(Number) = 10;
       w: Number = 10;
       
-      constructor = (x: Number) => {
-                this.x = x;
-      }
+      constructor = (x: Number) => { this.x = x; }
 
       sum = () => {
                => x+y+w;
