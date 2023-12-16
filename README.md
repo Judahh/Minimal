@@ -114,6 +114,15 @@ Human: Person = { # Class Human implements Person
 if(x < y, {
     log("x is less than y");
 }, log("x is greater than or equal to y"));
+# Conditional statement  (using ternary syntax)
+x < y ? log("x is less than y") : { 
+    log("x is greater than or equal to y"))
+};
+
+# Ternary (using if function)
+result = if(x < y, { => x }, y);
+# Ternary (using ternary syntax)
+result = x < y ? { => x }: y;
 
 # Looping statement (is a function for looping)
 loop(i=0, i < 5, i++, {
@@ -168,16 +177,16 @@ Overview of the syntax rules and grammar structure for some of the language cons
   <TypeName>:Type = { <typeBody> }
   ```
 
-#### Conditional Statements:
+#### Conditional Function:
 - Syntax:
   ```
   if(<condition>, { <trueBlock> }, [<elseBlock>]);
   ```
 
-#### Looping Statements:
+#### Looping Function:
 - Syntax:
   ```
-  loop(<initialization>; <condition>; <increment>, { <loopBody> });
+  loop(<initialization>, <condition>, <increment>, { <loopBody> });
   loop(iterates(<array>), { <loopBody> });
   loop(properties(<object>), { <loopBody> });
   loop({ <loopBody> }, <condition>);
@@ -210,9 +219,9 @@ classDeclaration ::= <ClassName> = { <classBody> }
 
 typeDeclaration ::= <TypeName> : Type = { <typeBody> }
 
-conditionalStatement ::= if ( <condition> , { <trueBlock> } , [ <elseBlock> ] ) ;
+conditionalFunction ::= if ( <condition> , { <trueBlock> } , [ <elseBlock> ] ) ;
 
-loopingStatement ::= loop ( <initialization> ; <condition> ; <increment> , { <loopBody> } )
+loopingFunction ::= loop ( <initialization> , <condition> , <increment> , { <loopBody> } )
                     | loop ( iterates ( <array> ) , { <loopBody> } )
                     | loop ( properties ( <object> ) , { <loopBody> } )
                     | loop ( { <loopBody> } , <condition> )
