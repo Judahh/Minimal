@@ -1,11 +1,17 @@
 # Minimal
+
 Language name: Minimal
-Language Goals and Features:
+
+## Language Goals and Features:
+
 - Minimal keywords
 - Minimal symbols
 - TypeScript-like syntax
-- Custom types 
-Example:
+- Custom types
+
+## Types
+
+## Example:
 ```minimal
 # Variable/Constant/Function declaration
 x: number = 5;
