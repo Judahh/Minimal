@@ -79,8 +79,8 @@ SampleClass2 = (z?: Number) => {
 };
 
 sampleClassChild = SampleClassChild(13);
-log(sampleClassChild.x); # prints 13
-log(sampleClassChild.w); # prints 10
+log(sampleClassChild.x);     # prints 13
+log(sampleClassChild.w);     # prints 10
 log(sampleClassChild.sum()); # prints 33
 
 # Struct
