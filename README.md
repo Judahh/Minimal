@@ -34,17 +34,17 @@ literal: 'string' or "string" or `string`
 ## Example:
 ```minimal
 # Variable/Constant/Function declaration
-x: number = 5;
-y: const number = 10;
+x: Number = 5;
+y: const(Number) = 10;
 z = 20;
-sum: (a: number, b: number) => number = (a: number, b: number)=>{
+sum: (a: Number, b: Number) => Number = (a: Number, b: Number)=>{
       log('Sum a:', a, ' and  b:', b);
       => a+b; # return is =>
 };
-sub = (a: number, b: number)=>a-b;
+sub = (a: Number, b: Number)=>a-b;
 
-multiply = (a: number, b: number)=>a*b;
-multiply |= (a: number, b: number, c: number)=>a*b*c; // multiple function signatures for the same naming using |=
+multiply = (a: Number, b: Number)=>a*b;
+multiply |= (a: Number, b: Number, c: Number)=>a*b*c; // multiple function signatures for the same naming using |=
 
 print = log;
 printFoo = {
@@ -53,11 +53,11 @@ printFoo = {
 
 # Classes
 SampleClass = {
-      x: private number = 5;
-      y: const number = 10;
-      w: number = 10;
+      private x: Number = 5;
+      y: const(Number) = 10;
+      w: Number = 10;
       
-      constructor = (x: number) => {
+      constructor = (x: Number) => {
                 this.x = x;
       }
 
@@ -67,15 +67,15 @@ SampleClass = {
 };
 
 SampleClassChild: sampleClass = { # inheritance
-      constructor =| (x: number, w: number) => { # new constructor signature option
+      constructor =| (x: Number, w: Number) => { # new constructor signature option
                 this.x = x;
                 this.w = w;
       }
 };
 
-SampleClass2 = (z?: number) => {
-      x: private number = z || 5;
-      y: const number = 10;
+SampleClass2 = (z?: Number) => {
+      private x: Number = z || 5;
+      y: const(Number) = 10;
 };
 
 sampleClassChild = SampleClassChild(13);
@@ -85,8 +85,8 @@ log(sampleClassChild.sum()); # prints 33
 
 # Struct
 sampleStruct = {
-      x: private number = 5;
-      y: const number = 10;
+      x: Number = 5;
+      y: const(Number) = 10;
 };
 log(sampleStruct.x); # prints 5
 log(sampleStruct.y); # prints 10
@@ -94,16 +94,16 @@ log(sampleStruct.y); # prints 10
 # Types/Interfaces
 
 Person:Type = {
-     name: string;
-     age: number;
+     name: String;
+     age: Number;
 };
 
 Worker:Person = {
-     job: string;
+     job: String;
 };
 
 Human: Person = { # Class Human implements Person
-      constructor = (name: string, age: number) => {
+      constructor = (name: String, age: Number) => {
                 this.name = name;
                 this.age = age;
       }
@@ -140,7 +140,7 @@ loop(k<5,{
     print("Iteration: " + k);
 }); # while like loop
 ```
-Designing a comprehensive grammar using formal notation (such as Backus-Naur Form - BNF) for a programming language like "Minimal" with TypeScript-like syntax is an extensive task that would require more space than is available here. However, I can provide an overview of the syntax rules and grammar structure for some of the language constructs based on the provided code snippet:
+Overview of the syntax rules and grammar structure for some of the language constructs:
 
 ### Overview of Syntax Rules:
 
