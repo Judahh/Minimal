@@ -160,25 +160,25 @@ Overview of the syntax rules and grammar structure for some of the language cons
 #### Functions:
 - Function Declaration Syntax:
   ```
-  <functionName> [= | =|] (<parameters>) [=>] { <functionBody> }
+  <functionName> [= | =|] (<parameters>) [=>] { <functionBody> } ;
   ```
 
 #### Classes:
 - Class Declaration Syntax:
   ```
-  <ClassName> = { <classBody> }
+  <ClassName> = { <classBody> } ;
   ```
 
 #### Types/Interfaces:
 - Type Declaration Syntax:
   ```
-  <TypeName>:Type = { <typeBody> }
+  <TypeName>:Type = { <typeBody> } ;
   ```
 
 #### Conditional Function:
 - Syntax:
   ```
-  if(<condition>, { <trueBlock> }, [<elseBlock>]);
+  if(<condition>, <trueBlock> , [<elseBlock>]);
   ```
 
 #### Looping Function:
@@ -211,19 +211,19 @@ Using a BNF-like representation (simplified for illustration):
 ```bnf
 declaration ::= <identifier> : <type> [ = <initializer> ] ;
 
-functionDeclaration ::= <functionName> [= | =|] ( <parameters> ) [ => ] { <functionBody> }
+functionDeclaration ::= <functionName> [= | =|] ( <parameters> ) [ => ] { <functionBody> } ;
 
-classDeclaration ::= <ClassName> = { <classBody> }
+classDeclaration ::= <ClassName> = { <classBody> } ;
 
-typeDeclaration ::= <TypeName> : Type = { <typeBody> }
+typeDeclaration ::= <TypeName> : Type = { <typeBody> } ;
 
-conditionalFunction ::= if ( <condition> , { <trueBlock> } , [ <elseBlock> ] ) ;
+conditionalFunction ::= if ( <conditionBlock> , <trueBlock> , [ <elseBlock> ] ) ;
 
-loopingFunction ::= loop ( <initialization> , <condition> , <increment> , { <loopBody> } )
-                    | loop ( iterates ( <array> ) , { <loopBody> } )
-                    | loop ( properties ( <object> ) , { <loopBody> } )
-                    | loop ( { <loopBody> } , <condition> )
-                    | loop ( <condition> , { <loopBody> } )
+loopingFunction ::= loop ( <initialization> , <condition> , <increment> , <loopBody> )
+                    | loop ( iterates ( <array> ) , <loopBody> )
+                    | loop ( properties ( <object> ) , <loopBody> )
+                    | loop ( <loopBody> , <condition> )
+                    | loop ( <condition> , <loopBody> )
                     ;
 
 arrayDeclaration ::= <arrayName> = [ <elements> ] ;
