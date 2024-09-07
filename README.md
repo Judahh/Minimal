@@ -26,9 +26,9 @@ Language name: Minimal
 #### Text Types
 
 ##### Char(encoding:String='utf-8')
-literal: 'c'1 or "c"1 or \`c\`1
+literal: 'c'
 ##### String<Type=Array>(encoding:String='utf-8')
-literal: 'string' or "string" or `string`
+literal: "string" or `string`
 #### Array<T?>(size?:Natural) (if it doesnot have a size it's growable)
 
 ## Example:
@@ -56,15 +56,19 @@ SampleClass = {
       private x: Number = 5;
       y: const(Number) = 10;
       w: Number = 10;
-      
+
       constructor = (x: Number) => { this.x = x; }
 
       sum = () => {
                => x+y+w;
       }
+
+      value = () => {
+               => x;
+      }
 };
 
-SampleClassChild: sampleClass = { # inheritance
+SampleClassChild: SampleClass = { # inheritance
       constructor =| (x: Number, w: Number) => { # new constructor signature option
                 this.x = x;
                 this.w = w;
@@ -80,6 +84,20 @@ sampleClassChild = SampleClassChild(13);
 log(sampleClassChild.x);     # prints 13
 log(sampleClassChild.w);     # prints 10
 log(sampleClassChild.sum()); # prints 33
+
+global.(a: SampleClass, '+', b: SampleClass) => {
+    => SampleClass(a.value() + b.value());
+};
+
+global.('|', a: SampleClass, '|') => {
+    => if(a.value() > 0, a.value(), -a.value());
+};
+
+sampleClass = SampleClass(6);
+sampleClass2 = SampleClass(7);
+log((sampleClass + sampleClass2).value); # prints 13
+sampleClass3 = SampleClass(-5);
+log(|sampleClass3|); # prints 5
 
 # Struct
 sampleStruct = {
@@ -116,6 +134,45 @@ if(x < y, {
 x < y ? log("x is less than y") : { 
     log("x is greater than or equal to y"))
 };
+
+# Try Catch statement  (is a function for statement)
+try({
+    log("try block");
+}, {
+    log("catch block");
+});
+
+or
+
+try({
+    log("try block");
+}, (e: Error)=>{
+    log("catch block");
+});
+
+or
+
+try({
+    log("try block");
+}).catch((e: Error)=>{
+    log("catch block");
+});
+
+or
+
+try({
+    log("try block");
+}).catch((e: SomeError)=>{
+    log("catch block");
+}).catch((e: AnotherError)=>{
+    log("another catch block");
+});
+
+# Error vs Exception
+Error is a type of exception
+
+Error will crash the program if not handled
+Exception will not crash the program if not handled, just reload the program if not handled
 
 # Ternary (using if function)
 result = if(x < y, { => x }, y);
