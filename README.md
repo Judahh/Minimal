@@ -17,6 +17,9 @@ Language name: Minimal
 
 ##### Boolean
 ##### Natural(size:Natural=32)
+##### Whole(size:Natural=32)
+      Whole=Unsigned(Integer)
+      Whole=Natural & 0
 ##### Integer(size:Natural=32)
 ##### Rational(pSize:Natural=32,qSize:Natural=32)
 ##### Real
@@ -31,11 +34,25 @@ literal: 'c'
 literal: "string" or `string`
 #### Array<T?>(size?:Natural) (if it doesnot have a size it's growable)
 
+
+#### Umbrella Types
+It's possible to define a type that can be any of the a set of types and it's possible agregate more types to an existing umbrella type:
+
+Real = Float | Number
+Numeric = Boolean | Natural | Whole | Integer | Rational | Real
+Text = Char | String
+
+How to add more types to an existing umbrella type:
+For the current file:
+Numeric |= NewNumeric | OtherNewNumeric
+For the everywhere it's imported:
+Global.Numeric |= NewNumeric | OtherNewNumeric
+
 ## Example:
 ```minimal
 # Variable/Constant/Function declaration
 x: Number = 5;
-y: const(Number) = 10;
+y: Const(Number) = 10;
 z = 20;
 sum: (a: Number, b: Number) => Number = (a: Number, b: Number)=>{
       log('Sum a:', a, ' and  b:', b);
@@ -54,7 +71,7 @@ printFoo = {
 # Classes
 SampleClass = {
       private x: Number = 5;
-      y: const(Number) = 10;
+      y: Const(Number) = 10;
       w: Number = 10;
 
       constructor = (x: Number) => { this.x = x; }
@@ -77,7 +94,7 @@ SampleClassChild: SampleClass = { # inheritance
 
 SampleClass2 = (z?: Number) => {
       private x: Number = z || 5;
-      y: const(Number) = 10;
+      y: Const(Number) = 10;
 };
 
 sampleClassChild = SampleClassChild(13);
@@ -85,27 +102,214 @@ log(sampleClassChild.x);     # prints 13
 log(sampleClassChild.w);     # prints 10
 log(sampleClassChild.sum()); # prints 33
 
-global.(a: SampleClass, '+', b: SampleClass) => {
+Global.(a: SampleClass, '+', b: SampleClass) => {
     => SampleClass(a.value() + b.value());
 };
 
-global.('|', a: SampleClass, '|') => {
+Global.(a: SampleClass, '+', b: Numeric) => {
+    => SampleClass(a.value() + b);
+};
+
+Global.(a: Numeric, '+', b: SampleClass) => {
+    => SampleClass(a + b.value());
+};
+
+Global.('|', a: SampleClass, '|') => {
     => if(a.value() > 0, a.value(), -a.value());
 };
 
 sampleClass = SampleClass(6);
 sampleClass2 = SampleClass(7);
 log((sampleClass + sampleClass2).value); # prints 13
+log((sampleClass + 5).value); # prints 11
 sampleClass3 = SampleClass(-5);
 log(|sampleClass3|); # prints 5
 
+# Global is a global object that can be used to define global properties, functions, operators...
+# Project is a global object that can be used to define project properties, functions, operators...
+# Namespace is a global object that can be used to define namespace properties, functions, operators...
+# This is a global for the current class, it can be used to define class properties, functions, operators...
+# this is a reference to the current object, it can be used to access the current object properties, functions, operators...
+
+numberExample = Number(5);
+functionExample = ()=>{};
+classExample = {
+  constructor = () => {};
+};
+
+# it's possible to use typeName properties to get the type name and variableName properties to get the variable name
+
+log(numberExample.typeName); # prints Number
+log(numberExample.variableName); # prints numberExample
+log(functionExample.typeName); # prints Function
+log(functionExample.variableName); # prints functionExample
+log(classExample.typeName); # prints Object
+log(classExample.variableName); # prints classExample
+
 # Struct
+Like a class but without functions (but can have constructor)
+If it does not have a constructor must have all variables initialized and cannot be instantiated
 sampleStruct = {
       x: Number = 5;
-      y: const(Number) = 10;
+      y: Const(Number) = 10;
 };
+or
+If it has a constructor it can have variables not initialized but must be instantiated
+SampleStruct = {
+      x: Number;
+      y: Const(Number);
+      constructor = (x: Number, y: Number) => {
+                this.x = x;
+                this.y = y;
+      }
+};
+sampleStruct = SampleStruct(5, 10);
+
 log(sampleStruct.x); # prints 5
 log(sampleStruct.y); # prints 10
+
+# Engine
+Like a class but without variables (Does not have constructor, and cannot be instantiated, just used as an object)
+sampleEngine = {
+      protected init = () => {
+                log('Engine initialized');
+      }
+      start = () => {
+                this.init();
+                log('Engine started');
+      }
+      sum = (a: Number, b: Number) => {
+                log('Sum a:', a, ' and  b:', b);
+                => a+b; # return is =>
+      }
+};
+
+returns types:
+For a "{}" (scope) use:
+  "=>" or "this.=>" returns the value for the current scope
+  "super.=>" returns the value for the parent scope
+  "final.=>" returns the value for the final scope
+  "global.=>" returns the value for the global scope (program)
+For a "[]" (scope) use:
+  "=>" returns the value for the closest {} (scope)
+  "super.=>" returns the value for the parent of the closest {} (scope)
+  "final.=>" returns the value for the final scope
+  "global.=>" returns the value for the global scope (program)
+
+example:
+someFunction = () => {
+  if(1 > 0, {
+      if(2 > 0, {
+          => 2;
+      }, {
+          => -2;
+      });
+      => 1;
+  }, {
+      => -1;
+  });
+  => 0;
+}
+# will return 0 because of the '=>' of each if statement is returning the value for the current {} (scope)
+
+someFunction = () => {
+  if(1 > 0, {
+      if(2 > 0, {
+          => 2;
+      }, {
+          => -2;
+      });
+      super.=> 1;
+  }, {
+      super.=> -1;
+  });
+  => 0;
+}
+# will return 1 because of the 'super.=>' of the second if statement is returning the value for the parent {} (scope)
+someFunction = () => {
+  if(1 > 0, {
+      if(2 > 0, {
+          super.=> 2;
+      }, {
+          super.=> -2;
+      });
+      super.=> 1;
+  }, {
+      super.=> -1;
+  });
+  => 0;
+}
+# will return 0 because of the 'super.=>' of the second if statement is returning the value for the parent {} (scope) so the 'super.=>' of the first if statement is not being executed
+
+someFunction = () => {
+  if(1 > 0, {
+      if(2 > 0, {
+          super.super.=> 2;
+      }, {
+          super.super.=> -2;
+      });
+      super.=> 1;
+  }, {
+      super.=> -1;
+  });
+  => 0;
+}
+# will return 2 because of the 'super.super.=>' of the first if statement is returning the value for the final {} (scope)
+
+someFunction = () => {
+  if(1 > 0, {
+      if(2 > 0, {
+          final.=> 2;
+      }, {
+          final.=> -2;
+      });
+      super.=> 1;
+  }, {super.
+      super.=> -1;
+  });
+  => 0;
+}
+# will return 2 because of the 'final.=>' of the first if statement is returning the value for the parent of the parent {} (scope)
+
+someFunction = () => {
+  if(1 > 0, [
+      if(2 > 0, {
+          => 2;
+      }, {
+          => -2;
+      });
+      => 1;
+  ], [
+      => -1;
+  ]);
+  => 0;
+}
+# will return 2 because the '=>' is returning the value for the closest {} (scope)
+
+# Enum
+Color:Enum = {
+      RED,
+      GREEN,
+      BLUE
+};
+or
+Color:Enum = {
+      RED = 1,
+      GREEN = 2,
+      BLUE = 3
+};
+or
+Color:Enum = {
+      RED = 1,
+      GREEN,
+      BLUE
+};
+or
+Color:Enum = {
+      RED = 'r',
+      GREEN = 'g',
+      BLUE = 'b'
+};
 
 # Types/Interfaces
 
@@ -131,7 +335,7 @@ if(x < y, {
     log("x is less than y");
 }, log("x is greater than or equal to y"));
 # Conditional statement  (using ternary syntax)
-x < y ? log("x is less than y") : { 
+x < y ? log("x is less than y") : {
     log("x is greater than or equal to y"))
 };
 
@@ -176,6 +380,19 @@ Exception will not crash the program if not handled, just reload the program if 
 
 # Ternary (using if function)
 result = if(x < y, { => x }, y);
+or
+result = if(x < y, { => x }, { => y });
+or
+result = if(x < y, x, y);
+or
+result = if(x < y, x, { => y });
+
+the default true value is 1 or true and the default false value is 0 or false
+example:
+result = if(x < y, x); # if x < y return x else return 0
+result = if(x < y, x, 0); # if x < y return x else return 0
+result = if(x < y); # if x < y return 1 else return 0
+result = if(x < y,, y); # if x < y return 1 else return y
 # Ternary (using ternary syntax)
 result = x < y ? { => x }: y;
 
@@ -203,6 +420,77 @@ k=0;
 loop(k<5,{
     print("Iteration: " + k);
 }); # while like loop
+
+# Error debugging
+someFunction = (x,y) => {
+    throw new Error('Some error');
+};
+someOtherFunction = (z) => {
+    someFunction(1,z);
+};
+someOtherFunction(2); # will print the error message and the stack trace
+Some error
+Code: 500
+Stack trace:
+    at someFunction (file:line:column)
+    where (x = 1, y = 2)
+    at someOtherFunction (file:line:column)
+    where (z = 2)
+    at main (file:line:column)
+
+
+someFunction = (x: Number,y) => {
+    throw new Exception('Some error', 404);
+};
+
+someFunction(1,2); # will print the error message and the stack trace
+Some error
+Code: 404
+Stack trace:
+    at someFunction (file:line:column)
+    where (x: Number = 1, y = 2)
+    at main (file:line:column)
+
+
+someFunction = (x,y) => {
+    throw new Exception('Some error');
+};
+someFunction(1,2); # will print the error message and the stack trace
+Some error
+Code: 400
+Stack trace:
+    at someFunction (file:line:column)
+    where (x = 1, y = 2)
+    at main (file:line:column)
+
+someFunction = (x,y) => {
+    throw new Exception('Some error', 404);
+};
+
+someFunction(1,2); # will print the error message and the stack trace
+
+Some error
+Code: 404
+Stack trace:
+    at someFunction (file:line:column)
+    where (x = 1, y = 2)
+    at main (file:line:column)
+
+Hide Secret Values
+
+someFunction = (x: Secret, y: Secret(Number), z) => {
+    throw new Exception('Some error', 404);
+};
+
+someFunction(1,2,3); # will print the error message and the stack trace
+
+Some error
+Code: 404
+Stack trace:
+    at someFunction (file:line:column)
+    where (x: Secret, y: Secret(Number), z = 3)
+    at main (file:line:column)
+
 ```
 Overview of the syntax rules and grammar structure for some of the language constructs:
 

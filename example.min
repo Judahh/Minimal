@@ -1,0 +1,129 @@
+import("global");
+
+PetFood = {
+    name: String;
+    price: Unsigned(Number);
+    portion: Natural;
+    constructor = (name, price, portion) => {
+        this.name = name;
+        this.price = price;
+        this.portion = portion;
+    };
+};
+
+Cat = {
+    name: String;
+
+    constructor = (name) => {
+        this.name = name;
+    };
+
+    sound = () => {
+        => "Meow";
+    };
+
+    eat = (food: PetFood) => {
+        print("Yum yum!");
+        food.portion = food.portion - 1;
+    };
+};
+
+Dog = {
+    name: String;
+
+    constructor = (name) => {
+        this.name = name;
+    };
+
+    sound = () => {
+        => "Woof";
+    };
+
+    eat = (food: PetFood) => {
+        print("Yum yum!");
+        food.portion = food.portion - 1;
+    };
+};
+
+Pet = Cat | Dog;
+
+PetEngine = {
+    generateFood = (pet: Pet) => {
+        petFood: PetFood;
+        if (pet.isInstanceOf(Cat), {
+            petFood = PetFood("Fish", 10, 100);
+        },{
+            petFood = PetFood("Meat", 20, 200);
+        });
+        => petFood;
+    };
+
+    generateFood2 = (pet: Pet) => {
+        petFood: PetFood;
+        if(pet.isInstanceOf(Cat), {
+            final.=> PetFood("Fish", 20, 200);
+        },{
+            final.=> PetFood("Meat", 10, 100);
+        });
+    };
+
+    generateFood3 = (pet: Pet) => {
+        petFood: PetFood;
+        => if(pet.isInstanceOf(Cat),
+            PetFood("Fish", 30, 300);
+        ,   PetFood("Meat", 30, 300);
+        );
+    };
+
+    generateFood4 = (pet: Pet) => {
+        petFood: PetFood;
+        if(pet.isInstanceOf(Cat), [
+            => PetFood("Fish", 40, 400);
+        ],[
+            => PetFood("Meat", 40, 400);
+        ]);
+    };
+
+    giveFood = (pet: Pet, petFood: PetFood) => {
+        print("Here is your food, " + pet.name + "!");
+        pet.eat(petFood);
+    };
+};
+
+# Some Initial Comment
+
+##
+ # A simple example of a pet engine that generates food for pets and feeds them.
+ # The engine can generate food for both cats and dogs.
+ #
+ # - Returns void.
+ # - Prints the name, price, and portion of the food.
+##
+main = () => {
+    var cat = Cat("Kitty"); # Optional var keyword for explicit variable declaration
+    dog = Dog("Doggy"## Some Double Internal Comment ##); # Without optional var keyword for implicit variable declaration
+
+    # Some Comment Over Comment
+    catFood = FoodGenerator.generate(cat##blooou##);
+    dogFood = FoodGenerator.generate(dog);
+
+    print(catFood.name); #Some Comment .f.ewveovkerv : ;}~l^}DPSL}A
+    print(catFood.price);
+    print(catFood.portion)### #Some Tripple Internal Comment ###;
+
+    print(dogFood.name);
+    print(dogFood.price);
+    print(dogFood.portion);
+
+    PetEngine.giveFood(cat, catFood);
+    PetEngine.giveFood(dog, dogFood);
+
+    if(dogFood.portion >= catFood.portion, {
+        print("Doggy has more food! Or they have the same amount.");
+    },{
+        print("Kitty has more food!");
+    });
+    print("Doggy has '" + dogFood.portion + "' portions of food.");
+    print("Kitty has '" + catFood.portion + "' portions of food.");
+    print("Doggy first Letter is '" + 'D' + "'.");
+};

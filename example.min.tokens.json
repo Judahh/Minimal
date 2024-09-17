@@ -1,0 +1,2410 @@
+[
+  {
+    "value": "import",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "global",
+    "type": 17
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "String",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "price",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "Unsigned",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Number",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "Natural",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "constructor",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "price",
+    "type": 1
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "this",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "this",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "price",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "price",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "this",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "Cat",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "String",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "constructor",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "this",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "sound",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "Meow",
+    "type": 17
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "eat",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "food",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Yum yum!",
+    "type": 17
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "food",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "food",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": "-",
+    "type": 3
+  },
+  {
+    "value": "1",
+    "type": 0
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "Dog",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "String",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "constructor",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "this",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "sound",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "Woof",
+    "type": 17
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "eat",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "food",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Yum yum!",
+    "type": 17
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "food",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "food",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": "-",
+    "type": 3
+  },
+  {
+    "value": "1",
+    "type": 0
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "Pet",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "Cat",
+    "type": 1
+  },
+  {
+    "value": "|",
+    "type": 3
+  },
+  {
+    "value": "Dog",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "PetEngine",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "generateFood",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "pet",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "Pet",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "petFood",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "if",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "pet",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "isInstanceOf",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Cat",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "petFood",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Fish",
+    "type": 17
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "10",
+    "type": 0
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "100",
+    "type": 0
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "petFood",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Meat",
+    "type": 17
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "20",
+    "type": 0
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "200",
+    "type": 0
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "petFood",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "generateFood",
+    "type": 1
+  },
+  {
+    "value": "2",
+    "type": 0
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "pet",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "Pet",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "petFood",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "if",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "pet",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "isInstanceOf",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Cat",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "final",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Fish",
+    "type": 17
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "20",
+    "type": 0
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "200",
+    "type": 0
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "final",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Meat",
+    "type": 17
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "10",
+    "type": 0
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "100",
+    "type": 0
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "generateFood",
+    "type": 1
+  },
+  {
+    "value": "3",
+    "type": 0
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "pet",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "Pet",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "petFood",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "if",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "pet",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "isInstanceOf",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Cat",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Fish",
+    "type": 17
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "30",
+    "type": 0
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "300",
+    "type": 0
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Meat",
+    "type": 17
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "30",
+    "type": 0
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "300",
+    "type": 0
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "generateFood",
+    "type": 1
+  },
+  {
+    "value": "4",
+    "type": 0
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "pet",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "Pet",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "petFood",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "if",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "pet",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "isInstanceOf",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Cat",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "[",
+    "type": 8
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Fish",
+    "type": 17
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "40",
+    "type": 0
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "400",
+    "type": 0
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "]",
+    "type": 9
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "[",
+    "type": 8
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Meat",
+    "type": 17
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "40",
+    "type": 0
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "400",
+    "type": 0
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "]",
+    "type": 9
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "giveFood",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "pet",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "Pet",
+    "type": 1
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "petFood",
+    "type": 1
+  },
+  {
+    "value": ":",
+    "type": 13
+  },
+  {
+    "value": "PetFood",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Here is your food, ",
+    "type": 17
+  },
+  {
+    "value": "+",
+    "type": 3
+  },
+  {
+    "value": "pet",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": "+",
+    "type": 3
+  },
+  {
+    "value": "!",
+    "type": 17
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "pet",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "eat",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "petFood",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "Some Initial Comment",
+    "type": 20
+  },
+  {
+    "value": "# A simple example of a pet engine that generates food for pets and feeds them.\n # The engine can generate food for both cats and dogs.\n #\n # - Returns void.\n # - Prints the name, price, and portion of the food.",
+    "type": 20,
+    "isInternal": true
+  },
+  {
+    "value": "main",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "=>",
+    "type": 14
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "var",
+    "type": 16
+  },
+  {
+    "value": "cat",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "Cat",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Kitty",
+    "type": 17
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "Optional var keyword for explicit variable declaration",
+    "type": 20
+  },
+  {
+    "value": "dog",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "Dog",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Doggy",
+    "type": 17
+  },
+  {
+    "value": "Some Double Internal Comment",
+    "type": 20,
+    "isInternal": true
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "Without optional var keyword for implicit variable declaration",
+    "type": 20
+  },
+  {
+    "value": "Some Comment Over Comment",
+    "type": 20
+  },
+  {
+    "value": "catFood",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "FoodGenerator",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "generate",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "cat",
+    "type": 1
+  },
+  {
+    "value": "blooou",
+    "type": 20,
+    "isInternal": true
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "dogFood",
+    "type": 1
+  },
+  {
+    "value": "=",
+    "type": 2
+  },
+  {
+    "value": "FoodGenerator",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "generate",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "dog",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "catFood",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "Some Comment .f.ewveovkerv : ;}~l^}DPSL}A",
+    "type": 20
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "catFood",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "price",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "catFood",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": "#Some Tripple Internal Comment",
+    "type": 20,
+    "isInternal": true
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "dogFood",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "name",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "dogFood",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "price",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "dogFood",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "PetEngine",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "giveFood",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "cat",
+    "type": 1
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "catFood",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "PetEngine",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "giveFood",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "dog",
+    "type": 1
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "dogFood",
+    "type": 1
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "if",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "dogFood",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": ">=",
+    "type": 3
+  },
+  {
+    "value": "catFood",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Doggy has more food! Or they have the same amount.",
+    "type": 17
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ",",
+    "type": 10
+  },
+  {
+    "value": "{",
+    "type": 6
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Kitty has more food!",
+    "type": 17
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Doggy has '",
+    "type": 17
+  },
+  {
+    "value": "+",
+    "type": 3
+  },
+  {
+    "value": "dogFood",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": "+",
+    "type": 3
+  },
+  {
+    "value": "' portions of food.",
+    "type": 17
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Kitty has '",
+    "type": 17
+  },
+  {
+    "value": "+",
+    "type": 3
+  },
+  {
+    "value": "catFood",
+    "type": 1
+  },
+  {
+    "value": ".",
+    "type": 11
+  },
+  {
+    "value": "portion",
+    "type": 1
+  },
+  {
+    "value": "+",
+    "type": 3
+  },
+  {
+    "value": "' portions of food.",
+    "type": 17
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 4
+  },
+  {
+    "value": "Doggy first Letter is '",
+    "type": 17
+  },
+  {
+    "value": "+",
+    "type": 3
+  },
+  {
+    "value": "D",
+    "type": 18
+  },
+  {
+    "value": "+",
+    "type": 3
+  },
+  {
+    "value": "'.",
+    "type": 17
+  },
+  {
+    "value": ")",
+    "type": 5
+  },
+  {
+    "value": ";",
+    "type": 12
+  },
+  {
+    "value": "}",
+    "type": 7
+  },
+  {
+    "value": ";",
+    "type": 12
+  }
+]
