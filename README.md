@@ -69,6 +69,7 @@ printFoo = {
 };
 
 # Classes
+# Struct Oriented Class
 SampleClass = {
       private x: Number = 5;
       y: Const(Number) = 10;
@@ -85,16 +86,28 @@ SampleClass = {
       }
 };
 
-SampleClassChild: SampleClass = { # inheritance
+SampleClassChild = { 
       constructor =| (x: Number, w: Number) => { # new constructor signature option
                 this.x = x;
                 this.w = w;
       }
-};
+}: SampleClass; # inheritance
 
+SampleClassChild2 = SampleClass: { # inheritance
+      constructor =| (x: Number, w: Number) => { # new constructor signature option
+                this.x = x;
+                this.w = w;
+      }
+}; 
+
+# Function Oriented Class
 SampleClass2 = (z?: Number) => {
+      sampleFunctionThatReturnsTen = () => {
+            => 10;
+      }
       private x: Number = z || 5;
       y: Const(Number) = 10;
+      => this;
 };
 
 sampleClassChild = SampleClassChild(13);
