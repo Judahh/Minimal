@@ -303,6 +303,25 @@ someFunction = () => {
 }
 # will return 2 because the '=>' is returning the value for the closest {} (scope)
 
+# Operands
+
+numberPlusNumber = global.(a:Number,'+',b:Number) =>{
+      =>Number.add(a,b);
+};
+
+numberTimesNumber = global.(a:Number,'*',b:Number) =>{
+      =>Number.mul(a,b);
+};
+
+numberDivideNumber = global.(a:Number,'/',b:Number) =>{
+      =>Number.div(a,b);
+};
+
+Global.precedence+=[
+      [numberTimesNumber,numberDivideNumber],
+      numberPlusNumber
+];
+
 # Enum
 Color:Enum = {
       RED,
