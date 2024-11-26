@@ -197,6 +197,10 @@ sampleEngine = {
       }
 };
 
+# its possible to merge a engine with a struct and it will become a class
+
+SampleClass= someStruct & someClass;
+
 returns types:
 For a "{}" (scope) use:
   "=>" or "this.=>" returns the value for the current scope
