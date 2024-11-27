@@ -16,15 +16,17 @@ Language name: Minimal
 #### Numeric Types
 
 ##### Boolean
-##### Natural(size:Natural=32)
-##### Whole(size:Natural=32)
+##### Natural(size:Natural=32, growable: Boolean = true)
+##### Whole(size:Natural=32, growable: Boolean = true)
+```
       Whole=Unsigned(Integer)
       Whole=Natural & 0
-##### Integer(size:Natural=32)
-##### Rational(pSize:Natural=32,qSize:Natural=32)
+```
+##### Integer(size:Natural=32, growable: Boolean = true)
+##### Rational(pSize:Natural=32,qSize:Natural=32, growable: Boolean = true)
 ##### Real
-###### Float(sizeMultiplier:Integer=1) | Float(size:Natural=32, mantissaSize:Natural=23)
-###### Number(integerSize:Natural=32, decimalSize:Natural=32) | Number(options: NumberOptions)
+###### Float(sizeMultiplier:Integer=1, growable: Boolean = true) | Float(size:Natural=32, mantissaSize:Natural=23, growable: Boolean = true)
+###### Number(integerSize:Natural=32, decimalSize:Natural=32, growable: Boolean = true) | Number(options: NumberOptions)
 
 #### Text Types
 
