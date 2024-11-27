@@ -592,6 +592,10 @@ Overview of the syntax rules and grammar structure for some of the language cons
 Using a BNF-like representation (simplified for illustration):
 
 ```bnf
+pairOperator ::= <value> <operator> <value>
+
+operatorReduction ::=  <value> <operator> = <value>
+
 declaration ::= <identifier> : <type> [ = <initializer> ] ;
 
 functionDeclaration ::= <functionName> [= | =|] [ ( <parameters> )  => ] <functionBody> ;
@@ -600,7 +604,7 @@ classDeclaration ::= <ClassName> = { <classBody> } ;
 
 typeDeclaration ::= <TypeName> : Type = { <typeBody> } ;
 
-conditionalFunction ::= if ( <conditionBlock> , <trueBlock> , [ <elseBlock> ] ) ;
+conditionalFunction ::= if ( <conditionBlock> , <trueBlock> [,  <elseBlock> ] ) ;
 
 ternaryOperator ::= <condition> ? { <trueBlock> } : { <elseBlock> } ;
 
