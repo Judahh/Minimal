@@ -39,7 +39,7 @@ literal: "string" or `string`
 
 #### Umbrella Types
 It's possible to define a type that can be any of the a set of types and it's possible agregate more types to an existing umbrella type:
-
+```
 Real = Float | Number
 Numeric = Boolean | Natural | Whole | Integer | Rational | Real
 Text = Char | String
@@ -49,7 +49,7 @@ For the current file:
 Numeric |= NewNumeric | OtherNewNumeric
 For the everywhere it's imported:
 Global.Numeric |= NewNumeric | OtherNewNumeric
-
+```
 ## Example:
 ```minimal
 # Variable/Constant/Function declaration
