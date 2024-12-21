@@ -77,7 +77,7 @@ SampleClass = {
       y: Const(Number) = 10;
       w: Number = 10;
 
-      constructor = (x: Number) => { this.x = x; }
+      (x: Number) => { this.x = x; }
 
       sum = () => {
                => x+y+w;
@@ -89,14 +89,14 @@ SampleClass = {
 };
 
 SampleClassChild = { 
-      constructor =| (x: Number, w: Number) => { # new constructor signature option
+      (x: Number, w: Number) => { # new constructor signature option
                 this.x = x;
                 this.w = w;
       }
 }: SampleClass; # inheritance
 
 SampleClassChild2 = SampleClass: { # inheritance
-      constructor =| (x: Number, w: Number) => { # new constructor signature option
+      (x: Number, w: Number) => { # new constructor signature option
                 this.x = x;
                 this.w = w;
       }
@@ -149,7 +149,7 @@ log(|sampleClass3|); # prints 5
 numberExample = Number(5);
 functionExample = ()=>{};
 classExample = {
-  constructor = () => {};
+  () => {};
 };
 
 # it's possible to use typeName properties to get the type name and variableName properties to get the variable name
@@ -173,7 +173,7 @@ If it has a constructor it can have variables not initialized but must be instan
 SampleStruct = {
       x: Number;
       y: Const(Number);
-      constructor = (x: Number, y: Number) => {
+      (x: Number, y: Number) => {
                 this.x = x;
                 this.y = y;
       }
@@ -361,7 +361,7 @@ Worker:Person = {
 };
 
 Human: Person = { # Class Human implements Person
-      constructor = (name: String, age: Number) => {
+      (name: String, age: Number) => {
                 this.name = name;
                 this.age = age;
       }
