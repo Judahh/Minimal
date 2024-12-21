@@ -58,7 +58,7 @@ y: Const(Number) = 10;
 z = 20;
 sum: (a: Number, b: Number) => Number = (a: Number, b: Number)=>{
       log('Sum a:', a, ' and  b:', b);
-      => a+b; # return is =>
+      <= a+b; # return is <=
 };
 sub = (a: Number, b: Number)=>a-b;
 
@@ -80,11 +80,11 @@ SampleClass = {
       (x: Number) => { this.x = x; }
 
       sum = () => {
-               => x+y+w;
+               <= x+y+w;
       }
 
       value = () => {
-               => x;
+               <= x;
       }
 };
 
@@ -105,11 +105,11 @@ SampleClassChild2 = SampleClass: { # inheritance
 # Function Oriented Class
 SampleClass2 = (z?: Number) => {
       sampleFunctionThatReturnsTen = () => {
-            => 10;
+            <= 10;
       }
       private x: Number = z || 5;
       y: Const(Number) = 10;
-      => this;
+      <= this;
 };
 
 sampleClassChild = SampleClassChild(13);
@@ -118,19 +118,19 @@ log(sampleClassChild.w);     # prints 10
 log(sampleClassChild.sum()); # prints 33
 
 Global.(a: SampleClass, '+', b: SampleClass) => {
-    => SampleClass(a.value() + b.value());
+    <= SampleClass(a.value() + b.value());
 };
 
 Global.(a: SampleClass, '+', b: Numeric) => {
-    => SampleClass(a.value() + b);
+    <= SampleClass(a.value() + b);
 };
 
 Global.(a: Numeric, '+', b: SampleClass) => {
-    => SampleClass(a + b.value());
+    <= SampleClass(a + b.value());
 };
 
 Global.('|', a: SampleClass, '|') => {
-    => if(a.value() > 0, a.value(), -a.value());
+    <= if(a.value() > 0, a.value(), -a.value());
 };
 
 sampleClass = SampleClass(6);
@@ -195,7 +195,7 @@ sampleEngine = {
       }
       sum = (a: Number, b: Number) => {
                 log('Sum a:', a, ' and  b:', b);
-                => a+b; # return is =>
+                <= a+b; # return is <=
       }
 };
 
@@ -205,118 +205,118 @@ SampleClass= someStruct & someClass;
 
 returns types:
 For a "{}" (scope) use:
-  "=>" or "this.=>" returns the value for the current scope
-  "super.=>" returns the value for the parent scope
-  "final.=>" returns the value for the final scope
-  "global.=>" returns the value for the global scope (program)
+  "<=" or "this.<=" returns the value for the current scope
+  "super.<=" returns the value for the parent scope
+  "final.<=" returns the value for the final scope
+  "global.<=" returns the value for the global scope (program)
 For a "[]" (scope) use:
-  "=>" returns the value for the closest {} (scope)
-  "super.=>" returns the value for the parent of the closest {} (scope)
-  "final.=>" returns the value for the final scope
-  "global.=>" returns the value for the global scope (program)
+  "<=" returns the value for the closest {} (scope)
+  "super.<=" returns the value for the parent of the closest {} (scope)
+  "final.<=" returns the value for the final scope
+  "global.<=" returns the value for the global scope (program)
 
 example:
 someFunction = () => {
   if(1 > 0, {
       if(2 > 0, {
-          => 2;
+          <= 2;
       }, {
-          => -2;
+          <= -2;
       });
-      => 1;
+      <= 1;
   }, {
-      => -1;
+      <= -1;
   });
-  => 0;
+  <= 0;
 }
-# will return 0 because of the '=>' of each if statement is returning the value for the current {} (scope)
+# will return 0 because of the '<=' of each if statement is returning the value for the current {} (scope)
 
 someFunction = () => {
   if(1 > 0, {
       if(2 > 0, {
-          => 2;
+          <= 2;
       }, {
-          => -2;
+          <= -2;
       });
-      super.=> 1;
+      super.<= 1;
   }, {
-      super.=> -1;
+      super.<= -1;
   });
-  => 0;
+  <= 0;
 }
-# will return 1 because of the 'super.=>' of the second if statement is returning the value for the parent {} (scope)
+# will return 1 because of the 'super.<=' of the second if statement is returning the value for the parent {} (scope)
 someFunction = () => {
   if(1 > 0, {
       if(2 > 0, {
-          super.=> 2;
+          super.<= 2;
       }, {
-          super.=> -2;
+          super.<= -2;
       });
-      super.=> 1;
+      super.<= 1;
   }, {
-      super.=> -1;
+      super.<= -1;
   });
-  => 0;
+  <= 0;
 }
-# will return 0 because of the 'super.=>' of the second if statement is returning the value for the parent {} (scope) so the 'super.=>' of the first if statement is not being executed
+# will return 0 because of the 'super.<=' of the second if statement is returning the value for the parent {} (scope) so the 'super.<=' of the first if statement is not being executed
 
 someFunction = () => {
   if(1 > 0, {
       if(2 > 0, {
-          super.super.=> 2;
+          super.super.<= 2;
       }, {
-          super.super.=> -2;
+          super.super.<= -2;
       });
-      super.=> 1;
+      super.<= 1;
   }, {
-      super.=> -1;
+      super.<= -1;
   });
-  => 0;
+  <= 0;
 }
-# will return 2 because of the 'super.super.=>' of the first if statement is returning the value for the final {} (scope)
+# will return 2 because of the 'super.super.<=' of the first if statement is returning the value for the final {} (scope)
 
 someFunction = () => {
   if(1 > 0, {
       if(2 > 0, {
-          final.=> 2;
+          final.<= 2;
       }, {
-          final.=> -2;
+          final.<= -2;
       });
-      super.=> 1;
+      super.<= 1;
   }, {super.
-      super.=> -1;
+      super.<= -1;
   });
-  => 0;
+  <= 0;
 }
-# will return 2 because of the 'final.=>' of the first if statement is returning the value for the parent of the parent {} (scope)
+# will return 2 because of the 'final.<=' of the first if statement is returning the value for the parent of the parent {} (scope)
 
 someFunction = () => {
   if(1 > 0, [
       if(2 > 0, {
-          => 2;
+          <= 2;
       }, {
-          => -2;
+          <= -2;
       });
-      => 1;
+      <= 1;
   ], [
-      => -1;
+      <= -1;
   ]);
-  => 0;
+  <= 0;
 }
-# will return 2 because the '=>' is returning the value for the closest {} (scope)
+# will return 2 because the '<=' is returning the value for the closest {} (scope)
 
 # Operands
 
 numberPlusNumber = global.(a:Number,'+',b:Number) =>{
-      =>Number.add(a,b);
+      <=Number.add(a,b);
 };
 
 numberTimesNumber = global.(a:Number,'*',b:Number) =>{
-      =>Number.mul(a,b);
+      <=Number.mul(a,b);
 };
 
 numberDivideNumber = global.(a:Number,'/',b:Number) =>{
-      =>Number.div(a,b);
+      <=Number.div(a,b);
 };
 
 Global.precedence+=[
@@ -417,13 +417,13 @@ Error will crash the program if not handled
 Exception will not crash the program if not handled, just reload the program if not handled
 
 # Ternary (using if function)
-result = if(x < y, { => x }, y);
+result = if(x < y, { <= x }, y);
 or
-result = if(x < y, { => x }, { => y });
+result = if(x < y, { <= x }, { <= y });
 or
 result = if(x < y, x, y);
 or
-result = if(x < y, x, { => y });
+result = if(x < y, x, { <= y });
 
 the default true value is 1 or true and the default false value is 0 or false
 example:
@@ -432,7 +432,7 @@ result = if(x < y, x, 0); # if x < y return x else return 0
 result = if(x < y); # if x < y return 1 else return 0
 result = if(x < y,, y); # if x < y return 1 else return y
 # Ternary (using ternary syntax)
-result = x < y ? { => x }: y;
+result = x < y ? { <= x }: y;
 
 # Looping statement (is a function for looping)
 loop(i=0, i < 5, i++, {
