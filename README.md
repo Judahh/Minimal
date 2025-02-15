@@ -224,13 +224,13 @@ sampleEngine = {
 
 SampleClass= someStruct & someClass;
 
-returns types:
-For a "{}" (scope) use:
+Returns types:
+For a "{}" block (scope) use:
   "<=" or "this.<=" returns the value for the current scope
   "super.<=" returns the value for the parent scope
   "final.<=" returns the value for the final scope
   "global.<=" returns the value for the global scope (program)
-For a "[]" (scope) use:
+For a "[]" block (scope) use:
   "<=" returns the value for the closest {} (scope)
   "super.<=" returns the value for the parent of the closest {} (scope)
   "final.<=" returns the value for the final scope
