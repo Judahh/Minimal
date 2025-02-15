@@ -470,7 +470,7 @@
     "typeName": "OpenBrace"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -765,7 +765,7 @@
     "typeName": "OpenBrace"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2025,7 +2025,7 @@
     "typeName": "OpenBrace"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2368,7 +2368,7 @@
     "typeName": "SemiColon"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2408,7 +2408,7 @@
     "typeName": "Comment"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2443,7 +2443,7 @@
     "typeName": "SemiColon"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2484,7 +2484,7 @@
     "typeName": "SemiColon"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2519,7 +2519,7 @@
     "typeName": "SemiColon"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2554,7 +2554,7 @@
     "typeName": "SemiColon"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2734,7 +2734,7 @@
     "typeName": "OpenBrace"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2774,7 +2774,7 @@
     "typeName": "OpenBrace"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2814,7 +2814,7 @@
     "typeName": "SemiColon"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2869,7 +2869,7 @@
     "typeName": "SemiColon"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
@@ -2924,7 +2924,7 @@
     "typeName": "SemiColon"
   },
   {
-    "value": "print",
+    "value": "log",
     "type": 1,
     "typeName": "Identifier"
   },
