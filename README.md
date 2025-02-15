@@ -147,6 +147,9 @@ log(|sampleClass3|); # prints 5
 # this is a reference to the current object, it can be used to access the current object properties, functions, operators...
 
 numberExample = Number(5);
+numberExampleReferece <= numberExample;
+numberExampleReferece2* = numberExample;
+numberExampleClone = numberExample;
 functionExample = ()=>{};
 classExample = {
   () => {};
@@ -156,6 +159,12 @@ classExample = {
 
 log(numberExample.typeName); # prints Number
 log(numberExample.variableName); # prints numberExample
+log(numberExampleReferece.typeName); # prints Number
+log(numberExampleReferece.variableName); # prints numberExample
+log(numberExampleReferece2.typeName); # prints Number
+log(numberExampleReferece2.variableName); # prints numberExample
+log(numberExampleClone.typeName); # prints Number
+log(numberExampleClone.variableName); # prints numberExampleClone
 log(functionExample.typeName); # prints Function
 log(functionExample.variableName); # prints functionExample
 log(classExample.typeName); # prints Object
@@ -177,11 +186,23 @@ SampleStruct = {
                 this.x = x;
                 this.y = y;
       }
+      inc = (a: Number) => {
+                a++;
+                <= a; # return is <=
+      }
 };
 sampleStruct = SampleStruct(5, 10);
 
 log(sampleStruct.x); # prints 5
 log(sampleStruct.y); # prints 10
+numberExample = Number(5);
+numberExample2 = sampleStruct.inc(numberExample);
+log(numberExample); # prints 5
+log(numberExample2); # prints 6
+numberExample = Number(5);
+numberExample2 = sampleStruct.inc(numberExample*);
+log(numberExample); # prints 6
+log(numberExample2); # prints 6
 
 # Engine
 Like a class but without variables (Does not have constructor, and cannot be instantiated, just used as an object)
