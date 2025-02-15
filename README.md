@@ -37,7 +37,7 @@ Language name: Minimal
 ##### Char(encoding:String='utf-8')
 literal: 'c'
 ##### String<Type=Array>(encoding:String='utf-8')
-literal: "string" or `string`
+literal: "string" or 'string' or `string`
 #### Array<T?>(size?:Natural) (if it does not have a size it's growable)
 
 
@@ -229,16 +229,16 @@ sampleEngine = {
 SampleClass= someStruct & someClass;
 
 Returns types:
-For a "{}" block (scope) use:
-  "<=" or "this.<=" returns the value for the current scope
-  "super.<=" returns the value for the parent scope
-  "final.<=" returns the value for the final scope
-  "global.<=" returns the value for the global scope (program)
-For a "[]" block (scope) use:
-  "<=" returns the value for the closest {} (scope)
-  "super.<=" returns the value for the parent of the closest {} (scope)
-  "final.<=" returns the value for the final scope
-  "global.<=" returns the value for the global scope (program)
+For a '{}' block (scope) use:
+  '<=' or 'this.<=' returns the value for the current scope
+  'super.<=' returns the value for the parent scope
+  'final.<=' returns the value for the final scope
+  'global.<=' returns the value for the global scope (program)
+For a '[]' block (scope) use:
+  '<=' returns the value for the closest {} (scope)
+  'super.<=' returns the value for the parent of the closest {} (scope)
+  'final.<=' returns the value for the final scope
+  'global.<=' returns the value for the global scope (program)
 
 example:
 someFunction = () => {
@@ -395,44 +395,44 @@ Human: Person = { # Class Human implements Person
 
 # Conditional statement  (is a function for statement)
 if(x < y, {
-    log("x is less than y");
-}, log("x is greater than or equal to y"));
+    log('x is less than y');
+}, log('x is greater than or equal to y'));
 # Conditional statement  (using ternary syntax)
-x < y ? log("x is less than y") : {
-    log("x is greater than or equal to y");
+x < y ? log('x is less than y') : {
+    log('x is greater than or equal to y');
 };
 
 # Try Catch statement  (is a function for statement)
 try({
-    log("try block");
+    log('try block');
 }, {
-    log("catch block");
+    log('catch block');
 });
 
 or
 
 try({
-    log("try block");
+    log('try block');
 }, (e: Error)=>{
-    log("catch block");
+    log('catch block');
 });
 
 or
 
 try({
-    log("try block");
+    log('try block');
 }).catch((e: Error)=>{
-    log("catch block");
+    log('catch block');
 });
 
 or
 
 try({
-    log("try block");
+    log('try block');
 }).catch((e: SomeError)=>{
-    log("catch block");
+    log('catch block');
 }).catch((e: AnotherError)=>{
-    log("another catch block");
+    log('another catch block');
 });
 
 # Error vs Exception
@@ -461,27 +461,27 @@ result = x < y ? { <= x }: y;
 
 # Looping statement (is a function for looping)
 loop(i=0, i < 5, i++, {
-    print("Iteration: " + i);
+    print('Iteration: ' + i);
 }); # for like loop
 
 a=[1,2,3,4,5];
 loop(iterates(a), {
-    print("Iteration: " + a);
+    print('Iteration: ' + a);
 }); # for of like loop
 
 b=SampleClass(6);
 loop(properties(b), {
-    print("Iteration: " + i);
+    print('Iteration: ' + i);
 }); # for in like loop
 
 j=0;
 loop({
-    print("Iteration: " + j);
+    print('Iteration: ' + j);
 }, j<5); # do while like loop
 
 k=0;
 loop(k<5,{
-    print("Iteration: " + k);
+    print('Iteration: ' + k);
 }); # while like loop
 
 # Error debugging
@@ -672,7 +672,7 @@ arrayDeclaration ::= <arrayName> = [ <elements> ] ;
 
 <unaryOperator> ::= - | ! ;
 
-<literal> ::= 'c'1 | "string" | 1 | 3.14 | true | false ;
+<literal> ::= 'c'1 | 'string' | 1 | 3.14 | true | false ;
 
 <functionCall> ::= <functionName> ( <arguments> ) ;
 
@@ -692,6 +692,6 @@ arrayDeclaration ::= <arrayName> = [ <elements> ] ;
 
 ```
 
-This is a simplified representation of the syntax rules using a BNF-like notation for some constructs in the "Minimal" language. For a complete and accurate grammar, additional rules for various constructs, including expressions, operators, scoping, and more, would need to be defined.
+This is a simplified representation of the syntax rules using a BNF-like notation for some constructs in the 'Minimal' language. For a complete and accurate grammar, additional rules for various constructs, including expressions, operators, scoping, and more, would need to be defined.
 
 Developing a complete and precise formal grammar for a programming language involves specifying rules for all language constructs in detail, handling precedence, associativity, and other intricacies. It typically requires a dedicated language specification document with extensive details and examples.
