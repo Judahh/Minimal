@@ -9,6 +9,10 @@ Language name: Minimal
 - TypeScript-like syntax
 - Custom types
 
+## Compilation/Transpilation
+- LLVM
+- JS/TS
+
 ## Types
 
 ### Basic Types
