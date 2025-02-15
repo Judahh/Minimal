@@ -20,7 +20,7 @@ Language name: Minimal
 ##### Whole(size:Natural=32, growable: Boolean = true)
 ```
       Whole:Type = Unsigned(Integer);
-      Whole:Type  =Natural & 0;
+      Whole:Type  =Natural & 0; # another example to represent the same
 ```
 ##### Integer(size:Natural=32, growable: Boolean = true)
 ##### Rational(pSize:Natural=32,qSize:Natural=32, growable: Boolean = true)
@@ -46,7 +46,7 @@ Text:Type = Char | String;
 
 How to add more types to an existing umbrella type:
 For the current file:
-Numeric:Type |= NewNumeric | OtherNewNumeric;
+Numeric |= NewNumeric | OtherNewNumeric; # ':Type' is only needed on declaration of a type, not in an extension
 For the everywhere it's imported:
 global.Numeric:Type |= NewNumeric | OtherNewNumeric;
 ```
@@ -77,7 +77,7 @@ SampleClass = {
       y: Const(Number) = 10;
       w: Number = 10;
 
-      (x: Number) => { this.x = x; };
+      (x: Number) => { this.x = x; }; # constructor
 
       sum = () => {
                <= x+y+w;
@@ -135,10 +135,10 @@ global.('|', a: SampleClass, '|') => {
 
 sampleClass = SampleClass(6);
 sampleClass2 = SampleClass(7);
-log((sampleClass + sampleClass2).value); # prints 13
-log((sampleClass + 5).value); # prints 11
+log((sampleClass + sampleClass2).value); # prints 13 (usage of global.(a: SampleClass, '+', b: SampleClass))
+log((sampleClass + 5).value); # prints 11 (usage of global.(a: SampleClass, '+', b: Numeric))
 sampleClass3 = SampleClass(-5);
-log(|sampleClass3|); # prints 5
+log(|sampleClass3|); # prints 5 (usage of global.('|', a: SampleClass, '|'))
 
 # global is a global object that can be used to define global properties, functions, operators...
 # project is a global object that can be used to define project properties, functions, operators...
