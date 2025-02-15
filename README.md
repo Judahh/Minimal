@@ -34,7 +34,7 @@ Language name: Minimal
 literal: 'c'
 ##### String<Type=Array>(encoding:String='utf-8')
 literal: "string" or `string`
-#### Array<T?>(size?:Natural) (if it doesnot have a size it's growable)
+#### Array<T?>(size?:Natural) (if it does not have a size it's growable)
 
 
 #### Umbrella Types
