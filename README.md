@@ -19,8 +19,8 @@ Language name: Minimal
 ##### Natural(size:Natural=32, growable: Boolean = true)
 ##### Whole(size:Natural=32, growable: Boolean = true)
 ```
-      Whole:Type=Unsigned(Integer)
-      Whole:Type=Natural & 0
+      Whole:Type = Unsigned(Integer);
+      Whole:Type  =Natural & 0;
 ```
 ##### Integer(size:Natural=32, growable: Boolean = true)
 ##### Rational(pSize:Natural=32,qSize:Natural=32, growable: Boolean = true)
@@ -38,17 +38,17 @@ literal: "string" or `string`
 
 
 #### Umbrella Types
-It's possible to define a type that can be any of the a set of types and it's possible agregate more types to an existing umbrella type:
+It's possible to define a type that can be any of a set of types, and it's possible to aggregate more types into an existing umbrella type.
 ```
-Real:Type = Float | Number
-Numeric:Type = Boolean | Natural | Whole | Integer | Rational | Real
-Text:Type = Char | String
+Real:Type = Float | Number;
+Numeric:Type = Boolean | Natural | Whole | Integer | Rational | Real;
+Text:Type = Char | String;
 
 How to add more types to an existing umbrella type:
 For the current file:
-Numeric:Type |= NewNumeric | OtherNewNumeric
+Numeric:Type |= NewNumeric | OtherNewNumeric;
 For the everywhere it's imported:
-global.Numeric:Type |= NewNumeric | OtherNewNumeric
+global.Numeric:Type |= NewNumeric | OtherNewNumeric;
 ```
 ## Example:
 ```minimal
@@ -56,11 +56,11 @@ global.Numeric:Type |= NewNumeric | OtherNewNumeric
 x: Number = 5;
 y: Const(Number) = 10;
 z = 20;
-sum: (a: Number, b: Number) => Number = (a: Number, b: Number)=>{
-      log('Sum a:', a, ' and  b:', b);
-      <= a+b; # return is <=
+sum: (a: Number, b: Number) => Number = (a: Number, b: Number) => {
+      log('Sum a:', a, ' and b:', b);
+      <= a + b; # return is <=
 };
-sub = (a: Number, b: Number)=>a-b;
+sub = (a: Number, b: Number) => a-b;
 
 multiply = (a: Number, b: Number)=>a*b;
 multiply |= (a: Number, b: Number, c: Number)=>a*b*c; // multiple function signatures for the same naming using |=
@@ -77,36 +77,36 @@ SampleClass = {
       y: Const(Number) = 10;
       w: Number = 10;
 
-      (x: Number) => { this.x = x; }
+      (x: Number) => { this.x = x; };
 
       sum = () => {
                <= x+y+w;
-      }
+      };
 
       value = () => {
                <= x;
-      }
+      };
 };
 
 SampleClassChild = { 
       (x: Number, w: Number) => { # new constructor signature option
                 this.x = x;
                 this.w = w;
-      }
+      };
 }: SampleClass; # inheritance after definition
 
 SampleClassChild2 = SampleClass: { # inheritance before definition
       (x: Number, w: Number) => { # new constructor signature option
                 this.x = x;
                 this.w = w;
-      }
+      };
 }; 
 
 # Function Oriented Class
 SampleClass2 = (z?: Number) => {
       sampleFunctionThatReturnsTen = () => {
             <= 10;
-      }
+      };
       private x: Number = z || 5;
       y: Const(Number) = 10;
       <= this;
@@ -185,11 +185,11 @@ SampleStruct = {
       (x: Number, y: Number) => {
                 this.x = x;
                 this.y = y;
-      }
+      };
       inc = (a: Number) => {
                 a++;
                 <= a; # return is <=
-      }
+      };
 };
 sampleStruct = SampleStruct(5, 10);
 
@@ -209,15 +209,15 @@ Like a class but without variables (Does not have constructor, and cannot be ins
 sampleEngine = {
       protected init = () => {
                 log('Engine initialized');
-      }
+      };
       start = () => {
                 this.init();
                 log('Engine started');
-      }
+      };
       sum = (a: Number, b: Number) => {
                 log('Sum a:', a, ' and  b:', b);
                 <= a+b; # return is <=
-      }
+      };
 };
 
 # its possible to merge a engine with a struct and it will become a class
@@ -264,7 +264,7 @@ someFunction = () => {
       super.<= -1;
   });
   <= 0;
-}
+};
 # will return 1 because of the 'super.<=' of the second if statement is returning the value for the parent {} (scope)
 someFunction = () => {
   if(1 > 0, {
@@ -278,7 +278,7 @@ someFunction = () => {
       super.<= -1;
   });
   <= 0;
-}
+};
 # will return 0 because of the 'super.<=' of the second if statement is returning the value for the parent {} (scope) so the 'super.<=' of the first if statement is not being executed
 
 someFunction = () => {
@@ -293,7 +293,7 @@ someFunction = () => {
       super.<= -1;
   });
   <= 0;
-}
+};
 # will return 2 because of the 'super.super.<=' of the first if statement is returning the value for the final {} (scope)
 
 someFunction = () => {
@@ -308,7 +308,7 @@ someFunction = () => {
       super.<= -1;
   });
   <= 0;
-}
+};
 # will return 2 because of the 'final.<=' of the first if statement is returning the value for the parent of the parent {} (scope)
 
 someFunction = () => {
@@ -323,7 +323,7 @@ someFunction = () => {
       <= -1;
   ]);
   <= 0;
-}
+};
 # will return 2 because the '<=' is returning the value for the closest {} (scope)
 
 # Operands
@@ -395,7 +395,7 @@ if(x < y, {
 }, log("x is greater than or equal to y"));
 # Conditional statement  (using ternary syntax)
 x < y ? log("x is less than y") : {
-    log("x is greater than or equal to y"))
+    log("x is greater than or equal to y");
 };
 
 # Try Catch statement  (is a function for statement)
