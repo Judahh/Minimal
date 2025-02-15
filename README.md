@@ -486,7 +486,7 @@ loop(k<5,{
 
 # Error debugging
 someFunction = (x,y) -> {
-    throw new Error('Some error');
+    throw Error('Some error');
 };
 someOtherFunction = (z) -> {
     someFunction(1,z);
@@ -503,7 +503,7 @@ Stack trace:
 
 
 someFunction = (x: Number,y) -> {
-    throw new Exception('Some error', 404);
+    throw Exception('Some error', 404);
 };
 
 someFunction(1,2); # will print the error message and the stack trace
@@ -516,7 +516,7 @@ Stack trace:
 
 
 someFunction = (x,y) -> {
-    throw new Exception('Some error');
+    throw Exception('Some error');
 };
 someFunction(1,2); # will print the error message and the stack trace
 Some error
@@ -527,7 +527,7 @@ Stack trace:
     at main (file:line:column)
 
 someFunction = (x,y) -> {
-    throw new Exception('Some error', 404);
+    throw Exception('Some error', 404);
 };
 
 someFunction(1,2); # will print the error message and the stack trace
@@ -542,7 +542,7 @@ Stack trace:
 Hide Secret Values
 
 someFunction = (x: Secret, y: Secret(Number), z) -> {
-    throw new Exception('Some error', 404);
+    throw Exception('Some error', 404);
 };
 
 someFunction(1,2,3); # will print the error message and the stack trace

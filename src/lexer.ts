@@ -56,6 +56,7 @@ const simpleTokenToTokenType: { [str: string]: TokenType } = {
 	"'": TokenType.CharOrString,
 	"#": TokenType.Comment,
 	"\\": TokenType.Escape,
+	"$": TokenType.Var,
 };
 
 
@@ -63,13 +64,14 @@ const simpleTokenToTokenType: { [str: string]: TokenType } = {
  * Constant lookup for keywords and known identifiers + symbols.
  */
 const KEYWORDS: Record<string, TokenType> = {
-	var: TokenType.Var,
+	// $: TokenType.Var,
 };
 
 // Reoresents a single token from the source-code.
 export interface Token {
 	value: string; // contains the raw value as seen inside the source code.
 	type: TokenType; // tagged structure.
+	typeName: string; // contains the name of the token type.
 	isFinal?: boolean; // used to determine if the token is the last token in the source code.
 	isInternal?: boolean; // used to determine if the token is an internal token.
 }
@@ -77,12 +79,12 @@ export interface Token {
 // Returns a token of a given type and value
 function token(value = "", type: TokenType, isFinal?: boolean): Token {
 	if (isFinal) {
-		return { value, type, isFinal };
+		return { value, type, isFinal, typeName: TokenType[type] };
 	} else if (type == TokenType.CustomOperator || type == TokenType.Equals || type == TokenType.Arrow) {
 		isFinal = false;
-		return { value, type, isFinal };
+		return { value, type, isFinal, typeName: TokenType[type] };
 	}
-	return { value, type };
+	return { value, type, typeName: TokenType[type] };
 }
 
 /**
@@ -126,9 +128,6 @@ function isHex(str: string) {
 //}
 
 function isValidChar(str: string) {
-	if (str.includes("constructor")) {
-		return false;
-	}
 	return isAlpha(str) || isInt(str) || isSkippable(str) || simpleTokenToTokenType[str] != undefined;
 }
 
@@ -136,9 +135,6 @@ function getTokenType(str: string, lastToken?: Token): Token {
 	try {
 		if (lastToken?.type == TokenType.Hyphen && !lastToken.isFinal && str == ">") {
 			return token(lastToken.value + str, TokenType.Arrow);
-		}
-		if (str.includes("constructor")) {
-			return token(str, TokenType.Identifier);
 		}
 		const t = token(str, simpleTokenToTokenType[str]);
 		if (t.type == undefined || t.type == null || t.type == TokenType.Unknown) {
@@ -300,9 +296,6 @@ export function tokenize(sourceCode: string): Token[] {
 
 					// CHECK FOR RESERVED KEYWORDS
 					let reserved: TokenType | undefined = KEYWORDS[ident];
-					if (typeof reserved == "function") {
-						reserved = undefined;
-					}
 					// If value is not undefined then the identifier is
 					// reconized keyword
 					if (reserved) {

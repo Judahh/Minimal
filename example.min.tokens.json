@@ -1,2410 +1,2981 @@
 [
   {
     "value": "import",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "global",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "String",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "price",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "Unsigned",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Number",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "Natural",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
-  },
-  {
-    "value": "constructor",
-    "type": 1
-  },
-  {
-    "value": "=",
-    "type": 2
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "price",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "this",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "this",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "price",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "price",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "this",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "Cat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "String",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
-  },
-  {
-    "value": "constructor",
-    "type": 1
-  },
-  {
-    "value": "=",
-    "type": 2
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "this",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "sound",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "Meow",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "eat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "food",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Yum yum!",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "food",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "food",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "-",
-    "type": 3
+    "type": 3,
+    "typeName": "Hyphen"
   },
   {
     "value": "1",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "Dog",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "String",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
-  },
-  {
-    "value": "constructor",
-    "type": 1
-  },
-  {
-    "value": "=",
-    "type": 2
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "this",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "sound",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "Woof",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "eat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "food",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Yum yum!",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "food",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "food",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "-",
-    "type": 3
+    "type": 3,
+    "typeName": "Hyphen"
   },
   {
     "value": "1",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "Pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "Cat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "|",
-    "type": 4
+    "type": 4,
+    "typeName": "CustomOperator"
   },
   {
     "value": "Dog",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "PetEngine",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "generateFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "Pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "petFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "if",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "isInstanceOf",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Cat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "petFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Fish",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "10",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "100",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "petFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Meat",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "20",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "200",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "petFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "generateFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "2",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "Pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "petFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "if",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "isInstanceOf",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Cat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "final",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Fish",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "20",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "200",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "final",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Meat",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "10",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "100",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "generateFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "3",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "Pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "petFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "if",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "isInstanceOf",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Cat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Fish",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "30",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "300",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Meat",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "30",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "300",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "generateFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "4",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "Pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "petFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "if",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "isInstanceOf",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Cat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "[",
-    "type": 9
+    "type": 9,
+    "typeName": "OpenBracket"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Fish",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "40",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "400",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "]",
-    "type": 10
+    "type": 10,
+    "typeName": "CloseBracket"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "[",
-    "type": 9
+    "type": 9,
+    "typeName": "OpenBracket"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Meat",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "40",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "400",
-    "type": 0
+    "type": 0,
+    "typeName": "Number"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "]",
-    "type": 10
+    "type": 10,
+    "typeName": "CloseBracket"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "giveFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "Pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "petFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ":",
-    "type": 14
+    "type": 14,
+    "typeName": "Colon"
   },
   {
     "value": "PetFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Here is your food, ",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": "+",
-    "type": 4
+    "type": 4,
+    "typeName": "CustomOperator"
   },
   {
     "value": "pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "+",
-    "type": 4
+    "type": 4,
+    "typeName": "CustomOperator"
   },
   {
     "value": "!",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "pet",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "eat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "petFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "Some Initial Comment",
-    "type": 22
+    "type": 22,
+    "typeName": "Comment"
   },
   {
     "value": "# A simple example of a pet engine that generates food for pets and feeds them.\n # The engine can generate food for both cats and dogs.\n #\n # - Returns void.\n # - Prints the name, price, and portion of the food.",
     "type": 22,
+    "typeName": "Comment",
     "isInternal": true
   },
   {
     "value": "main",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "->",
-    "type": 15
+    "type": 15,
+    "typeName": "Arrow"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
-    "value": "var",
-    "type": 17
+    "value": "$",
+    "type": 17,
+    "typeName": "Var"
   },
   {
     "value": "cat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "Cat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Kitty",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
-    "value": "Optional var keyword for explicit variable declaration",
-    "type": 22
+    "value": "Optional $ keyword for explicit variable declaration",
+    "type": 22,
+    "typeName": "Comment"
   },
   {
     "value": "dog",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "Dog",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Doggy",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": "Some Double Internal Comment",
     "type": 22,
+    "typeName": "Comment",
     "isInternal": true
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
-    "value": "Without optional var keyword for implicit variable declaration",
-    "type": 22
+    "value": "Without optional $ keyword for implicit variable declaration",
+    "type": 22,
+    "typeName": "Comment"
   },
   {
     "value": "Some Comment Over Comment",
-    "type": 22
+    "type": 22,
+    "typeName": "Comment"
   },
   {
     "value": "catFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "FoodGenerator",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "generate",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "cat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "blooou",
     "type": 22,
+    "typeName": "Comment",
     "isInternal": true
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "dogFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "=",
-    "type": 2
+    "type": 2,
+    "typeName": "Equals"
   },
   {
     "value": "FoodGenerator",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "generate",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "dog",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "catFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "Some Comment .f.ewveovkerv : ;}~l^}DPSL}A",
-    "type": 22
+    "type": 22,
+    "typeName": "Comment"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "catFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "price",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "catFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": "#Some Tripple Internal Comment",
     "type": 22,
+    "typeName": "Comment",
     "isInternal": true
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "dogFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "name",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "dogFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "price",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "dogFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "PetEngine",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "giveFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "cat",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "catFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "PetEngine",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "giveFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "dog",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "dogFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "if",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "dogFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ">=",
-    "type": 4
+    "type": 4,
+    "typeName": "CustomOperator"
   },
   {
     "value": "catFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Doggy has more food! Or they have the same amount.",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ",",
-    "type": 11
+    "type": 11,
+    "typeName": "Comma"
   },
   {
     "value": "{",
-    "type": 7
+    "type": 7,
+    "typeName": "OpenBrace"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Kitty has more food!",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Doggy has '",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": "+",
-    "type": 4
+    "type": 4,
+    "typeName": "CustomOperator"
   },
   {
     "value": "dogFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "+",
-    "type": 4
+    "type": 4,
+    "typeName": "CustomOperator"
   },
   {
     "value": "' portions of food.",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Kitty has '",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": "+",
-    "type": 4
+    "type": 4,
+    "typeName": "CustomOperator"
   },
   {
     "value": "catFood",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": ".",
-    "type": 12
+    "type": 12,
+    "typeName": "Dot"
   },
   {
     "value": "portion",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "+",
-    "type": 4
+    "type": 4,
+    "typeName": "CustomOperator"
   },
   {
     "value": "' portions of food.",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "print",
-    "type": 1
+    "type": 1,
+    "typeName": "Identifier"
   },
   {
     "value": "(",
-    "type": 5
+    "type": 5,
+    "typeName": "OpenParentesis"
   },
   {
     "value": "Doggy first Letter is '",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": "+",
-    "type": 4
+    "type": 4,
+    "typeName": "CustomOperator"
   },
   {
     "value": "D",
-    "type": 20
+    "type": 20,
+    "typeName": "CharOrString"
   },
   {
     "value": "+",
-    "type": 4
+    "type": 4,
+    "typeName": "CustomOperator"
   },
   {
     "value": "'.",
-    "type": 18
+    "type": 18,
+    "typeName": "String"
   },
   {
     "value": ")",
-    "type": 6
+    "type": 6,
+    "typeName": "CloseParentesis"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   },
   {
     "value": "}",
-    "type": 8
+    "type": 8,
+    "typeName": "CloseBrace"
   },
   {
     "value": ";",
-    "type": 13
+    "type": 13,
+    "typeName": "SemiColon"
   }
 ]

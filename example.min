@@ -4,7 +4,7 @@ PetFood = {
     name: String;
     price: Unsigned(Number);
     portion: Natural;
-    constructor = (name, price, portion) -> {
+    (name, price, portion) -> {
         this.name = name;
         this.price = price;
         this.portion = portion;
@@ -14,7 +14,7 @@ PetFood = {
 Cat = {
     name: String;
 
-    constructor = (name) -> {
+    (name) -> {
         this.name = name;
     };
 
@@ -23,7 +23,7 @@ Cat = {
     };
 
     eat = (food: PetFood) -> {
-        print("Yum yum!");
+        log("Yum yum!");
         food.portion = food.portion - 1;
     };
 };
@@ -31,7 +31,7 @@ Cat = {
 Dog = {
     name: String;
 
-    constructor = (name) -> {
+    (name) -> {
         this.name = name;
     };
 
@@ -40,7 +40,7 @@ Dog = {
     };
 
     eat = (food: PetFood) -> {
-        print("Yum yum!");
+        log("Yum yum!");
         food.portion = food.portion - 1;
     };
 };
@@ -85,7 +85,7 @@ PetEngine = {
     };
 
     giveFood = (pet: Pet, petFood: PetFood) -> {
-        print("Here is your food, " + pet.name + "!");
+        log("Here is your food, " + pet.name + "!");
         pet.eat(petFood);
     };
 };
@@ -100,30 +100,30 @@ PetEngine = {
  # - Prints the name, price, and portion of the food.
 ##
 main = () -> {
-    var cat = Cat("Kitty"); # Optional var keyword for explicit variable declaration
-    dog = Dog("Doggy"## Some Double Internal Comment ##); # Without optional var keyword for implicit variable declaration
+    $ cat = Cat("Kitty"); # Optional $ keyword for explicit variable declaration
+    dog = Dog("Doggy"## Some Double Internal Comment ##); # Without optional $ keyword for implicit variable declaration
 
     # Some Comment Over Comment
     catFood = FoodGenerator.generate(cat##blooou##);
     dogFood = FoodGenerator.generate(dog);
 
-    print(catFood.name); #Some Comment .f.ewveovkerv : ;}~l^}DPSL}A
-    print(catFood.price);
-    print(catFood.portion)### #Some Tripple Internal Comment ###;
+    log(catFood.name); #Some Comment .f.ewveovkerv : ;}~l^}DPSL}A
+    log(catFood.price);
+    log(catFood.portion)### #Some Tripple Internal Comment ###;
 
-    print(dogFood.name);
-    print(dogFood.price);
-    print(dogFood.portion);
+    log(dogFood.name);
+    log(dogFood.price);
+    log(dogFood.portion);
 
     PetEngine.giveFood(cat, catFood);
     PetEngine.giveFood(dog, dogFood);
 
     if(dogFood.portion >= catFood.portion, {
-        print("Doggy has more food! Or they have the same amount.");
+        log("Doggy has more food! Or they have the same amount.");
     },{
-        print("Kitty has more food!");
+        log("Kitty has more food!");
     });
-    print("Doggy has '" + dogFood.portion + "' portions of food.");
-    print("Kitty has '" + catFood.portion + "' portions of food.");
-    print("Doggy first Letter is '" + 'D' + "'.");
+    log("Doggy has '" + dogFood.portion + "' portions of food.");
+    log("Kitty has '" + catFood.portion + "' portions of food.");
+    log("Doggy first Letter is '" + 'D' + "'.");
 };
