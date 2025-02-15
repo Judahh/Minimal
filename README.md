@@ -93,9 +93,9 @@ SampleClassChild = {
                 this.x = x;
                 this.w = w;
       }
-}: SampleClass; # inheritance
+}: SampleClass; # inheritance after definition
 
-SampleClassChild2 = SampleClass: { # inheritance
+SampleClassChild2 = SampleClass: { # inheritance before definition
       (x: Number, w: Number) => { # new constructor signature option
                 this.x = x;
                 this.w = w;
@@ -117,7 +117,7 @@ log(sampleClassChild.x);     # prints 13
 log(sampleClassChild.w);     # prints 10
 log(sampleClassChild.sum()); # prints 33
 
-global.(a: SampleClass, '+', b: SampleClass) => {
+global.(a: SampleClass, '+', b: SampleClass) => { # The literal string shows the symbol(s) used as operator
     <= SampleClass(a.value() + b.value());
 };
 
@@ -340,9 +340,9 @@ numberDivideNumber = global.(a:Number,'/',b:Number) =>{
       <=Number.div(a,b);
 };
 
-global.precedence+=[
-      [numberTimesNumber,numberDivideNumber],
-      numberPlusNumber
+global.precedence+=[ # Order evaluated left to right for the same level
+      [numberTimesNumber,numberDivideNumber], # higher level
+      numberPlusNumber # lower level
 ];
 
 # Enum
