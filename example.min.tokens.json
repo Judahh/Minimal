@@ -5,19 +5,19 @@
   },
   {
     "value": "(",
-    "type": 4
-  },
-  {
-    "value": "global",
-    "type": 17
-  },
-  {
-    "value": ")",
     "type": 5
   },
   {
+    "value": "global",
+    "type": 18
+  },
+  {
+    "value": ")",
+    "type": 6
+  },
+  {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "PetFood",
@@ -29,7 +29,7 @@
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "name",
@@ -37,7 +37,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "String",
@@ -45,7 +45,7 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "price",
@@ -53,7 +53,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "Unsigned",
@@ -61,7 +61,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Number",
@@ -69,11 +69,11 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "portion",
@@ -81,7 +81,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "Natural",
@@ -89,7 +89,7 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "constructor",
@@ -101,7 +101,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "name",
@@ -109,7 +109,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "price",
@@ -117,7 +117,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "portion",
@@ -125,23 +125,23 @@
   },
   {
     "value": ")",
-    "type": 5
-  },
-  {
-    "value": "=>",
-    "type": 14
-  },
-  {
-    "value": "{",
     "type": 6
   },
   {
+    "value": "->",
+    "type": 15
+  },
+  {
+    "value": "{",
+    "type": 7
+  },
+  {
     "value": "this",
     "type": 1
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "name",
@@ -157,7 +157,7 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "this",
@@ -165,7 +165,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "price",
@@ -181,7 +181,7 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "this",
@@ -189,7 +189,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "portion",
@@ -205,23 +205,23 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "Cat",
@@ -233,7 +233,7 @@
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "name",
@@ -241,7 +241,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "String",
@@ -249,7 +249,7 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "constructor",
@@ -261,7 +261,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "name",
@@ -269,15 +269,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "this",
@@ -285,7 +285,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "name",
@@ -301,15 +301,15 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "sound",
@@ -321,39 +321,39 @@
   },
   {
     "value": "(",
-    "type": 4
-  },
-  {
-    "value": ")",
     "type": 5
   },
   {
-    "value": "=>",
-    "type": 14
-  },
-  {
-    "value": "{",
+    "value": ")",
     "type": 6
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
-    "value": "Meow",
-    "type": 17
-  },
-  {
-    "value": ";",
-    "type": 12
-  },
-  {
-    "value": "}",
+    "value": "{",
     "type": 7
   },
   {
+    "value": "->",
+    "type": 15
+  },
+  {
+    "value": "Meow",
+    "type": 18
+  },
+  {
     "value": ";",
-    "type": 12
+    "type": 13
+  },
+  {
+    "value": "}",
+    "type": 8
+  },
+  {
+    "value": ";",
+    "type": 13
   },
   {
     "value": "eat",
@@ -365,7 +365,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "food",
@@ -373,7 +373,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "PetFood",
@@ -381,15 +381,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "print",
@@ -397,19 +397,19 @@
   },
   {
     "value": "(",
-    "type": 4
-  },
-  {
-    "value": "Yum yum!",
-    "type": 17
-  },
-  {
-    "value": ")",
     "type": 5
   },
   {
+    "value": "Yum yum!",
+    "type": 18
+  },
+  {
+    "value": ")",
+    "type": 6
+  },
+  {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "food",
@@ -417,7 +417,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "portion",
@@ -433,7 +433,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "portion",
@@ -449,23 +449,23 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "Dog",
@@ -477,7 +477,7 @@
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "name",
@@ -485,7 +485,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "String",
@@ -493,7 +493,7 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "constructor",
@@ -505,7 +505,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "name",
@@ -513,15 +513,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "this",
@@ -529,7 +529,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "name",
@@ -545,15 +545,15 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "sound",
@@ -565,39 +565,39 @@
   },
   {
     "value": "(",
-    "type": 4
-  },
-  {
-    "value": ")",
     "type": 5
   },
   {
-    "value": "=>",
-    "type": 14
-  },
-  {
-    "value": "{",
+    "value": ")",
     "type": 6
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
-    "value": "Woof",
-    "type": 17
-  },
-  {
-    "value": ";",
-    "type": 12
-  },
-  {
-    "value": "}",
+    "value": "{",
     "type": 7
   },
   {
+    "value": "->",
+    "type": 15
+  },
+  {
+    "value": "Woof",
+    "type": 18
+  },
+  {
     "value": ";",
-    "type": 12
+    "type": 13
+  },
+  {
+    "value": "}",
+    "type": 8
+  },
+  {
+    "value": ";",
+    "type": 13
   },
   {
     "value": "eat",
@@ -609,7 +609,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "food",
@@ -617,7 +617,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "PetFood",
@@ -625,15 +625,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "print",
@@ -641,19 +641,19 @@
   },
   {
     "value": "(",
-    "type": 4
-  },
-  {
-    "value": "Yum yum!",
-    "type": 17
-  },
-  {
-    "value": ")",
     "type": 5
   },
   {
+    "value": "Yum yum!",
+    "type": 18
+  },
+  {
+    "value": ")",
+    "type": 6
+  },
+  {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "food",
@@ -661,7 +661,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "portion",
@@ -677,7 +677,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "portion",
@@ -693,23 +693,23 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "Pet",
@@ -725,7 +725,7 @@
   },
   {
     "value": "|",
-    "type": 3
+    "type": 4
   },
   {
     "value": "Dog",
@@ -733,7 +733,7 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "PetEngine",
@@ -745,7 +745,7 @@
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "generateFood",
@@ -757,7 +757,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "pet",
@@ -765,7 +765,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "Pet",
@@ -773,15 +773,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "petFood",
@@ -789,7 +789,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "PetFood",
@@ -797,7 +797,7 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "if",
@@ -805,7 +805,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "pet",
@@ -813,7 +813,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "isInstanceOf",
@@ -821,7 +821,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Cat",
@@ -829,15 +829,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "petFood",
@@ -853,15 +853,15 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Fish",
-    "type": 17
+    "type": 18
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "10",
@@ -869,7 +869,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "100",
@@ -877,23 +877,23 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "petFood",
@@ -909,15 +909,15 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Meat",
-    "type": 17
+    "type": 18
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "20",
@@ -925,7 +925,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "200",
@@ -933,27 +933,27 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "petFood",
@@ -961,15 +961,15 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "generateFood",
@@ -985,7 +985,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "pet",
@@ -993,7 +993,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "Pet",
@@ -1001,15 +1001,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "petFood",
@@ -1017,7 +1017,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "PetFood",
@@ -1025,7 +1025,7 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "if",
@@ -1033,7 +1033,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "pet",
@@ -1041,7 +1041,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "isInstanceOf",
@@ -1049,7 +1049,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Cat",
@@ -1057,15 +1057,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "final",
@@ -1073,11 +1073,11 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "PetFood",
@@ -1085,15 +1085,15 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Fish",
-    "type": 17
+    "type": 18
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "20",
@@ -1101,7 +1101,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "200",
@@ -1109,23 +1109,23 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "final",
@@ -1133,11 +1133,11 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "PetFood",
@@ -1145,15 +1145,15 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Meat",
-    "type": 17
+    "type": 18
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "10",
@@ -1161,7 +1161,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "100",
@@ -1169,31 +1169,31 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "generateFood",
@@ -1209,7 +1209,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "pet",
@@ -1217,7 +1217,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "Pet",
@@ -1225,15 +1225,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "petFood",
@@ -1241,7 +1241,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "PetFood",
@@ -1249,11 +1249,11 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "if",
@@ -1261,7 +1261,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "pet",
@@ -1269,7 +1269,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "isInstanceOf",
@@ -1277,7 +1277,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Cat",
@@ -1285,11 +1285,11 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "PetFood",
@@ -1297,15 +1297,15 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Fish",
-    "type": 17
+    "type": 18
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "30",
@@ -1313,7 +1313,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "300",
@@ -1321,15 +1321,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "PetFood",
@@ -1337,15 +1337,15 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Meat",
-    "type": 17
+    "type": 18
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "30",
@@ -1353,7 +1353,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "300",
@@ -1361,27 +1361,27 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "generateFood",
@@ -1397,7 +1397,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "pet",
@@ -1405,7 +1405,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "Pet",
@@ -1413,15 +1413,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "petFood",
@@ -1429,7 +1429,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "PetFood",
@@ -1437,7 +1437,7 @@
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "if",
@@ -1445,7 +1445,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "pet",
@@ -1453,7 +1453,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "isInstanceOf",
@@ -1461,7 +1461,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Cat",
@@ -1469,19 +1469,19 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "[",
-    "type": 8
+    "type": 9
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "PetFood",
@@ -1489,15 +1489,15 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Fish",
-    "type": 17
+    "type": 18
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "40",
@@ -1505,7 +1505,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "400",
@@ -1513,27 +1513,27 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "]",
-    "type": 9
-  },
-  {
-    "value": ",",
     "type": 10
   },
   {
-    "value": "[",
-    "type": 8
+    "value": ",",
+    "type": 11
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "[",
+    "type": 9
+  },
+  {
+    "value": "->",
+    "type": 15
   },
   {
     "value": "PetFood",
@@ -1541,15 +1541,15 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Meat",
-    "type": 17
+    "type": 18
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "40",
@@ -1557,7 +1557,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "400",
@@ -1565,31 +1565,31 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "]",
-    "type": 9
+    "type": 10
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "giveFood",
@@ -1601,7 +1601,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "pet",
@@ -1609,7 +1609,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "Pet",
@@ -1617,7 +1617,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "petFood",
@@ -1625,7 +1625,7 @@
   },
   {
     "value": ":",
-    "type": 13
+    "type": 14
   },
   {
     "value": "PetFood",
@@ -1633,15 +1633,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
-    "value": "=>",
-    "type": 14
+    "value": "->",
+    "type": 15
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "print",
@@ -1649,15 +1649,15 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Here is your food, ",
-    "type": 17
+    "type": 18
   },
   {
     "value": "+",
-    "type": 3
+    "type": 4
   },
   {
     "value": "pet",
@@ -1665,7 +1665,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "name",
@@ -1673,19 +1673,19 @@
   },
   {
     "value": "+",
-    "type": 3
+    "type": 4
   },
   {
     "value": "!",
-    "type": 17
+    "type": 18
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "pet",
@@ -1693,7 +1693,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "eat",
@@ -1701,7 +1701,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "petFood",
@@ -1709,35 +1709,35 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "Some Initial Comment",
-    "type": 20
+    "type": 22
   },
   {
     "value": "# A simple example of a pet engine that generates food for pets and feeds them.\n # The engine can generate food for both cats and dogs.\n #\n # - Returns void.\n # - Prints the name, price, and portion of the food.",
-    "type": 20,
+    "type": 22,
     "isInternal": true
   },
   {
@@ -1750,23 +1750,23 @@
   },
   {
     "value": "(",
-    "type": 4
-  },
-  {
-    "value": ")",
     "type": 5
   },
   {
-    "value": "=>",
-    "type": 14
-  },
-  {
-    "value": "{",
+    "value": ")",
     "type": 6
   },
   {
+    "value": "->",
+    "type": 15
+  },
+  {
+    "value": "{",
+    "type": 7
+  },
+  {
     "value": "var",
-    "type": 16
+    "type": 17
   },
   {
     "value": "cat",
@@ -1782,23 +1782,23 @@
   },
   {
     "value": "(",
-    "type": 4
-  },
-  {
-    "value": "Kitty",
-    "type": 17
-  },
-  {
-    "value": ")",
     "type": 5
   },
   {
+    "value": "Kitty",
+    "type": 18
+  },
+  {
+    "value": ")",
+    "type": 6
+  },
+  {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "Optional var keyword for explicit variable declaration",
-    "type": 20
+    "type": 22
   },
   {
     "value": "dog",
@@ -1814,32 +1814,32 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Doggy",
-    "type": 17
+    "type": 18
   },
   {
     "value": "Some Double Internal Comment",
-    "type": 20,
+    "type": 22,
     "isInternal": true
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "Without optional var keyword for implicit variable declaration",
-    "type": 20
+    "type": 22
   },
   {
     "value": "Some Comment Over Comment",
-    "type": 20
+    "type": 22
   },
   {
     "value": "catFood",
@@ -1855,7 +1855,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "generate",
@@ -1863,7 +1863,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "cat",
@@ -1871,16 +1871,16 @@
   },
   {
     "value": "blooou",
-    "type": 20,
+    "type": 22,
     "isInternal": true
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "dogFood",
@@ -1896,7 +1896,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "generate",
@@ -1904,7 +1904,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "dog",
@@ -1912,11 +1912,11 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "print",
@@ -1924,7 +1924,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "catFood",
@@ -1932,7 +1932,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "name",
@@ -1940,15 +1940,15 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "Some Comment .f.ewveovkerv : ;}~l^}DPSL}A",
-    "type": 20
+    "type": 22
   },
   {
     "value": "print",
@@ -1956,7 +1956,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "catFood",
@@ -1964,7 +1964,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "price",
@@ -1972,11 +1972,11 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "print",
@@ -1984,7 +1984,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "catFood",
@@ -1992,7 +1992,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "portion",
@@ -2000,16 +2000,16 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": "#Some Tripple Internal Comment",
-    "type": 20,
+    "type": 22,
     "isInternal": true
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "print",
@@ -2017,7 +2017,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "dogFood",
@@ -2025,7 +2025,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "name",
@@ -2033,11 +2033,11 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "print",
@@ -2045,7 +2045,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "dogFood",
@@ -2053,7 +2053,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "price",
@@ -2061,11 +2061,11 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "print",
@@ -2073,7 +2073,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "dogFood",
@@ -2081,7 +2081,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "portion",
@@ -2089,11 +2089,11 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "PetEngine",
@@ -2101,7 +2101,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "giveFood",
@@ -2109,7 +2109,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "cat",
@@ -2117,7 +2117,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "catFood",
@@ -2125,11 +2125,11 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "PetEngine",
@@ -2137,7 +2137,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "giveFood",
@@ -2145,7 +2145,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "dog",
@@ -2153,7 +2153,7 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "dogFood",
@@ -2161,11 +2161,11 @@
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "if",
@@ -2173,7 +2173,7 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "dogFood",
@@ -2181,7 +2181,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "portion",
@@ -2189,7 +2189,7 @@
   },
   {
     "value": ">=",
-    "type": 3
+    "type": 4
   },
   {
     "value": "catFood",
@@ -2197,7 +2197,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "portion",
@@ -2205,11 +2205,11 @@
   },
   {
     "value": ",",
-    "type": 10
+    "type": 11
   },
   {
     "value": "{",
-    "type": 6
+    "type": 7
   },
   {
     "value": "print",
@@ -2217,63 +2217,31 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Doggy has more food! Or they have the same amount.",
-    "type": 17
+    "type": 18
   },
   {
     "value": ")",
-    "type": 5
-  },
-  {
-    "value": ";",
-    "type": 12
-  },
-  {
-    "value": "}",
-    "type": 7
-  },
-  {
-    "value": ",",
-    "type": 10
-  },
-  {
-    "value": "{",
     "type": 6
   },
   {
-    "value": "print",
-    "type": 1
-  },
-  {
-    "value": "(",
-    "type": 4
-  },
-  {
-    "value": "Kitty has more food!",
-    "type": 17
-  },
-  {
-    "value": ")",
-    "type": 5
-  },
-  {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
+    "type": 8
+  },
+  {
+    "value": ",",
+    "type": 11
+  },
+  {
+    "value": "{",
     "type": 7
-  },
-  {
-    "value": ")",
-    "type": 5
-  },
-  {
-    "value": ";",
-    "type": 12
   },
   {
     "value": "print",
@@ -2281,15 +2249,47 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
+  },
+  {
+    "value": "Kitty has more food!",
+    "type": 18
+  },
+  {
+    "value": ")",
+    "type": 6
+  },
+  {
+    "value": ";",
+    "type": 13
+  },
+  {
+    "value": "}",
+    "type": 8
+  },
+  {
+    "value": ")",
+    "type": 6
+  },
+  {
+    "value": ";",
+    "type": 13
+  },
+  {
+    "value": "print",
+    "type": 1
+  },
+  {
+    "value": "(",
+    "type": 5
   },
   {
     "value": "Doggy has '",
-    "type": 17
+    "type": 18
   },
   {
     "value": "+",
-    "type": 3
+    "type": 4
   },
   {
     "value": "dogFood",
@@ -2297,7 +2297,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "portion",
@@ -2305,19 +2305,19 @@
   },
   {
     "value": "+",
-    "type": 3
+    "type": 4
   },
   {
     "value": "' portions of food.",
-    "type": 17
+    "type": 18
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "print",
@@ -2325,15 +2325,15 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Kitty has '",
-    "type": 17
+    "type": 18
   },
   {
     "value": "+",
-    "type": 3
+    "type": 4
   },
   {
     "value": "catFood",
@@ -2341,7 +2341,7 @@
   },
   {
     "value": ".",
-    "type": 11
+    "type": 12
   },
   {
     "value": "portion",
@@ -2349,19 +2349,19 @@
   },
   {
     "value": "+",
-    "type": 3
+    "type": 4
   },
   {
     "value": "' portions of food.",
-    "type": 17
+    "type": 18
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "print",
@@ -2369,42 +2369,42 @@
   },
   {
     "value": "(",
-    "type": 4
+    "type": 5
   },
   {
     "value": "Doggy first Letter is '",
-    "type": 17
-  },
-  {
-    "value": "+",
-    "type": 3
-  },
-  {
-    "value": "D",
     "type": 18
   },
   {
     "value": "+",
-    "type": 3
+    "type": 4
+  },
+  {
+    "value": "D",
+    "type": 20
+  },
+  {
+    "value": "+",
+    "type": 4
   },
   {
     "value": "'.",
-    "type": 17
+    "type": 18
   },
   {
     "value": ")",
-    "type": 5
+    "type": 6
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   },
   {
     "value": "}",
-    "type": 7
+    "type": 8
   },
   {
     "value": ";",
-    "type": 12
+    "type": 13
   }
 ]

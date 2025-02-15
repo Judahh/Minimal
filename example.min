@@ -4,7 +4,7 @@ PetFood = {
     name: String;
     price: Unsigned(Number);
     portion: Natural;
-    constructor = (name, price, portion) => {
+    constructor = (name, price, portion) -> {
         this.name = name;
         this.price = price;
         this.portion = portion;
@@ -14,15 +14,15 @@ PetFood = {
 Cat = {
     name: String;
 
-    constructor = (name) => {
+    constructor = (name) -> {
         this.name = name;
     };
 
-    sound = () => {
-        => "Meow";
+    sound = () -> {
+        -> "Meow";
     };
 
-    eat = (food: PetFood) => {
+    eat = (food: PetFood) -> {
         print("Yum yum!");
         food.portion = food.portion - 1;
     };
@@ -31,15 +31,15 @@ Cat = {
 Dog = {
     name: String;
 
-    constructor = (name) => {
+    constructor = (name) -> {
         this.name = name;
     };
 
-    sound = () => {
-        => "Woof";
+    sound = () -> {
+        -> "Woof";
     };
 
-    eat = (food: PetFood) => {
+    eat = (food: PetFood) -> {
         print("Yum yum!");
         food.portion = food.portion - 1;
     };
@@ -48,43 +48,43 @@ Dog = {
 Pet = Cat | Dog;
 
 PetEngine = {
-    generateFood = (pet: Pet) => {
+    generateFood = (pet: Pet) -> {
         petFood: PetFood;
         if (pet.isInstanceOf(Cat), {
             petFood = PetFood("Fish", 10, 100);
         },{
             petFood = PetFood("Meat", 20, 200);
         });
-        => petFood;
+        -> petFood;
     };
 
-    generateFood2 = (pet: Pet) => {
+    generateFood2 = (pet: Pet) -> {
         petFood: PetFood;
         if(pet.isInstanceOf(Cat), {
-            final.=> PetFood("Fish", 20, 200);
+            final.-> PetFood("Fish", 20, 200);
         },{
-            final.=> PetFood("Meat", 10, 100);
+            final.-> PetFood("Meat", 10, 100);
         });
     };
 
-    generateFood3 = (pet: Pet) => {
+    generateFood3 = (pet: Pet) -> {
         petFood: PetFood;
-        => if(pet.isInstanceOf(Cat),
+        -> if(pet.isInstanceOf(Cat),
             PetFood("Fish", 30, 300);
         ,   PetFood("Meat", 30, 300);
         );
     };
 
-    generateFood4 = (pet: Pet) => {
+    generateFood4 = (pet: Pet) -> {
         petFood: PetFood;
         if(pet.isInstanceOf(Cat), [
-            => PetFood("Fish", 40, 400);
+            -> PetFood("Fish", 40, 400);
         ],[
-            => PetFood("Meat", 40, 400);
+            -> PetFood("Meat", 40, 400);
         ]);
     };
 
-    giveFood = (pet: Pet, petFood: PetFood) => {
+    giveFood = (pet: Pet, petFood: PetFood) -> {
         print("Here is your food, " + pet.name + "!");
         pet.eat(petFood);
     };
@@ -99,7 +99,7 @@ PetEngine = {
  # - Returns void.
  # - Prints the name, price, and portion of the food.
 ##
-main = () => {
+main = () -> {
     var cat = Cat("Kitty"); # Optional var keyword for explicit variable declaration
     dog = Dog("Doggy"## Some Double Internal Comment ##); # Without optional var keyword for implicit variable declaration
 
