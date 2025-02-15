@@ -19,8 +19,8 @@ Language name: Minimal
 ##### Natural(size:Natural=32, growable: Boolean = true)
 ##### Whole(size:Natural=32, growable: Boolean = true)
 ```
-      Whole=Unsigned(Integer)
-      Whole=Natural & 0
+      Whole:Type=Unsigned(Integer)
+      Whole:Type=Natural & 0
 ```
 ##### Integer(size:Natural=32, growable: Boolean = true)
 ##### Rational(pSize:Natural=32,qSize:Natural=32, growable: Boolean = true)
@@ -40,15 +40,15 @@ literal: "string" or `string`
 #### Umbrella Types
 It's possible to define a type that can be any of the a set of types and it's possible agregate more types to an existing umbrella type:
 ```
-Real = Float | Number
-Numeric = Boolean | Natural | Whole | Integer | Rational | Real
-Text = Char | String
+Real:Type = Float | Number
+Numeric:Type = Boolean | Natural | Whole | Integer | Rational | Real
+Text:Type = Char | String
 
 How to add more types to an existing umbrella type:
 For the current file:
-Numeric |= NewNumeric | OtherNewNumeric
+Numeric:Type |= NewNumeric | OtherNewNumeric
 For the everywhere it's imported:
-Global.Numeric |= NewNumeric | OtherNewNumeric
+global.Numeric:Type |= NewNumeric | OtherNewNumeric
 ```
 ## Example:
 ```minimal
@@ -117,19 +117,19 @@ log(sampleClassChild.x);     # prints 13
 log(sampleClassChild.w);     # prints 10
 log(sampleClassChild.sum()); # prints 33
 
-Global.(a: SampleClass, '+', b: SampleClass) => {
+global.(a: SampleClass, '+', b: SampleClass) => {
     <= SampleClass(a.value() + b.value());
 };
 
-Global.(a: SampleClass, '+', b: Numeric) => {
+global.(a: SampleClass, '+', b: Numeric) => {
     <= SampleClass(a.value() + b);
 };
 
-Global.(a: Numeric, '+', b: SampleClass) => {
+global.(a: Numeric, '+', b: SampleClass) => {
     <= SampleClass(a + b.value());
 };
 
-Global.('|', a: SampleClass, '|') => {
+global.('|', a: SampleClass, '|') => {
     <= if(a.value() > 0, a.value(), -a.value());
 };
 
@@ -140,10 +140,10 @@ log((sampleClass + 5).value); # prints 11
 sampleClass3 = SampleClass(-5);
 log(|sampleClass3|); # prints 5
 
-# Global is a global object that can be used to define global properties, functions, operators...
-# Project is a global object that can be used to define project properties, functions, operators...
-# Namespace is a global object that can be used to define namespace properties, functions, operators...
-# This is a global for the current class, it can be used to define class properties, functions, operators...
+# global is a global object that can be used to define global properties, functions, operators...
+# project is a global object that can be used to define project properties, functions, operators...
+# namespace is a global object that can be used to define namespace properties, functions, operators...
+# self is a global for the current class, it can be used to define class properties, functions, operators...
 # this is a reference to the current object, it can be used to access the current object properties, functions, operators...
 
 numberExample = Number(5);
@@ -340,7 +340,7 @@ numberDivideNumber = global.(a:Number,'/',b:Number) =>{
       <=Number.div(a,b);
 };
 
-Global.precedence+=[
+global.precedence+=[
       [numberTimesNumber,numberDivideNumber],
       numberPlusNumber
 ];
@@ -372,12 +372,12 @@ Color:Enum = {
 
 # Types/Interfaces
 
-Person:Type = {
+Person:Type = { # is a Type
      name: String;
      age: Number;
 };
 
-Worker:Person = {
+Worker:Person = { # extends Person
      job: String;
 };
 
