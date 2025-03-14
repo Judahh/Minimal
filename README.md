@@ -518,15 +518,6 @@ try({
 });
 ```
 
-## Error and Exception
-
-Error is a type of exception
-Error will crash the program if not handled
-Exception will not crash the program if not handled, just reload the program if not handled
-
-```minimal
-```
-
 ## Looping statement
 
 is a function for looping
@@ -557,11 +548,17 @@ loop(k<5,{
 }); # while like loop
 ```
 
-## Error
+## Error and Exception
+
+Error is a type of exception
+Error will crash the program if not handled
+Exception will not crash the program if not handled, just reload the program if not handled
+
+### Error
 
 ```minimal
 someFunction = (x,y) -> {
-    throw Error('Some error');
+    throw(Error('Some error'));
 };
 someOtherFunction = (z) -> {
     someFunction(1,z);
@@ -578,7 +575,7 @@ Stack trace:
 
 
 someFunction = (x: Number,y) -> {
-    throw Exception('Some error', 404);
+    throw(Exception('Some error', 404));
 };
 
 someFunction(1,2); # will print the error message and the stack trace
@@ -591,7 +588,7 @@ Stack trace:
 
 
 someFunction = (x,y) -> {
-    throw Exception('Some error');
+    throw(Exception('Some error'));
 };
 someFunction(1,2); # will print the error message and the stack trace
 Some error
@@ -602,7 +599,7 @@ Stack trace:
     at main (file:line:column)
 
 someFunction = (x,y) -> {
-    throw Exception('Some error', 404);
+    throw(Exception('Some error', 404));
 };
 
 someFunction(1,2); # will print the error message and the stack trace
@@ -617,7 +614,7 @@ Stack trace:
 Hide Secret Values
 
 someFunction = (x: Secret, y: Secret(Number), z) -> {
-    throw Exception('Some error', 404);
+    throw(Exception('Some error', 404));
 };
 
 someFunction(1,2,3); # will print the error message and the stack trace
