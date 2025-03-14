@@ -267,7 +267,6 @@ sampleEngine = {
 # its possible to merge a engine with a struct and it will become a class
 
 SampleClass= someStruct & someClass;
-
 ```
 
 ## Return types
@@ -373,9 +372,11 @@ someFunction = () -> {
   -> 0;
 };
 # will return 2 because the '->' is returning the value for the closest {} (scope)
+```
 
-# Operands
+## Operands
 
+```minimal
 numberPlusNumber = global.(a:Number,'+',b:Number) ->{
       ->Number.add(a,b);
 };
@@ -392,8 +393,11 @@ global.precedence+=[ # Order evaluated left to right for the same level
       [numberTimesNumber,numberDivideNumber], # higher level
       numberPlusNumber # lower level
 ];
+```
 
-# Enum
+## Enum
+
+```minimal
 Color:Enum = {
       RED,
       GREEN,
@@ -417,9 +421,11 @@ Color:Enum = {
       GREEN = 'g',
       BLUE = 'b'
 };
+```
 
-# Types/Interfaces
+## Types/Interfaces
 
+```minimal
 Person:Type = { # is a Type
      name: String;
      age: Number;
@@ -436,16 +442,24 @@ Human: Person = { # Class Human implements Person
       }
       eat = () -> log('eat');
 }
+```
 
-# Conditional statement  (is a function for statement)
+## Conditional statement
+
+```minimal
+# using a function for statement
 if(x < y, {
     log('x is less than y');
 }, log('x is greater than or equal to y'));
-# Conditional statement  (using ternary syntax)
+# using ternary syntax
 x < y ? log('x is less than y') : {
     log('x is greater than or equal to y');
 };
+```
 
+## Try Catch statement
+
+```minimal
 # Try Catch statement  (is a function for statement)
 try({
     log('try block');
@@ -478,13 +492,20 @@ try({
 }).catch((e: AnotherError)->{
     log('another catch block');
 });
+```
 
-# Error vs Exception
+## Error and Exception
+
 Error is a type of exception
-
 Error will crash the program if not handled
 Exception will not crash the program if not handled, just reload the program if not handled
 
+```minimal
+```
+
+## Ternary
+
+```minimal
 # Ternary (using if function)
 result = if(x < y, { -> x }, y);
 or
@@ -500,10 +521,16 @@ result = if(x < y, x); # if x < y return x else return 0
 result = if(x < y, x, 0); # if x < y return x else return 0
 result = if(x < y); # if x < y return 1 else return 0
 result = if(x < y,, y); # if x < y return 1 else return y
+
 # Ternary (using ternary syntax)
 result = x < y ? { -> x }: y;
+```
 
-# Looping statement (is a function for looping)
+## Looping statement
+
+is a function for looping
+
+```minimal
 loop(i=0, i < 5, i++, {
     print('Iteration: ' + i);
 }); # for like loop
@@ -527,8 +554,11 @@ k=0;
 loop(k<5,{
     print('Iteration: ' + k);
 }); # while like loop
+```
 
-# Error debugging
+## Error
+
+```minimal
 someFunction = (x,y) -> {
     throw Error('Some error');
 };
