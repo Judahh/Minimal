@@ -166,6 +166,28 @@ sampleClass3 = SampleClass(-5);
 log(|sampleClass3|); # prints 5 (usage of global.('|', a: SampleClass, '|'))
 ```
 
+
+### Operand Precedence
+
+```minimal
+numberPlusNumber = global.(a:Number,'+',b:Number) ->{
+      ->Number.add(a,b);
+};
+
+numberTimesNumber = global.(a:Number,'*',b:Number) ->{
+      ->Number.mul(a,b);
+};
+
+numberDivideNumber = global.(a:Number,'/',b:Number) ->{
+      ->Number.div(a,b);
+};
+
+global.precedence+=[ # Order evaluated left to right for the same level
+      [numberTimesNumber,numberDivideNumber], # higher level
+      numberPlusNumber # lower level
+];
+```
+
 ## Reference Identifiers
 
 ### global 
@@ -374,27 +396,6 @@ someFunction = () -> {
 # will return 2 because the '->' is returning the value for the closest {} (scope)
 ```
 
-## Operands
-
-```minimal
-numberPlusNumber = global.(a:Number,'+',b:Number) ->{
-      ->Number.add(a,b);
-};
-
-numberTimesNumber = global.(a:Number,'*',b:Number) ->{
-      ->Number.mul(a,b);
-};
-
-numberDivideNumber = global.(a:Number,'/',b:Number) ->{
-      ->Number.div(a,b);
-};
-
-global.precedence+=[ # Order evaluated left to right for the same level
-      [numberTimesNumber,numberDivideNumber], # higher level
-      numberPlusNumber # lower level
-];
-```
-
 ## Enum
 
 ```minimal
@@ -457,6 +458,29 @@ x < y ? log('x is less than y') : {
 };
 ```
 
+## Ternary
+
+```minimal
+# Ternary (using if function)
+result = if(x < y, { -> x }, y);
+or
+result = if(x < y, { -> x }, { -> y });
+or
+result = if(x < y, x, y);
+or
+result = if(x < y, x, { -> y });
+
+the default true value is 1 or true and the default false value is 0 or false
+example:
+result = if(x < y, x); # if x < y return x else return 0
+result = if(x < y, x, 0); # if x < y return x else return 0
+result = if(x < y); # if x < y return 1 else return 0
+result = if(x < y,, y); # if x < y return 1 else return y
+
+# Ternary (using ternary syntax)
+result = x < y ? { -> x }: y;
+```
+
 ## Try Catch statement
 
 ```minimal
@@ -501,29 +525,6 @@ Error will crash the program if not handled
 Exception will not crash the program if not handled, just reload the program if not handled
 
 ```minimal
-```
-
-## Ternary
-
-```minimal
-# Ternary (using if function)
-result = if(x < y, { -> x }, y);
-or
-result = if(x < y, { -> x }, { -> y });
-or
-result = if(x < y, x, y);
-or
-result = if(x < y, x, { -> y });
-
-the default true value is 1 or true and the default false value is 0 or false
-example:
-result = if(x < y, x); # if x < y return x else return 0
-result = if(x < y, x, 0); # if x < y return x else return 0
-result = if(x < y); # if x < y return 1 else return 0
-result = if(x < y,, y); # if x < y return 1 else return y
-
-# Ternary (using ternary syntax)
-result = x < y ? { -> x }: y;
 ```
 
 ## Looping statement
