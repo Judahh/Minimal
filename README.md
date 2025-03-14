@@ -22,7 +22,7 @@ Language name: Minimal
 ##### Boolean
 ##### Natural(size:Natural=32, growable: Boolean = true)
 ##### Whole(size:Natural=32, growable: Boolean = true)
-```
+```minimal
       Whole:Type = Unsigned(Integer);
       Whole:Type  =Natural & 0; # another example to represent the same
 ```
@@ -42,8 +42,10 @@ literal: "string" or 'string' or `string`
 
 
 #### Umbrella Types
+
 It's possible to define a type that can be any of a set of types, and it's possible to aggregate more types into an existing umbrella type.
-```
+
+```minimal
 Real:Type = Float | Number;
 Numeric:Type = Boolean | Natural | Whole | Integer | Rational | Real;
 Text:Type = Char | String;
@@ -54,7 +56,9 @@ Numeric |= NewNumeric | OtherNewNumeric; # ':Type' is only needed on declaration
 For the everywhere it's imported:
 global.Numeric:Type |= NewNumeric | OtherNewNumeric;
 ```
-## Example:
+
+## Variable/Constant/Function declaration
+
 ```minimal
 # Variable/Constant/Function declaration
 x: Number = 5;
@@ -73,9 +77,13 @@ print = log;
 printFoo = {
     log('foo');
 };
+```
 
-# Classes
-# Struct Oriented Class
+## Classes
+
+### Struct Oriented Class
+
+```minimal
 SampleClass = {
       private x: Number = 5;
       y: Const(Number) = 10;
@@ -105,8 +113,11 @@ SampleClassChild2 = SampleClass: { # inheritance before definition
                 this.w = w;
       };
 }; 
+```
 
-# Function Oriented Class
+### Function Oriented Class
+
+```minimal
 SampleClass2 = (z?: Number) -> {
       sampleFunctionThatReturnsTen = () -> {
             -> 10;
@@ -120,7 +131,13 @@ sampleClassChild = SampleClassChild(13);
 log(sampleClassChild.x);     # prints 13
 log(sampleClassChild.w);     # prints 10
 log(sampleClassChild.sum()); # prints 33
+```
 
+## Operand
+
+### Operand Definition
+
+```minimal
 global.(a: SampleClass, '+', b: SampleClass) -> { # The literal string shows the symbol(s) used as operator
     -> SampleClass(a.value() + b.value());
 };
@@ -136,19 +153,37 @@ global.(a: Numeric, '+', b: SampleClass) -> {
 global.('|', a: SampleClass, '|') -> {
     -> if(a.value() > 0, a.value(), -a.value());
 };
+```
 
+### Operand Usage
+
+```minimal
 sampleClass = SampleClass(6);
 sampleClass2 = SampleClass(7);
 log((sampleClass + sampleClass2).value); # prints 13 (usage of global.(a: SampleClass, '+', b: SampleClass))
 log((sampleClass + 5).value); # prints 11 (usage of global.(a: SampleClass, '+', b: Numeric))
 sampleClass3 = SampleClass(-5);
 log(|sampleClass3|); # prints 5 (usage of global.('|', a: SampleClass, '|'))
+```
 
-# global is a global object that can be used to define global properties, functions, operators...
-# self is a global for the current class, it can be used to define class properties, functions, operators...
-# this is a reference to the current object, it can be used to access the current object properties, functions, operators...
-# internal is a reference to the current function, it can be used to access the current function params, name, properties...
+## Reference Identifiers
 
+### global 
+is a global object that can be used to define global properties, functions, operators...
+
+### self 
+is a global for the current class, it can be used to define class properties, functions, operators...
+
+### this 
+is a reference to the current object, it can be used to access the current object properties, functions, operators...
+
+### internal 
+is a reference to the current function, it can be used to access the current function params, name, properties...
+
+
+## Instantiation
+
+```minimal
 numberExample = Number(5);
 numberExampleReferece -> numberExample;
 numberExampleReferece2* = numberExample;
@@ -172,8 +207,11 @@ log(functionExample.typeName); # prints Function
 log(functionExample.variableName); # prints functionExample
 log(classExample.typeName); # prints Object
 log(classExample.variableName); # prints classExample
+```
 
-# Struct
+## Struct
+
+```minimal
 Like a class but without functions (but can have constructor)
 If it does not have a constructor must have all variables initialized and cannot be instantiated
 sampleStruct = {
@@ -206,8 +244,11 @@ numberExample = Number(5);
 numberExample2 = sampleStruct.inc(numberExample*);
 log(numberExample); # prints 6
 log(numberExample2); # prints 6
+```
 
-# Engine
+## Engine
+
+```minimal
 Like a class but without variables (Does not have constructor, and cannot be instantiated, just used as an object)
 sampleEngine = {
       protected init = () -> {
@@ -227,7 +268,11 @@ sampleEngine = {
 
 SampleClass= someStruct & someClass;
 
-Returns types:
+```
+
+## Return types
+
+```minimal
 For a '{}' block (scope) use:
   '->' or 'this.->' returns the value for the current scope
   'super.->' returns the value for the parent scope
