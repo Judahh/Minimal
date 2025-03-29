@@ -111,7 +111,7 @@ Syntax:
 
 Syntax:
 ```
-equalType: Type = 'same' |  | 'strict' | 'loose';
+equalType: Type = 'same' | 'strict' | 'loose' | 'truthy'; # same: same address in memory, strict: checks type and value, loose: checks value, truthy: checks if both are truthy
 equals(<value1>, <value2>, <equalType>);
 notEquals(<value1>, <value2>, <equalType>);
 greaterThan(<value1>, <value2>, <equalType>);
