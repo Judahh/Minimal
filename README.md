@@ -20,20 +20,22 @@ Language name: Minimal
 #### Numeric Types
 
 ##### Boolean
+0 or 1
 
 ##### Natural(size:Natural=32, growable: Boolean = true)
+1,2,...
 
 ##### Whole(size:Natural=32, growable: Boolean = true)
+0,1,2,...
 
-```minimal
-      Whole:Type = Unsigned(Integer);
-      Whole:Type = Natural & 0; # another example to represent the same
-```
 ##### Integer(size:Natural=32, growable: Boolean = true)
+...,-2,-1,0,1,2,...
 
 ##### Rational(pSize:Natural=32,qSize:Natural=32, growable: Boolean = true)
+Integer/Whole
 
 ##### Real
+Integer.Whole
 
 ###### Float(sizeMultiplier:Integer=1, growable: Boolean = true) | Float(size:Natural=32, mantissaSize:Natural=23, growable: Boolean = true)
 
