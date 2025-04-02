@@ -41,17 +41,28 @@ Integer.Whole
 
 ###### Number(integerSize:Natural=32, decimalSize:Natural=32, growable: Boolean = true) | Number(options: NumberOptions)
 
+#### Array(Type=Auto, size?:Natural) (if it does not have a size it's growable)
+
+literal: [1, 3, 4, 5]
+
 #### Text Types
 
 ##### Char(encoding:String='ascii')
 
 literal: 'c'
 
-##### String<Type=Array>(encoding:String='ascii')
+##### String(encoding:String='ascii')
 
+It's a special type of Array (Array(Char)) that represents a sequence of characters.
 literal: "string" or `string`
 
-#### Array<T?>(size?:Natural) (if it does not have a size it's growable)
+#### Pointer(Type=Auto)
+
+It's a type to indicates a pointer to another variable.
+
+#### Constant(Type=Auto)
+
+It's a type to indicates a constant variable.
 
 #### Umbrella Types
 
@@ -69,45 +80,39 @@ For the everywhere it's imported:
 global.Numeric:Type |= NewNumeric | OtherNewNumeric;
 ```
 
-## Declaration
+### Function:
+
+#### Control Function:
+
+##### Variable Instantiation Function:
 
 Syntax:
-
 ```
-<identifier>[: <type>] [=|->[<operator>] <initializer>)] ;
+new(<name>[, Type]);
+new(<name>, <value>[, Type]);
 ```
-
-### Variable/Constant:
 
 Example:
 
 ```minimal
-# Variable/Constant/Function declaration
-x: Number = 5;
-y: Const(Number) = 10;
-z = 20;
+new("y");
+new("k", Number)
+new("x", 5, Number);
+new("p", x, Pointer);
+new("q", Pointer<Number>);
+new("c", Constant<Number>);
+new("c2", 6, Constant);
+new("c3", x, Constant<Pointer>);
+new("z", 10);
+new("array", [1,2,3,4]);
+new("array2", [1,2,3,4], Array);
+new("s", "hello");
+new("s2", "hello", String);
 ```
 
+##### Scope:
 
-#### Array:
-
-Syntax:
-
-```
-<arrayName> = [ <elements> ];
-```
-
-#### String:
-
-Syntax:
-
-```
-<stringName> = "<elements>";
-```
-
-### Function:
-
-#### Control Function:
+##### Params:
 
 ##### Comparison Function:
 
@@ -128,6 +133,7 @@ Syntax:
 
 ```
 if(<condition>, <trueBlock> , [<elseBlock>]);
+# add switch statement ans else if
 ```
 
 Example:
@@ -158,7 +164,13 @@ result = if(x < y); # if x < y return 1 else return 0
 result = if(x < y,, y); # if x < y return 1 else return y
 ```
 
+#### Mathematical Operations Functions:
+
+#### Array Functions:
+
 ##### Looping Function:
+
+is a function for looping
 
 Syntax:
 
@@ -168,6 +180,34 @@ loop(iterates(<array>), { <loopBody> });
 loop(properties(<object>), { <loopBody> });
 loop({ <loopBody> }, <condition>);
 loop(<condition>, { <loopBody> });
+```
+
+Example:
+
+```minimal
+loop(i=0, i < 5, i++, {
+    log('Iteration: ' + i);
+}); # for like loop
+
+a=[1,2,3,4,5];
+loop(iterates(a), {
+    log('Iteration: ' + a);
+}); # for of like loop
+
+b=SampleClass(6);
+loop(properties(b), {
+    log('Iteration: ' + i);
+}); # for in like loop
+
+j=0;
+loop({
+    log('Iteration: ' + j);
+}, j<5); # do while like loop
+
+k=0;
+loop(k<5,{
+    log('Iteration: ' + k);
+}); # while like loop
 ```
 
 #### Function Declaration:
@@ -192,7 +232,7 @@ multiply = (a: Number, b: Number)->a*b;
 multiply |= (a: Number, b: Number, c: Number)->a*b*c; // multiple function signatures for the same naming using |=
 ```
 
-## Try Catch statement
+#### Try Catch Function:
 
 ```minimal
 # Try Catch statement  (is a function for statement)
@@ -229,43 +269,13 @@ try({
 });
 ```
 
-## Looping statement
-
-is a function for looping
-
-```minimal
-loop(i=0, i < 5, i++, {
-    log('Iteration: ' + i);
-}); # for like loop
-
-a=[1,2,3,4,5];
-loop(iterates(a), {
-    log('Iteration: ' + a);
-}); # for of like loop
-
-b=SampleClass(6);
-loop(properties(b), {
-    log('Iteration: ' + i);
-}); # for in like loop
-
-j=0;
-loop({
-    log('Iteration: ' + j);
-}, j<5); # do while like loop
-
-k=0;
-loop(k<5,{
-    log('Iteration: ' + k);
-}); # while like loop
-```
-
-## Error and Exception
+#### Error and Exception Function:
 
 Error is a type of exception
 Error will crash the program if not handled
 Exception will not crash the program if not handled, just reload the program if not handled
 
-### Error
+##### Error Function:
 
 ```minimal
 someFunction = (x,y) -> {
