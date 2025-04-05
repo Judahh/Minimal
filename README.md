@@ -41,7 +41,7 @@ Integer.Whole
 
 ###### Number(integerSize:Natural=32, decimalSize:Natural=32, growable: Boolean = true) | Number(options: NumberOptions)
 
-#### Array(Type=Auto, size?:Natural) (if it does not have a size it's growable)
+#### (Type=Auto)Array(size?:Natural) (if it does not have a size it's growable)
 
 literal: [1, 3, 4, 5]
 
@@ -56,11 +56,11 @@ literal: 'c'
 It's a special type of Array (Array(Char)) that represents a sequence of characters.
 literal: "string" or `string`
 
-#### Pointer(Type=Auto)
+#### (Type=Auto)Pointer
 
 It's a type to indicates a pointer to another variable.
 
-#### Constant(Type=Auto)
+#### (Type=Auto)Constant
 
 It's a type to indicates a constant variable.
 
@@ -82,49 +82,115 @@ global.Numeric:Type |= NewNumeric | OtherNewNumeric;
 
 ### Function:
 
+```
+[(<TypeParams>)]new(<Params>);
+```
+
+Example:
+
+```minimal
+someFunction0(); # receives no params
+someFunction1(x,y,z); # receives params in order
+someFunction1(param1 = x, param2 = y, param3 = z); # receives params by name
+someFunction1(object); # receives params as an object that has properties with names just like the params of the someFunction1
+(SomeType)someFunction2(); # receives SomeType as a Type param for generics
+(SomeType, SomeOtherType)someFunction3(); # receives SomeType and SomeOtherType as Type params in order for generics
+(Type1=SomeType, Type1=SomeOtherType)someFunction3(); # receives SomeType and SomeOtherType as Type params by Type name for generics
+(GreaterType)someFunction3(); # receives Greater as Type that has properties with names names just like the Type params of the someFunction3
+someFunction3.name; # returns the name of the function (if it's not a pointer, it's someFunction3, if it's a pointer it's the name of the function that the pointer points to)
+```
+
 #### Control Function:
 
 ##### Variable Instantiation Function:
 
 Syntax:
 ```
-new(<name>[, Type]);
-new(<name>, <value>[, Type]);
+[(Type)]new(<name>[, <value>]);
 ```
 
 Example:
 
 ```minimal
 new("y");
-new("k", Number)
-new("x", 5, Number);
+(Number)new("k");
+(Number)new("x", 5);
 new("p", x, Pointer);
-new("q", Pointer<Number>);
-new("c", Constant<Number>);
-new("c2", 6, Constant);
-new("c3", x, Constant<Pointer>);
+((Number)Pointer)new("q");
+((Number)Constant)new("c");
+(Constant)new("c2", 6);
+((Pointer)Constant)new("c3", x);
 new("z", 10);
 new("array", [1,2,3,4]);
-new("array2", [1,2,3,4], Array);
+(Array)new("array2", [1,2,3,4]);
 new("s", "hello");
-new("s2", "hello", String);
+(String)new("s2", "hello");
+```
+
+##### Variable Setting Function:
+
+Syntax:
+```
+set(<name>, <value>);
+```
+
+Example:
+
+```minimal
+set(y, 5);
+set(k, 6);
+set(x, k);
 ```
 
 ##### Scope:
+Syntax:
+```
+{ <statements> }
+```
+Example:
 
-##### Params:
+```minimal
+{
+    new("x", 5);
+    new("y", 6);
+    set(x, y);
+}
+set(x, 7); # x is not defined
+
+# function scope
+someFunction({ # function receives a multiline scope
+    new("x", 5);
+    new("y", 6);
+    set(x, y);
+})
+someFunction({ # function receives a multiline scope
+    new("x", 5);
+    new("y", 6);
+    set(x, y);
+    -> x; # return of the scope return is ->
+})
+someFunction(new("x", 5)) # function receives a single line scope and returns the value of the scope
+
+someOtherFunction((x,y) -> { # function receives a multiline scope, sending the parameters
+    set(x, y);
+})
+
+someOtherFunction((x,y) -> set(x, y) ) # function receives a silgle line scope, sending the parameters
+
+someOtherFunction2(x -> set(x, y) ) # function receives a silgle line scope, sending a single parameter
+```
 
 ##### Comparison Function:
 
 Syntax:
 ```
 equalType: Type = 'same' | 'strict' | 'loose' | 'truthy'; # same: same address in memory, strict: checks type and value, loose: checks value, truthy: checks if both are truthy
-equals(<value1>, <value2>, <equalType>);
-notEquals(<value1>, <value2>, <equalType>);
-greaterThan(<value1>, <value2>, <equalType>);
-greaterThanOrEquals(<value1>, <value2>, <equalType>);
-lessThan(<value1>, <value2>, <equalType>);
-lessThanOrEquals(<value1>, <value2>, <equalType>);
+equals(<value1>, <value2>[, <equalType>]);
+notEquals(<value1>, <value2>[, <equalType>]);
+greaterThan(<value1>, <value2>[, <equalType>]);
+greaterThanOrEquals(<value1>, <value2>[, <equalType>]);
+lessThan(<value1>, <value2>[, <equalType>]);
+lessThanOrEquals(<value1>, <value2>[, <equalType>]);
 ```
 
 ##### Conditional Function:
@@ -139,7 +205,7 @@ if(<condition>, <trueBlock> , [<elseBlock>]);
 Example:
 
 ```minimal
-if(x < y, {
+if(lessThan(x, y), {
     log('x is less than y');
 }, log('x is greater than or equal to y'));
 ```
@@ -148,23 +214,40 @@ if(x < y, {
 
 ```minimal
 # Ternary (using if function)
-result = if(x < y, { -> x }, y);
+result = if(lessThan(x, y), { -> x }, y);
 or
-result = if(x < y, { -> x }, { -> y });
+result = if(lessThan(x, y), { -> x }, { -> y });
 or
-result = if(x < y, x, y);
+result = if(lessThan(x, y), x, y);
 or
-result = if(x < y, x, { -> y });
+result = if(lessThan(x, y), x, { -> y });
 
 the default true value is 1 or true and the default false value is 0 or false
 example:
-result = if(x < y, x); # if x < y return x else return 0
-result = if(x < y, x, 0); # if x < y return x else return 0
-result = if(x < y); # if x < y return 1 else return 0
-result = if(x < y,, y); # if x < y return 1 else return y
+result = if(lessThan(x, y), x); # if x < y return x else return 0
+result = if(lessThan(x, y), x, 0); # if x < y return x else return 0
+result = if(lessThan(x, y)); # if x < y return 1 else return 0
+result = if(lessThan(x, y),, y); # if x < y return 1 else return y
 ```
 
 #### Mathematical Operations Functions:
+
+Syntax:
+
+```
+sum(<value1>, <value2>);
+subtract(<value1>, <value2>);
+multiply(<value1>, <value2>);
+divide(<value1>, <value2>);
+modulo(<value1>, <value2>);
+power(<value1>, <value2>);
+squareRoot(<value>);
+root(<value>, <root>);
+absolute(<value>);
+negative(<value>);
+inverse(<value>);
+logarithm(<value>, <base>);
+```
 
 #### Array Functions:
 
@@ -175,9 +258,8 @@ is a function for looping
 Syntax:
 
 ```
-loop(<initialization>, <condition>, <increment>, { <loopBody> });
-loop(iterates(<array>), { <loopBody> });
-loop(properties(<object>), { <loopBody> });
+loop(iterates(<array>), element -> { <loopBody> });
+loop(properties(<object>), element -> { <loopBody> });
 loop({ <loopBody> }, <condition>);
 loop(<condition>, { <loopBody> });
 ```
@@ -185,29 +267,31 @@ loop(<condition>, { <loopBody> });
 Example:
 
 ```minimal
-loop(i=0, i < 5, i++, {
-    log('Iteration: ' + i);
-}); # for like loop
-
-a=[1,2,3,4,5];
-loop(iterates(a), {
-    log('Iteration: ' + a);
+new("a", [1,2,3,4,5]);
+loop(iterates(a), e -> {
+    log('Iteration: ', e);
 }); # for of like loop
 
-b=SampleClass(6);
-loop(properties(b), {
-    log('Iteration: ' + i);
+new("b",SampleClass(6));
+loop(properties(b), i -> {
+    log('Iteration: ', i);
 }); # for in like loop
 
-j=0;
+new("j", 0);
 loop({
-    log('Iteration: ' + j);
-}, j<5); # do while like loop
+    log('Iteration: ', j);
+}, lessThan(j, 5)); # do while like loop
 
-k=0;
-loop(k<5,{
-    log('Iteration: ' + k);
+new("k", 0);
+loop(lessThan(k, 5), {
+    log('Iteration: ', k);
 }); # while like loop
+
+new("k", 0);
+loop(lessThan(k, 5), {
+    log('Iteration: ', k);
+    set(k, sum(k, 1));
+}); # for like loop
 ```
 
 #### Function Declaration:
@@ -224,12 +308,11 @@ Example:
 ```minimal
 sum: (a: Number, b: Number) -> Number = (a: Number, b: Number) -> {
       log('Sum a:', a, ' and b:', b);
-      -> a + b; # return is ->
+      -> sum(a, b); # return is ->
 };
-sub = (a: Number, b: Number) -> a-b;
+sub = (a: Number, b: Number) -> subtract(a,b);
 
-multiply = (a: Number, b: Number)->a*b;
-multiply |= (a: Number, b: Number, c: Number)->a*b*c; // multiple function signatures for the same naming using |=
+mult = (a: Number, b: Number)->multiply(a,b);
 ```
 
 #### Try Catch Function:
@@ -600,7 +683,7 @@ log(sampleClassChild.sum()); # logs 33
 Syntax:
 
 ```
-  <TypeName>:Type = { <typeBody> } ;
+  (Type)<TypeName> = { <typeBody> } ;
 ```
 
 Example:
@@ -676,7 +759,7 @@ log(|sampleClass3|); # logs 5 (usage of global.('|', a: SampleClass, '|'))
 
 ```minimal
 numberPlusNumber = global.(a:Number,'+',b:Number) ->{
-      ->Number.add(a,b);
+      ->Number.sum(a,b);
 };
 
 numberTimesNumber = global.(a:Number,'*',b:Number) ->{
