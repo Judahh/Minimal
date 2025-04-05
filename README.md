@@ -15,6 +15,23 @@ Language name: Minimal
 
 ## Types
 
+### Auto
+
+Automatic type detection
+
+### Default Values
+
+```
+default(Type, value)
+```
+
+Example:
+
+```minimal
+default(0)
+(Natural)default(0.0)
+```
+
 ### Basic Types
 
 #### Numeric Types
@@ -22,45 +39,45 @@ Language name: Minimal
 ##### Boolean
 0 or 1
 
-##### Natural(size:Natural=32, growable: Boolean = true)
+##### Natural(size:default(Natural, 32), growable: default(Boolean, 1))
 1,2,...
 
-##### Whole(size:Natural=32, growable: Boolean = true)
+##### Whole(size:default(Natural, 32), growable: default(Boolean, 1))
 0,1,2,...
 
-##### Integer(size:Natural=32, growable: Boolean = true)
+##### Integer(size:default(Natural, 32), growable: default(Boolean, 1))
 ...,-2,-1,0,1,2,...
 
-##### Rational(pSize:Natural=32,qSize:Natural=32, growable: Boolean = true)
+##### Rational(pSize:default(Natural, 32),qSize:default(Natural, 32), growable: default(Boolean, 1))
 Integer/Whole
 
 ##### Real
 Integer.Whole
 
-###### Float(sizeMultiplier:Integer=1, growable: Boolean = true) | Float(size:Natural=32, mantissaSize:Natural=23, growable: Boolean = true)
+###### Float(sizeMultiplier:default(Integer, 1), growable: default(Boolean, 1)) | Float(size:default(Natural, 32), mantissaSize:default(Natural, 23), growable: default(Boolean, 1))
 
-###### Number(integerSize:Natural=32, decimalSize:Natural=32, growable: Boolean = true) | Number(options: NumberOptions)
+###### Number(integerSize:default(Natural, 32), decimalSize:default(Natural, 32), growable: default(Boolean, 1)) | Number(options: NumberOptions)
 
-#### (Type=Auto)Array(size?:Natural) (if it does not have a size it's growable)
+#### (default(Type,Auto))Array(size?:Natural) (if it does not have a size it's growable)
 
 literal: [1, 3, 4, 5]
 
 #### Text Types
 
-##### Char(encoding:String='ascii')
+##### Char(encoding:default(String, "ascii"))
 
 literal: 'c'
 
-##### String(encoding:String='ascii')
+##### String(encoding:default(String, "ascii"))
 
 It's a special type of Array (Array(Char)) that represents a sequence of characters.
 literal: "string" or `string`
 
-#### (Type=Auto)Pointer
+#### (default(Type,Auto))Pointer
 
 It's a type to indicates a pointer to another variable.
 
-#### (Type=Auto)Constant
+#### (default(Type,Auto))Constant
 
 It's a type to indicates a constant variable.
 
@@ -68,16 +85,10 @@ It's a type to indicates a constant variable.
 
 It's possible to define a type that can be any of a set of types, and it's possible to aggregate more types into an existing umbrella type.
 
-```minimal
+```
 Real:Type = Float | Number;
 Numeric:Type = Boolean | Natural | Whole | Integer | Rational | Real;
 Text:Type = Char | String;
-
-How to add more types to an existing umbrella type:
-For the current file:
-Numeric |= NewNumeric | OtherNewNumeric; # ':Type' is only needed on declaration of a type, not in an extension
-For the everywhere it's imported:
-global.Numeric:Type |= NewNumeric | OtherNewNumeric;
 ```
 
 ### Function:
@@ -91,11 +102,9 @@ Example:
 ```minimal
 someFunction0(); # receives no params
 someFunction1(x,y,z); # receives params in order
-someFunction1(param1 = x, param2 = y, param3 = z); # receives params by name
 someFunction1(object); # receives params as an object that has properties with names just like the params of the someFunction1
 (SomeType)someFunction2(); # receives SomeType as a Type param for generics
 (SomeType, SomeOtherType)someFunction3(); # receives SomeType and SomeOtherType as Type params in order for generics
-(Type1=SomeType, Type1=SomeOtherType)someFunction3(); # receives SomeType and SomeOtherType as Type params by Type name for generics
 (GreaterType)someFunction3(); # receives Greater as Type that has properties with names names just like the Type params of the someFunction3
 someFunction3.name; # returns the name of the function (if it's not a pointer, it's someFunction3, if it's a pointer it's the name of the function that the pointer points to)
 ```
@@ -142,6 +151,38 @@ set(k, 6);
 set(x, k);
 ```
 
+##### Mathematical Operations Functions:
+
+Syntax:
+
+```
+sum(<value1>, <value2>);
+subtract(<value1>, <value2>);
+multiply(<value1>, <value2>);
+divide(<value1>, <value2>);
+modulo(<value1>, <value2>);
+power(<value1>, <value2>);
+squareRoot(<value>);
+root(<value>, <root>);
+absolute(<value>);
+negative(<value>);
+inverse(<value>);
+logarithm(<value>, <base>);
+```
+
+##### Comparison Function:
+
+Syntax:
+```
+equalType: Type = "same" | "strict" | "loose" | "truthy"; # same: same address in memory, strict: checks type and value, loose: checks value, truthy: checks if both are truthy
+equals(<value1>, <value2>[, <equalType>]);
+notEquals(<value1>, <value2>[, <equalType>]);
+greaterThan(<value1>, <value2>[, <equalType>]);
+greaterThanOrEquals(<value1>, <value2>[, <equalType>]);
+lessThan(<value1>, <value2>[, <equalType>]);
+lessThanOrEquals(<value1>, <value2>[, <equalType>]);
+```
+
 ##### Scope:
 Syntax:
 ```
@@ -180,19 +221,6 @@ someOtherFunction((x,y) -> set(x, y) ) # function receives a silgle line scope, 
 someOtherFunction2(x -> set(x, y) ) # function receives a silgle line scope, sending a single parameter
 ```
 
-##### Comparison Function:
-
-Syntax:
-```
-equalType: Type = 'same' | 'strict' | 'loose' | 'truthy'; # same: same address in memory, strict: checks type and value, loose: checks value, truthy: checks if both are truthy
-equals(<value1>, <value2>[, <equalType>]);
-notEquals(<value1>, <value2>[, <equalType>]);
-greaterThan(<value1>, <value2>[, <equalType>]);
-greaterThanOrEquals(<value1>, <value2>[, <equalType>]);
-lessThan(<value1>, <value2>[, <equalType>]);
-lessThanOrEquals(<value1>, <value2>[, <equalType>]);
-```
-
 ##### Conditional Function:
 
 Syntax:
@@ -214,42 +242,21 @@ if(lessThan(x, y), {
 
 ```minimal
 # Ternary (using if function)
-result = if(lessThan(x, y), { -> x }, y);
+new("result", if(lessThan(x, y), { -> x }, y));
 or
-result = if(lessThan(x, y), { -> x }, { -> y });
+new("result", if(lessThan(x, y), { -> x }, { -> y }));
 or
-result = if(lessThan(x, y), x, y);
+new("result", if(lessThan(x, y), x, y));
 or
-result = if(lessThan(x, y), x, { -> y });
+new("result", if(lessThan(x, y), x, { -> y }));
 
 the default true value is 1 or true and the default false value is 0 or false
 example:
-result = if(lessThan(x, y), x); # if x < y return x else return 0
-result = if(lessThan(x, y), x, 0); # if x < y return x else return 0
-result = if(lessThan(x, y)); # if x < y return 1 else return 0
-result = if(lessThan(x, y),, y); # if x < y return 1 else return y
+new("result", if(lessThan(x, y), x)); # if x < y return x else return 0
+new("result", if(lessThan(x, y), x, 0)); # if x < y return x else return 0
+new("result", if(lessThan(x, y))); # if x < y return 1 else return 0
+new("result", if(lessThan(x, y),, y)); # if x < y return 1 else return y
 ```
-
-#### Mathematical Operations Functions:
-
-Syntax:
-
-```
-sum(<value1>, <value2>);
-subtract(<value1>, <value2>);
-multiply(<value1>, <value2>);
-divide(<value1>, <value2>);
-modulo(<value1>, <value2>);
-power(<value1>, <value2>);
-squareRoot(<value>);
-root(<value>, <root>);
-absolute(<value>);
-negative(<value>);
-inverse(<value>);
-logarithm(<value>, <base>);
-```
-
-#### Array Functions:
 
 ##### Looping Function:
 
@@ -269,6 +276,11 @@ Example:
 ```minimal
 new("a", [1,2,3,4,5]);
 loop(iterates(a), e -> {
+    log('Iteration: ', e);
+}); # for of like loop
+
+(Number)new("a", [1,2,3,4,5]);
+loop(iterates(a), e: Number -> {
     log('Iteration: ', e);
 }); # for of like loop
 
@@ -294,28 +306,7 @@ loop(lessThan(k, 5), {
 }); # for like loop
 ```
 
-#### Function Declaration:
-
-Syntax:
-
-```
-[(<parameters>)] [->] <functionBody> ;
-functionBody: { <statementsWithReturn> } | <expression> ;
-```
-
-Example:
-
-```minimal
-sum: (a: Number, b: Number) -> Number = (a: Number, b: Number) -> {
-      log('Sum a:', a, ' and b:', b);
-      -> sum(a, b); # return is ->
-};
-sub = (a: Number, b: Number) -> subtract(a,b);
-
-mult = (a: Number, b: Number)->multiply(a,b);
-```
-
-#### Try Catch Function:
+##### Try Catch Function:
 
 ```minimal
 # Try Catch statement  (is a function for statement)
@@ -352,21 +343,21 @@ try({
 });
 ```
 
-#### Error and Exception Function:
+##### Error and Exception Function:
 
 Error is a type of exception
 Error will crash the program if not handled
 Exception will not crash the program if not handled, just reload the program if not handled
 
-##### Error Function:
+###### Error Function:
 
 ```minimal
-someFunction = (x,y) -> {
+new("someFunction", (x,y) -> {
     throw(Error('Some error'));
-};
-someOtherFunction = (z) -> {
+});
+new("someOtherFunction", (z) -> {
     someFunction(1,z);
-};
+});
 someOtherFunction(2); # will log the error message and the stack trace
 Some error
 Code: 500
@@ -378,9 +369,9 @@ Stack trace:
     at main (file:line:column)
 
 
-someFunction = (x: Number,y) -> {
+new("someFunction", (x: Number,y) -> {
     throw(Exception('Some error', 404));
-};
+});
 
 someFunction(1,2); # will log the error message and the stack trace
 Some error
@@ -391,9 +382,9 @@ Stack trace:
     at main (file:line:column)
 
 
-someFunction = (x,y) -> {
+new("someFunction", (x,y) -> {
     throw(Exception('Some error'));
-};
+});
 someFunction(1,2); # will log the error message and the stack trace
 Some error
 Code: 400
@@ -402,9 +393,9 @@ Stack trace:
     where (x = 1, y = 2)
     at main (file:line:column)
 
-someFunction = (x,y) -> {
+new("someFunction", (x,y) -> {
     throw(Exception('Some error', 404));
-};
+});
 
 someFunction(1,2); # will log the error message and the stack trace
 
@@ -417,9 +408,9 @@ Stack trace:
 
 Hide Secret Values
 
-someFunction = (x: Secret, y: Secret(Number), z) -> {
+new("someFunction", (x: Secret, y: Secret(Number), z) -> {
     throw(Exception('Some error', 404));
-};
+});
 
 someFunction(1,2,3); # will log the error message and the stack trace
 
@@ -430,6 +421,29 @@ Stack trace:
     where (x: Secret, y: Secret(Number), z = 3)
     at main (file:line:column)
 
+```
+
+##### Array Functions:
+
+#### Function Declaration:
+
+Syntax:
+
+```
+[(<parameters>) -> ]<functionBody> ;
+functionBody: { <statementsWithReturn> } | <expression> ;
+```
+
+Example:
+
+```minimal
+((a: Number, b: Number) -> Number)new("sum", (a: Number, b: Number) -> {
+      log('Sum a:', a, ' and b:', b);
+      -> sum(a, b); # return is ->
+});
+new("sub", (a: Number, b: Number) -> subtract(a,b));
+
+new("mult", (a: Number, b: Number)->multiply(a,b));
 ```
 
 ## Struct
