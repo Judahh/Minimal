@@ -226,8 +226,15 @@ someOtherFunction2(x -> set(x, y) ) # function receives a silgle line scope, sen
 Syntax:
 
 ```
-if(<condition>, <trueBlock> , [<elseBlock>]);
-# add switch statement ans else if
+if(<condition>, <trueBlock> , [<elseBlock>]...);
+# add a contition instead of elseBlock for an else if
+if(<condition>, <trueBlock> , <condition>, <trueBlock2> , [<elseBlock>]...);
+# for cases:
+if(<element>, <value1> , <value1Block>, 
+   <value2> , <value2Block>, 
+   <value3> , <value3Block>, 
+   [<elseBlock>]...
+);
 ```
 
 Example:
@@ -236,6 +243,34 @@ Example:
 if(lessThan(x, y), {
     log('x is less than y');
 }, log('x is greater than or equal to y'));
+
+if(lessThan(x, y), {
+    log('x is less than y');
+}, equals(x, y), {
+    log('x is equal to y');
+}, {
+    log('x is greater than y');
+});
+
+new("x", 5);
+if(x, 
+    1, next -> {
+        log('x is 1');
+    },
+    2, next -> {
+        log('x is 2');
+    },
+    3, next -> {
+        log('x is 3');
+    },
+    4, next -> {
+        log('x is 4');
+        next();
+    },
+    {
+        log('x is greater or equal than 4 or less than 1');
+    },
+);
 ```
 
 ###### Ternary
@@ -438,8 +473,8 @@ Example:
 
 ```minimal
 ((a: Number, b: Number) -> Number)new("sum", (a: Number, b: Number) -> {
-      log('Sum a:', a, ' and b:', b);
-      -> sum(a, b); # return is ->
+    log('Sum a:', a, ' and b:', b);
+    -> sum(a, b); # return is ->
 });
 new("sub", (a: Number, b: Number) -> subtract(a,b));
 
@@ -451,34 +486,34 @@ new("mult", (a: Number, b: Number)->multiply(a,b));
 ```minimal
 Like a class but without functions (but can have constructor)
 If it does not have a constructor must have all variables initialized and cannot be instantiated
-sampleStruct = {
-      x: Number = 5;
-      y: Const(Number) = 10;
-};
+new("sampleStruct", {
+    x: Number = 5;
+    y: Const(Number) = 10;
+});
 or
 If it has a constructor it can have variables not initialized but must be instantiated
-SampleStruct = {
-      x: Number;
-      y: Const(Number);
-      (x: Number, y: Number) -> {
-                this.x = x;
-                this.y = y;
-      };
-      inc = (a: Number) -> {
-                a++;
-                -> a; # return is ->
-      };
-};
-sampleStruct = SampleStruct(5, 10);
+new("SampleStruct", {
+    x: Number;
+    y: Const(Number);
+    (x: Number, y: Number) -> {
+        set(this.x, x);
+        set(this.y, y);
+    };
+    inc = (a: Number) -> {
+        set(a, sum(a, 1));
+        -> a; # return is ->
+    };
+});
+new("sampleStruct", SampleStruct(5, 10));
 
 log(sampleStruct.x); # logs 5
 log(sampleStruct.y); # logs 10
-numberExample = Number(5);
-numberExample2 = sampleStruct.inc(numberExample);
+(Number)new("numberExample", 5);
+new("numberExample2", sampleStruct.inc(numberExample));
 log(numberExample); # logs 5
 log(numberExample2); # logs 6
-numberExample = Number(5);
-numberExample2 = sampleStruct.inc(numberExample*);
+new("numberExample", Number(5));
+new("numberExample2", sampleStruct.inc(numberExample*));
 log(numberExample); # logs 6
 log(numberExample2); # logs 6
 ```
@@ -487,26 +522,26 @@ log(numberExample2); # logs 6
 
 ```minimal
 Like a class but without variables (Does not have constructor, and cannot be instantiated, just used as an object)
-sampleEngine = {
-      protected init = () -> {
-                log('Engine initialized');
-      };
-      start = () -> {
-                this.init();
-                log('Engine started');
-      };
-      sum = (a: Number, b: Number) -> {
-                log('Sum a:', a, ' and  b:', b);
-                -> a+b; # return is ->
-      };
-};
+new("sampleEngine", {
+    protected init = () -> {
+        log('Engine initialized');
+    };
+    start = () -> {
+        this.init();
+        log('Engine started');
+    };
+    sum = (a: Number, b: Number) -> {
+        log('Sum a:', a, ' and  b:', b);
+        -> sum(a, b); # return is ->
+    };
+});
 
 # its possible to merge a engine with a struct and it will become a class
 
-SampleClass= someStruct & someClass;
+new("SampleClass", merge(someStruct, someClass));
 ```
 
-## Return types
+## Return
 
 ```minimal
 For a '{}' block (scope) use:
@@ -521,210 +556,210 @@ For a '[]' block (scope) use:
   'global.->' returns the value for the global scope (program)
 
 example:
-someFunction = () -> {
-  if(1 > 0, {
-      if(2 > 0, {
-          -> 2;
-      }, {
-          -> -2;
-      });
-      -> 1;
+new("someFunction", () -> {
+  if(greaterThan(1, 0), {
+    if(greaterThan(2, 0), {
+        -> 2;
+    }, {
+        -> -2;
+    });
+    -> 1;
   }, {
-      -> -1;
+    -> -1;
   });
   -> 0;
-}
+});
 # will return 0 because of the '->' of each if statement is returning the value for the current {} (scope)
 
-someFunction = () -> {
-  if(1 > 0, {
-      if(2 > 0, {
-          -> 2;
-      }, {
-          -> -2;
-      });
-      super.-> 1;
+new("someFunction", () -> {
+  if(greaterThan(1, 0), {
+    if(greaterThan(2, 0), {
+        -> 2;
+    }, {
+        -> -2;
+    });
+    super.-> 1;
   }, {
-      super.-> -1;
+    super.-> -1;
   });
   -> 0;
-};
+});
 # will return 1 because of the 'super.->' of the second if statement is returning the value for the parent {} (scope)
-someFunction = () -> {
-  if(1 > 0, {
-      if(2 > 0, {
-          super.-> 2;
-      }, {
-          super.-> -2;
-      });
-      super.-> 1;
+new("someFunction", () -> {
+  if(greaterThan(1, 0), {
+    if(greaterThan(2, 0), {
+        super.-> 2;
+    }, {
+        super.-> -2;
+    });
+    super.-> 1;
   }, {
-      super.-> -1;
+    super.-> -1;
   });
   -> 0;
-};
+});
 # will return 0 because of the 'super.->' of the second if statement is returning the value for the parent {} (scope) so the 'super.->' of the first if statement is not being executed
 
-someFunction = () -> {
-  if(1 > 0, {
-      if(2 > 0, {
-          super.super.-> 2;
-      }, {
-          super.super.-> -2;
-      });
-      super.-> 1;
+new("someFunction", () -> {
+  if(greaterThan(1, 0), {
+    if(greaterThan(2, 0), {
+        super.super.-> 2;
+    }, {
+        super.super.-> -2;
+    });
+    super.-> 1;
   }, {
-      super.-> -1;
+    super.-> -1;
   });
   -> 0;
-};
+});
 # will return 2 because of the 'super.super.->' of the first if statement is returning the value for the final {} (scope)
 
-someFunction = () -> {
-  if(1 > 0, {
-      if(2 > 0, {
-          final.-> 2;
-      }, {
-          final.-> -2;
-      });
-      super.-> 1;
+new("someFunction", () -> {
+  if(greaterThan(1, 0), {
+    if(greaterThan(2, 0), {
+        final.-> 2;
+    }, {
+        final.-> -2;
+    });
+    super.-> 1;
   }, {super.
-      super.-> -1;
+    super.-> -1;
   });
   -> 0;
-};
+});
 # will return 2 because of the 'final.->' of the first if statement is returning the value for the parent of the parent {} (scope)
 
-someFunction = () -> {
-  if(1 > 0, [
-      if(2 > 0, {
-          -> 2;
-      }, {
-          -> -2;
-      });
-      -> 1;
+new("someFunction", () -> {
+  if(greaterThan(1, 0), [
+    if(greaterThan(2, 0), {
+        -> 2;
+    }, {
+        -> -2;
+    });
+    -> 1;
   ], [
-      -> -1;
+    -> -1;
   ]);
   -> 0;
-};
+});
 # will return 2 because the '->' is returning the value for the closest {} (scope)
 ```
 
 ## Enum
 
 ```minimal
-Color:Enum = {
-      RED,
-      GREEN,
-      BLUE
-};
+(Enum)new("Color", {
+    RED,
+    GREEN,
+    BLUE
+});
 or
-Color:Enum = {
-      RED = 1,
-      GREEN = 2,
-      BLUE = 3
-};
+(Enum)new("Color", {
+    RED = 1,
+    GREEN = 2,
+    BLUE = 3
+});
 or
-Color:Enum = {
-      RED = 1,
-      GREEN,
-      BLUE
-};
+(Enum)new("Color", {
+    RED = 1,
+    GREEN,
+    BLUE
+});
 or
-Color:Enum = {
-      RED = 'r',
-      GREEN = 'g',
-      BLUE = 'b'
-};
+(Enum)new("Color", {
+    RED = 'r',
+    GREEN = 'g',
+    BLUE = 'b'
+});
 ```
 
-## Classes
+## Classe
 
 Syntax:
 
 ```
-  <ClassName> = { <classBody> } ;
+  { <classBody> } ;
 ```
 
 ### Struct Oriented Class
 
 ```minimal
-SampleClass = {
-      private x: Number = 5;
-      y: Const(Number) = 10;
-      w: Number = 10;
+new("SampleClass", {
+    private x: Number = 5;
+    y: Const(Number) = 10;
+    w: Number = 10;
 
-      (x: Number) -> { this.x = x; }; # constructor
+    (x: Number) -> { set(this.x, x); }; # constructor
 
-      sum = () -> {
-               -> x+y+w;
-      };
+    sum = () -> {
+        -> sum(x,y,w);
+    };
 
-      value = () -> {
-               -> x;
-      };
-};
-
-SampleClassChild = extends(SampleClass, { 
-      (x: Number, w: Number) -> { # new constructor signature option
-                this.x = x;
-                this.w = w;
-      };
+    value = () -> {
+        -> x;
+    };
 });
+
+new("SampleClassChild", extends(SampleClass, { 
+    (x: Number, w: Number) -> { # new constructor signature option
+        set(this.x, x);
+        set(this.w, w);
+    };
+}));
 ```
 
 ### Function Oriented Class
 
 ```minimal
-SampleClass2 = (z?: Number) -> {
-      sampleFunctionThatReturnsTen = () -> {
-            -> 10;
-      };
-      private x: Number = z || 5;
-      y: Const(Number) = 10;
-      -> this;
+new("SampleClass2", (z?: Number) -> {
+    sampleFunctionThatReturnsTen = () -> {
+        -> 10;
+    };
+    private x: Number = z || 5;
+    y: Const(Number) = 10;
+    -> this;
 };
 
-sampleClassChild = SampleClassChild(13);
+new("sampleClassChild", SampleClassChild(13));
 log(sampleClassChild.x);     # logs 13
 log(sampleClassChild.w);     # logs 10
 log(sampleClassChild.sum()); # logs 33
 ```
 
-## Types/Interfaces
+## Type/Interface
 
 Syntax:
 
 ```
-  (Type)<TypeName> = { <typeBody> } ;
+{ <typeBody> } ;
 ```
 
 Example:
 
 ```minimal
-Person = { # is a Type
+new("Person", { # is a Type
      name: String;
      age: Number;
-};
-
-Robot = {
-    id: Number;
-}
-
-Worker = and(Person,{ # extends Person
-     job: String;
 });
 
-Thinker = or(Person,Robot); # Thinker can be a Person or a Robot
+new("Robot", {
+    id: Number;
+});
 
-Human: Person = { # Class Human implements Person
+new("Worker", and(Person,{ # extends Person
+     job: String;
+}));
+
+new("Thinker", or(Person,Robot)); # Thinker can be a Person or a Robot
+
+(Human)new("Person", { # Class Human implements Person
       (name: String, age: Number) -> {
                 this.name = name;
                 this.age = age;
       }
       eat = () -> log('eat');
-}
+});
 ```
 
 ## Operand
@@ -732,6 +767,34 @@ Human: Person = { # Class Human implements Person
 ### Operand Definition
 
 ```minimal
+global.(a: Number, '<', b: Number) -> {
+    -> lessThan(a, b);
+};
+
+global.(a: Number, '>', b: Number) -> {
+    -> greaterThan(a, b);
+};
+
+global.(a: Number, '<=', b: Number) -> {
+    -> lessThanOrEquals(a, b);
+};
+
+global.(a: Number, '>=', b: Number) -> {
+    -> greaterThanOrEquals(a, b);
+};
+
+global.(a: Number, '?=', b: Number) -> {
+    -> equals(a, b);
+};
+
+global.(a: Number, '=', b: Number) -> {
+    -> exists(a) ? set(a.name, b) : new(a.name, b);
+};
+
+global.(a: Number, '+', b: Number) -> { # The literal string shows the symbol(s) used as operator
+    -> sum(a + b);
+};
+
 global.(a: SampleClass, '+', b: SampleClass) -> { # The literal string shows the symbol(s) used as operator
     -> SampleClass(a.value() + b.value());
 };
@@ -748,9 +811,15 @@ global.('|', a: SampleClass, '|') -> {
     -> if(a.value() > 0, a.value(), -a.value());
 };
 
-# TODO: Make a desing for creating a operand for condition (using ternary syntax)
+global.(a: Number, '=', o: Operand, b: Number) -> {
+    -> a = a o b;
+};
 
-result = x < y ? { -> x } : y;
+global.(c: Any, '?', t: Scope, f: Scope) -> {
+    -> if(c, t, f);
+};
+
+new("result", x < y ? { -> x } : y);
 
 x < y ? log('x is less than y') : {
     log('x is greater than or equal to y');
@@ -790,7 +859,7 @@ global.precedence+=[ # Order evaluated left to right for the same level
 ];
 ```
 
-## Reference Identifiers
+## Reference Identifier
 
 ### global 
 is a global object that can be used to define global properties, functions, operators...
