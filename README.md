@@ -94,7 +94,7 @@ Text:Type = Char | String;
 ### Function:
 
 ```
-[(<TypeParams>)]new(<Params>);
+[(<TypeParams>)]<functionName>(<Params>);
 ```
 
 Example:
@@ -149,6 +149,21 @@ Example:
 set(y, 5);
 set(k, 6);
 set(x, k);
+```
+
+##### Pointer Setting Function:
+
+Syntax:
+```
+points(<name>, <value>);
+```
+
+Example:
+
+```minimal
+points(y, 5);
+points(k, 6);
+points(x, k);
 ```
 
 ##### Mathematical Operations Functions:
@@ -788,7 +803,11 @@ global.(a: Number, '?=', b: Number) -> {
 };
 
 global.(a: Number, '=', b: Number) -> {
-    -> exists(a) ? set(a.name, b) : new(a.name, b);
+    -> exists(a) ? set(a.name, b) : new(a.name, b, typeOf(a));
+};
+
+global.(a: Number, '->', b: Number) -> {
+    -> exists(a) ? points(a.name, b) : new(a.name, b, Pointer);
 };
 
 global.(a: Number, '+', b: Number) -> { # The literal string shows the symbol(s) used as operator
@@ -879,7 +898,6 @@ is a reference to the current function, it can be used to access the current fun
 ```minimal
 numberExample = Number(5);
 numberExampleReferece -> numberExample;
-numberExampleReferece2* = numberExample;
 numberExampleClone = numberExample;
 functionExample = ()->{};
 classExample = {
@@ -892,8 +910,6 @@ log(numberExample.typeName); # logs Number
 log(numberExample.variableName); # logs numberExample
 log(numberExampleReferece.typeName); # logs Number
 log(numberExampleReferece.variableName); # logs numberExample
-log(numberExampleReferece2.typeName); # logs Number
-log(numberExampleReferece2.variableName); # logs numberExample
 log(numberExampleClone.typeName); # logs Number
 log(numberExampleClone.variableName); # logs numberExampleClone
 log(functionExample.typeName); # logs Function

@@ -10,78 +10,94 @@
 Using a BNF-like representation (simplified for illustration):
 
 ```bnf
-pairOperator ::= <value> <operator> <value>
+param = <identifier> | <literal> ;
 
-operatorReduction ::=  <value> <operator> = <value>
+functionName = <identifier> ;
 
-declaration ::= <identifier> : <type> [ = <initializer> ] ;
+params = param [ , param ]* ;
 
-functionDeclaration ::= <functionName> [= | =|] [ ( <parameters> )  -> ] <functionBody> ;
+typeParam = <type> ;
 
-classDeclaration ::= <ClassName> = { <classBody> } ;
+typeParams = typeParam [ , typeParam ]* ;
 
-typeDeclaration ::= <TypeName> : Type = { <typeBody> } ;
+newFunction = [(typeParam)]new(<name>[, <value>]) ;
 
-conditionalFunction ::= if ( <conditionBlock> , <trueBlock> [,  <elseBlock> ] ) ;
+setFunction = set(<name>, <value>);
 
-ternaryOperator ::= <condition> ? { <trueBlock> } : { <elseBlock> } ;
+pointsFunction = points(<name>, <value>);
 
-loopingFunction ::= loop ( <initialization> , <condition> , <increment> , <loopBody> )
-                    | loop ( iterates ( <array> ) , <loopBody> )
-                    | loop ( properties ( <object> ) , <loopBody> )
-                    | loop ( <loopBody> , <condition> )
-                    | loop ( <condition> , <loopBody> )
-                    ;
+setFunction = newFunction | setFunction | pointsFunction ;
 
-arrayDeclaration ::= <arrayName> = [ <elements> ] ;
+sumFunction = sum(<value1>, <value2>[, <value3>]*);
 
-<type> ::= <basicType> | <customType> ;
+subtractFunction = subtract(<value1>, <value2>[, <value3>]*);
 
-<basicType> ::= Boolean | Natural ( size: Natural = 32 )
-                | Integer ( size: Natural = 32 )
-                | Rational ( pSize: Natural = 32, qSize: Natural = 32 )
-                | Real | Float ( sizeMultiplier: Integer = 1 )
-                | Number ( integerSize: Natural = 32, decimalSize: Natural = 32 )
-                | Char ( encoding: String = 'utf-8' )
-                | String <Array> ( encoding: String = 'utf-8' ) ;
+multiplyFunction = multiply(<value1>, <value2>[, <value3>]*);
 
-<customType> ::= <TypeIdentifier> ;
+divideFunction = divide(<value1>, <value2>[, <value3>]*);
 
-<functionBody> ::= <statements> ;
+moduloFunction = modulo(<value1>, <value2>);
 
-<elements> ::= <element> [ , <element> ]* ;
+powerFunction = power(<value1>, <value2>);
 
-<element> ::= <value> ;
+rootFunction = root(<value>, <root>);
 
-<value> ::= <literal> | <functionCall> | <variable> | <expression> ;
+absoluteFunction = absolute(<value>);
 
-<expression> ::= <term> | <expression> <binaryOperator> <expression> ;
+negativeFunction = negative(<value>);
 
-<term> ::= <factor> | <term> <binaryOperator> <term> ;
+inverseFunction = inverse(<value>);
 
-<factor> ::= <unaryOperator> <factor> | ( <expression> ) | <value> ;
+logarithmFunction = logarithm(<value>, <base>);
 
-<binaryOperator> ::= + | - | * | / | < | > | == | != | && | || ;
+mathFunction = sumFunction | subtractFunction | multiplyFunction
+                | divideFunction | moduloFunction | powerFunction
+                | rootFunction | absoluteFunction | negativeFunction
+                | inverseFunction | logarithmFunction ;
 
-<unaryOperator> ::= - | ! ;
+equalType = "same" | "strict" | "loose" | "truthy"; # same: same address in memory, strict: checks type and value, loose: checks value, truthy: checks if both are truthy
 
-<literal> ::= 'c'1 | 'string' | 1 | 3.14 | true | false ;
+equalsFunction = equals(<value1>, <value2>[, <equalType>]);
+notEqualsFunction = notEquals(<value1>, <value2>[, <equalType>]);
+greaterThanFunction = greaterThan(<value1>, <value2>[, <equalType>]);
+greaterThanOrEqualsFunction = greaterThanOrEquals(<value1>, <value2>[, <equalType>]);
+lessThanFunction = lessThan(<value1>, <value2>[, <equalType>]);
+lessThanOrEqualsFunction = lessThanOrEquals(<value1>, <value2>[, <equalType>]);
 
-<functionCall> ::= <functionName> ( <arguments> ) ;
+comparisonFunction = equalsFunction | notEqualsFunction | greaterThanFunction
+                        | greaterThanOrEqualsFunction | lessThanFunction
+                        | lessThanOrEqualsFunction ;
 
-<arguments> ::= <expression> [ , <expression> ]* ;
+andFunction = and(<value1>, <value2>[, <value3>]*);
+orFunction = or(<value1>, <value2>[, <value3>]*);
+notFunction = not(<value>);
+logicalFunction = andFunction | orFunction | notFunction ;
 
-<variable> ::= <identifier> ;
+trueBlock = <scope>;
 
-<identifier> ::= [ a-zA-Z_ ] [ a-zA-Z0-9_ ]* ;
+falseBlock =  <condition>, <trueBlock>[, <falseBlock>] | <scope>;
 
-<loopBody> ::= <statements> ;
+conditionalFunction = if(<condition>, <trueBlock>[, <falseBlock>]);
 
-<statements> ::= <statement> [ <statement> ]* ;
+caseStatement = <value> , <scope>;
 
-<statement> ::= <declaration> | <assignment> | <functionCall> | <conditionalFunction> | <loopingFunction> ;
+defaultBlock = <scope>;
 
-<assignment> ::= <variable> = <expression> ;
+caseFunction = if(<identifier>, caseStatement [, caseStatement]*, <defaultBlock>) ;  
+
+function ::= [(<typeParams>)]<functionName>(<params>) ;
+
+statement ::= <function> ;
+
+statements ::= statement [ ; statements ]* ;
+
+scope ::= { <statements> } | <statement> ;
+
+paramDefinition ::= <value> : <type> ;
+
+paramsDefinition ::= paramDefinition [ , paramDefinition ]* ;
+
+functionDefinition ::=  (<paramDefinition>) -> <scope> ;
 
 ```
 
