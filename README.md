@@ -315,7 +315,7 @@ is a function for looping
 Syntax:
 
 ```
-loop(iterates(<array>), element -> { <loopBody> });
+loop(<array>, element -> { <loopBody> });
 loop(properties(<object>), element -> { <loopBody> });
 loop({ <loopBody> }, <condition>);
 loop(<condition>, { <loopBody> });

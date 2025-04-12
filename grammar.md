@@ -20,13 +20,29 @@ typeParam = <type> ;
 
 typeParams = typeParam [ , typeParam ]* ;
 
+functionCall ::= [(<typeParams>)]<functionName>(<params>) ;
+
+statement ::= <functionCall | systemFunctionCall> ;
+
+statements ::= statement [ ; statements ]* ;
+
+scope ::= { <statements> } | <statement> ;
+
+paramDefinition ::= <value> : <type> ;
+
+paramsDefinition ::= paramDefinition [ , paramDefinition ]* ;
+
+fuctionParams ::= paramDefinition | (paramsDefinition) ;
+
+functionDefinition ::=  fuctionParams -> <scope> ;
+
 newFunction = [(typeParam)]new(<name>[, <value>]) ;
 
 setFunction = set(<name>, <value>);
 
 pointsFunction = points(<name>, <value>);
 
-setFunction = newFunction | setFunction | pointsFunction ;
+setFunctions = <newFunction> | <setFunction> | <pointsFunction> ;
 
 sumFunction = sum(<value1>, <value2>[, <value3>]*);
 
@@ -69,8 +85,11 @@ comparisonFunction = equalsFunction | notEqualsFunction | greaterThanFunction
                         | lessThanOrEqualsFunction ;
 
 andFunction = and(<value1>, <value2>[, <value3>]*);
+
 orFunction = or(<value1>, <value2>[, <value3>]*);
+
 notFunction = not(<value>);
+
 logicalFunction = andFunction | orFunction | notFunction ;
 
 trueBlock = <scope>;
@@ -83,22 +102,52 @@ caseStatement = <value> , <scope>;
 
 defaultBlock = <scope>;
 
-caseFunction = if(<identifier>, caseStatement [, caseStatement]*, <defaultBlock>) ;  
+caseFunction = if(<identifier>, <caseStatement> [, <caseStatement>]*, <defaultBlock>) ; 
 
-function ::= [(<typeParams>)]<functionName>(<params>) ;
+propertiesArray = properties(<object>);
 
-statement ::= <function> ;
+iterationFunction = loop(<array>, <functionDefinition>);
 
-statements ::= statement [ ; statements ]* ;
+whileFunction = loop(<condition>, <scope>);
 
-scope ::= { <statements> } | <statement> ;
+doWhileFunction = loop(<scope>, <condition>);
 
-paramDefinition ::= <value> : <type> ;
+loopFunction = <iterationFunction> | <whileFunction> | <doWhileFunction> ;
 
-paramsDefinition ::= paramDefinition [ , paramDefinition ]* ;
+controlFunction = <conditionalFunction> | <caseFunction> | <loopFunction> ;
 
-functionDefinition ::=  (<paramDefinition>) -> <scope> ;
+errorFunction = Error(<value>, <code>);
 
+exceptionFunction = Exception(<value>, <code>);
+
+throwFunction = throw(<errorFunction> | <exceptionFunction>);
+
+tryFunction = try(<scope>[, <catchScope>]*)[.catch(<functionDefinition>)];
+
+exceptionsFunctions = <throwFunction> | <tryFunction> | exceptionFunction | errorFunction ;
+
+systemFunctionCall = <setFunctions> | <mathFunction> | <comparisonFunction>
+                | <logicalFunction> | <propertiesArray> | <controlFunction>
+                | <exceptionsFunctions> ;
+
+booleanType = Boolean ;
+
+naturalType = Natural([size:default(Natural, 32)[, growable: default(Boolean, 1)]]) ;
+
+wholeType = Whole([size:default(Whole, 32)[, growable: default(Boolean, 1)]]) ;
+
+integerType = Integer([size:default(Integer, 32)[, growable: default(Boolean, 1)]]) ;
+
+rationalType = Rational([pSize:default(Natural, 32)[,qSize:default(Natural, 32)[, growable: default(Boolean, 1)]]]) ;
+
+realType = Real([iSize:default(Whole, 32)[, dSize:default(Whole, 32)[, growable: default(Boolean, 1)]]]) ;
+
+floatType = Float([sizeMultiplier:default(Integer, 1)[, growable: default(Boolean, 1)]) | Float([size:default(Natural, 32)[, mantissaSize:default(Natural, 23)[, growable: default(Boolean, 1)]]]) ;
+
+numericTypes = booleanType | naturalType | wholeType | integerType
+                | rationalType | realType | floatType ;
+
+type = <numericTypes> | <arrayType> | <textTypes> | <specialTypes> | <userTypes>;
 ```
 
 This is a simplified representation of the syntax rules using a BNF-like notation for some constructs in the 'Minimal' language. For a complete and accurate grammar, additional rules for various constructs, including expressions, operators, scoping, and more, would need to be defined.
