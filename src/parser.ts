@@ -49,6 +49,23 @@ interface BracketExpression extends ASTNode {
     expressions: ASTNode[];
 }
 
+
+interface Param extends ASTNode {
+    type: "Param";
+    identifier: Identifier;
+}
+
+interface Params extends ASTNode {
+    type: "Params";
+    params: Param[];
+}
+
+interface FunctionCall extends ASTNode {
+    type: "FunctionCall";
+    identifier: Identifier;
+    params: Params;
+}
+
 interface TypeAnnotation extends ASTNode {
     type: "TypeAnnotation";
     left: ASTNode;
@@ -98,6 +115,12 @@ export class Parser {
     }
 
     private parseStatement(): ASTNode {
+        if (true) {
+            const funCall = this.parseFunctionCall()
+            if (this.peek()?.type == TokenType.SemiColon){
+                this.advance();
+            }
+        }
         if (this.match(TokenType.Var)) {
             return this.parseVariableDeclaration();
         }
@@ -119,6 +142,48 @@ export class Parser {
             value,
         };
     }
+
+    private parseFunctionCall(): FunctionCall {
+        const identifier = this.consume();
+        if (identifier.type !== TokenType.Identifier) {
+            throw new Error("wroong");
+        }
+        if (!this.match(TokenType.OpenParentesis)) {
+            throw new Error("wroong");
+        }
+        const params = this.parseParams();
+        if (!this.match(TokenType.CloseParentesis)) {
+            throw new Error("wroong");
+        }
+
+        return {identifier: {type: "Identifier", name: identifier.value}, params: params} as FunctionCall
+    }
+
+    // private parseSystemFunctionCall(): SystemFunctionCall {
+
+    // }
+
+    private parseParam(): Param {
+        const token = this.consume();
+        // if (!(token.type == TokenType.Identifier) && !(token.type == TokenType.Literal))
+        if (!(token.type == TokenType.Identifier)) {
+            throw new Error("wroong");
+        }
+        return {type: "Param", identifier: {type: "Identifier", name: token.value}} as Param
+    }
+
+    private parseParams(): Params {
+        let params = [this.parseParam()];
+        while (this.match(TokenType.Comma)) {
+            params.push(this.parseParam());
+        }
+        return {type: "Params", params: params} as Params;
+    }
+
+    // private parseTypeParams(): TypeParams {
+
+    // }
+
 
     private check(type: TokenType): boolean {
         if (this.isAtEnd()) return false;
