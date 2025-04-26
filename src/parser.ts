@@ -4,6 +4,16 @@ interface ASTNode {
     type: string;
 }
 
+interface Stmt extends ASTNode{
+    type: "Statement";
+    statement: FunctionCall;
+}
+
+interface Stmts extends ASTNode{
+    type: "Statements";
+    statements: Stmt[];
+}
+
 interface NumberLiteral extends ASTNode {
     type: "NumberLiteral";
     value: number;
@@ -39,6 +49,11 @@ interface VariableDeclaration extends ASTNode {
     value: ASTNode;
 }
 
+interface Scope extends ASTNode {
+    type: "Scope";
+    statements: Stmt | Stmts
+}
+
 interface ScopeExpression extends ASTNode {
     type: "ScopeExpression";
     expressions: ASTNode[];
@@ -47,6 +62,17 @@ interface ScopeExpression extends ASTNode {
 interface BracketExpression extends ASTNode {
     type: "BracketExpression";
     expressions: ASTNode[];
+}
+
+interface ParamDefinition extends ASTNode {
+    type: "ParamDefinition";
+    name: Identifier;
+    varType: Identifier;
+}
+
+interface ParamsDefinition extends ASTNode {
+    type: "ParamsDefinition";
+    parameters: ParamDefinition[];
 }
 
 
@@ -64,6 +90,12 @@ interface FunctionCall extends ASTNode {
     type: "FunctionCall";
     identifier: Identifier;
     params: Params;
+}
+
+interface FunctionDefinition extends ASTNode {
+    type: "FunctionDefinition";
+    params: Params;
+    scope: Scope;
 }
 
 interface TypeAnnotation extends ASTNode {
@@ -114,17 +146,16 @@ export class Parser {
         return ast;
     }
 
-    private parseStatement(): ASTNode {
-        if (true) {
-            const funCall = this.parseFunctionCall()
-            if (this.peek()?.type == TokenType.SemiColon){
-                this.advance();
-            }
+    private parseStatement(): Stmt {
+        const funCall = this.parseFunctionCall()
+        if (this.check(TokenType.SemiColon)){
+            this.advance();
         }
-        if (this.match(TokenType.Var)) {
-            return this.parseVariableDeclaration();
-        }
-        return this.parseExpression();
+        return {type: "Statement", statement: funCall} as Stmt
+    }
+
+    private parseStatements(): Stmts {
+        ...
     }
 
     private parseVariableDeclaration(): VariableDeclaration {
@@ -143,6 +174,28 @@ export class Parser {
         };
     }
 
+    private parseScope(): Scope {
+        if (this.check(TokenType.OpenBrace)){
+            ...
+        }
+    }
+
+    private parseFunctionDefinition(): FunctionDefinition {
+        let open: Boolean = false
+        let params: ParamsDefinition;
+        let scope: Scope;
+        if (this.peek()?.type == TokenType.OpenParentesis) {
+            open = true;
+            this.advance();
+        }
+        params = this.parseParamsDefinition();
+        if (open && !this.match(TokenType.CloseParentesis)){
+            throw new Error("Unclosed parenthesis")
+        }
+        scope = parseScope();
+        return {type: "FunctionDefinition", params: params, scope: scope} as FunctionDefinition
+    }
+
     private parseFunctionCall(): FunctionCall {
         const identifier = this.consume();
         if (identifier.type !== TokenType.Identifier) {
@@ -159,9 +212,35 @@ export class Parser {
         return {identifier: {type: "Identifier", name: identifier.value}, params: params} as FunctionCall
     }
 
-    // private parseSystemFunctionCall(): SystemFunctionCall {
+    private parseParamsDefinition(): ParamsDefinition {
+        const params: ParamDefinition[] = []
+        do {
+            params.push(this.parseParamDefinition());
+        } while(this.peek()?.type == TokenType.Comma && this.consume());
 
-    // }
+        return {parameters: params} as ParamsDefinition
+
+    }
+
+    private parseParamDefinition(): ParamDefinition {
+        const name = this.consume();
+        if (name.type != TokenType.Identifier){
+            throw new Error("wrooong");
+        }
+        const type = this.consume();
+        if (type.type != TokenType.Identifier) {
+            throw new Error("wrooong");
+        }
+        if (!this.match(TokenType.Colon)){
+            throw new Error("wroong");
+        }
+
+        return {type: "ParamDefinition", name: {type: "Identifier", name: name.value}, varType: {type: "Identifier", name: type.value}} as ParamDefinition
+    }
+
+    private parseFunctionParams(): FunctionParams {
+
+    }
 
     private parseParam(): Param {
         const token = this.consume();
