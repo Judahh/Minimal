@@ -6,12 +6,13 @@ interface ASTNode {
 
 interface Stmt extends ASTNode{
     type: "Statement";
-    statement: FunctionCall;
+    statement: FunctionCall | FunctionDefinition;
 }
 
+// I'm not sure if I'm going to keep this
 interface Stmts extends ASTNode{
     type: "Statements";
-    statements: Stmt[];
+    statements: (Stmt | Scope)[];
 }
 
 interface NumberLiteral extends ASTNode {
@@ -43,15 +44,14 @@ interface AssignmentExpression extends ASTNode {
     right: ASTNode;
 }
 
-interface VariableDeclaration extends ASTNode {
-    type: "VariableDeclaration";
-    identifier: Identifier;
-    value: ASTNode;
+interface Expr extends ASTNode {  // how to best represent an expression node?
+    type: "Expression";
+    value: Expression;
 }
 
 interface Scope extends ASTNode {
     type: "Scope";
-    statements: Stmt | Stmts
+    statements: (Stmt | Scope)[]
 }
 
 interface ScopeExpression extends ASTNode {
@@ -75,6 +75,10 @@ interface ParamsDefinition extends ASTNode {
     parameters: ParamDefinition[];
 }
 
+interface FunctionParams extends ASTNode {
+    type: "FunctionParams";
+    parameters: ParamsDefinition;
+}
 
 interface Param extends ASTNode {
     type: "Param";
@@ -94,8 +98,8 @@ interface FunctionCall extends ASTNode {
 
 interface FunctionDefinition extends ASTNode {
     type: "FunctionDefinition";
-    params: Params;
-    scope: Scope;
+    params: FunctionParams;
+    body: Stmt | Scope;
 }
 
 interface TypeAnnotation extends ASTNode {
@@ -109,7 +113,7 @@ interface EOF extends ASTNode {
     type: "EOF";
 }
 
-export type Expression = NumberLiteral | Identifier | BinaryExpression | AssignmentExpression | ScopeExpression | BracketExpression | VariableDeclaration;
+export type Expression = FunctionCall | FunctionDefinition | NumberLiteral | Identifier | BinaryExpression | AssignmentExpression | ScopeExpression | BracketExpression;
 
 export class Parser {
     private tokens: Token[];
@@ -140,60 +144,62 @@ export class Parser {
 
     parse(): ASTNode[] {
         const ast: ASTNode[] = [];
-        while (this.current < this.tokens.length) {
+        while (!this.isAtEnd()) {
             ast.push(this.parseStatement());
         }
         return ast;
     }
+// error messages are still very much subject to change
+// also, some flattening of some of the node structures would probably go a long way
 
     private parseStatement(): Stmt {
-        const funCall = this.parseFunctionCall()
-        if (this.check(TokenType.SemiColon)){
-            this.advance();
+        let statement;
+        if (this.check(TokenType.Identifier)){  // provisional, needs better handling
+            statement = this.parseFunctionCall();
         }
-        return {type: "Statement", statement: funCall} as Stmt
+        else{
+            statement = this.parseFunctionDefinition(); // at the present moment, statements may only be function calls or function definitions
+        }
+        if (!this.check(TokenType.SemiColon)){
+            throw new Error("Expected ';' after statement");
+        }
+        this.advance();
+        return {type: "Statement", statement: statement} as Stmt
     }
 
-    private parseStatements(): Stmts {
-        ...
-    }
-
-    private parseVariableDeclaration(): VariableDeclaration {
-        const identifier = this.consume();
-        if (identifier.type !== TokenType.Identifier) {
-            throw new Error("Expected identifier after 'var'");
-        }
-        if (!this.match(TokenType.Equals)) {
-            throw new Error("Expected '=' in variable declaration");
-        }
-        const value = this.parseExpression();
-        return {
-            type: "VariableDeclaration",
-            identifier: { type: "Identifier", name: identifier.value },
-            value,
-        };
-    }
-
+    // I've defined scope to be a block scope and nothing else. A global scope is not a scope. Neither is the body of a function if the user does not employ braces,
+    // in which case it's being treated as an expression. This is consistent with the JS design and behavior.
     private parseScope(): Scope {
-        if (this.check(TokenType.OpenBrace)){
-            ...
+        let statements: (Stmt | Scope)[] = []
+        if (!this.match(TokenType.OpenBrace)){
+            throw new Error("missing opening brace");
         }
+        do{
+            if (this.check(TokenType.OpenBrace)){
+                statements.push(this.parseScope());
+            }
+            this.parseStatement();        
+        } while(!this.isAtEnd && !this.check(TokenType.CloseBrace))
+        if (this.isAtEnd()) {
+            throw new Error("Unexpected EOF");
+        }
+        this.advance();
+        return {type: "Scope", statements: statements} as Scope;
     }
 
     private parseFunctionDefinition(): FunctionDefinition {
-        let open: Boolean = false
-        let params: ParamsDefinition;
-        let scope: Scope;
-        if (this.peek()?.type == TokenType.OpenParentesis) {
-            open = true;
-            this.advance();
+        let params = this.parseFunctionParams();
+        let body: (Expr | Scope)
+        if (!this.check(TokenType.Arrow)){
+            throw new Error(`unexpected token: ${this.peek()}`);
         }
-        params = this.parseParamsDefinition();
-        if (open && !this.match(TokenType.CloseParentesis)){
-            throw new Error("Unclosed parenthesis")
+        this.advance();
+        if (this.check(TokenType.OpenBrace))
+            body = this.parseScope();
+        else{
+            body = this.parseExpression();
         }
-        scope = parseScope();
-        return {type: "FunctionDefinition", params: params, scope: scope} as FunctionDefinition
+        return {type: "FunctionDefinition", params: params, body: body} as FunctionDefinition
     }
 
     private parseFunctionCall(): FunctionCall {
@@ -205,46 +211,58 @@ export class Parser {
             throw new Error("wroong");
         }
         const params = this.parseParams();
-        if (!this.match(TokenType.CloseParentesis)) {
-            throw new Error("wroong");
+        if (!this.check(TokenType.CloseParentesis)) {
+            throw new Error(`unexpected token: '${this.peek()?.value}'`);
         }
+        this.advance();
 
         return {identifier: {type: "Identifier", name: identifier.value}, params: params} as FunctionCall
     }
+
 
     private parseParamsDefinition(): ParamsDefinition {
         const params: ParamDefinition[] = []
         do {
             params.push(this.parseParamDefinition());
-        } while(this.peek()?.type == TokenType.Comma && this.consume());
-
+            if (!this.check(TokenType.Comma) && !this.check(TokenType.CloseParentesis)){
+                throw new Error("expected ',' after param definition");
+            }
+        } while(this.check(TokenType.Comma) && this.advance());
         return {parameters: params} as ParamsDefinition
 
     }
 
     private parseParamDefinition(): ParamDefinition {
+        if (!this.check(TokenType.Identifier)){
+            throw new Error("expected parameter");
+        }
         const name = this.consume();
-        if (name.type != TokenType.Identifier){
-            throw new Error("wrooong");
+        if (!this.match(TokenType.Colon)){
+            throw new Error("expected type declaration after parameter");
         }
         const type = this.consume();
         if (type.type != TokenType.Identifier) {
             throw new Error("wrooong");
-        }
-        if (!this.match(TokenType.Colon)){
-            throw new Error("wroong");
         }
 
         return {type: "ParamDefinition", name: {type: "Identifier", name: name.value}, varType: {type: "Identifier", name: type.value}} as ParamDefinition
     }
 
     private parseFunctionParams(): FunctionParams {
-
+        let params;
+        let unclosedParenthesis = this.check(TokenType.OpenParentesis);
+        if (unclosedParenthesis) {
+            this.advance();
+        }
+        params = this.parseParamsDefinition();
+        if (unclosedParenthesis && !this.match(TokenType.CloseParentesis)){
+            throw new Error("unclosed parenthesis")
+        }
+        return {type: "FunctionParams", parameters: params} as FunctionParams
     }
 
     private parseParam(): Param {
         const token = this.consume();
-        // if (!(token.type == TokenType.Identifier) && !(token.type == TokenType.Literal))
         if (!(token.type == TokenType.Identifier)) {
             throw new Error("wroong");
         }
@@ -258,10 +276,12 @@ export class Parser {
         }
         return {type: "Params", params: params} as Params;
     }
-
-    // private parseTypeParams(): TypeParams {
-
-    // }
+    
+    // an expression is probably more than that, but it'll do for now.
+    private parseExpression(): Expr {
+        let funcCall = this.parseFunctionCall();
+        return {type: "Expression", value: funcCall};
+    }
 
 
     private check(type: TokenType): boolean {
@@ -282,130 +302,5 @@ export class Parser {
         return this.tokens[this.current - 1];
     }
 
-    private parseExpression(): ASTNode {
-        let left = this.parsePrimary();
-    
-        while (!this.isAtEnd() && (this.check(TokenType.OpenParentesis) || this.check(TokenType.Colon))) {
-            if (this.check(TokenType.OpenParentesis)) {
-                this.advance(); // Consume the '('
-                const right = this.parseExpression();
-                if (!this.match(TokenType.CloseParentesis)) {
-                    throw new Error(`Expected ')' after expression ${this.tokens[this.current].line}:${this.tokens[this.current].column}`);
-                }
-                left = { type: "BinaryExpression", left, operator: "()", right } as BinaryExpression;
-            } else if (this.check(TokenType.Colon)) {
-                this.advance(); // Consume the ':'
-                const right = this.parseExpression();
-                left = { type: "TypeAnnotation", left, operator: ":", right } as TypeAnnotation;
-            }
-        }
-    
-        return left;
-    }
 
-    private parseBracketExpression(): ASTNode {
-        const expressions: ASTNode[] = [];
-
-        while (!this.isAtEnd() && !(this.check(TokenType.CloseBracket) && this.braceCount === 0)) {
-            if (this.check(TokenType.OpenBracket)) {
-                this.bracketCount++;
-            } else if (this.check(TokenType.CloseBracket)) {
-                this.bracketCount--;
-            }
-            expressions.push(this.parseExpression());
-        }
-
-        if (!this.match(TokenType.CloseBracket)) {
-            throw new Error(`Expected ']' after scope expression ${this.tokens[this.current].line}:${this.tokens[this.current].column}`);
-        }
-
-        return { type: "BracketExpression", expressions } as BracketExpression;
-    }
-
-    private parseScopeExpression(): ASTNode {
-        const expressions: ASTNode[] = [];
-
-        while (!this.isAtEnd() && !(this.check(TokenType.CloseBrace) && this.braceCount === 0)) {
-            if (this.check(TokenType.OpenBrace)) {
-                this.braceCount++;
-            } else if (this.check(TokenType.CloseBrace)) {
-                this.braceCount--;
-            }
-            expressions.push(this.parseExpression());
-        }
-
-        if (!this.match(TokenType.CloseBrace)) {
-            throw new Error(`Expected '}' after scope expression at ${this.tokens[this.current].line}:${this.tokens[this.current].column}`);
-        }
-
-        return { type: "ScopeExpression", expressions } as ScopeExpression;
-    }
-
-    private parsePrimary(): ASTNode {
-        const token = this.consume();
-
-        if (token.type === TokenType.Number) {
-            return { type: "NumberLiteral", value: parseFloat(token.value) } as NumberLiteral;
-        }
-        if (token.type === TokenType.String) {
-            return { type: "StringLiteral", value: token.value } as StringLiteral
-        }
-        if (token.type === TokenType.Identifier) {
-            return { type: "Identifier", name: token.value } as Identifier;
-        }
-        if (token.type === TokenType.OpenParentesis) {
-            const expression = this.parseExpression();
-            if (!this.match(TokenType.CloseParentesis)) {
-                throw new Error(`Expected ')' after expression '${JSON.stringify(expression)}' at ${token.line}:${token.column}`);
-            }
-            return expression;
-        }
-        if (token.type === TokenType.OpenBrace) {
-            const expression = this.parseScopeExpression();
-            if (!this.match(TokenType.CloseBrace)) {
-                throw new Error(`Expected '}' after expression '${JSON.stringify(expression)}' at ${token.line}:${token.column}`);
-            }
-            return expression;
-        }
-
-        if (token.type === TokenType.OpenBracket) {
-            const expression = this.parseBracketExpression();
-            if (!this.match(TokenType.CloseBracket)) {
-                throw new Error(`Expected ']' after expression '${JSON.stringify(expression)}' at ${token.line}:${token.column}`);
-            }
-            return expression;
-        }
-
-        if (token.type === TokenType.CustomOperator) {
-            const left = this.parseExpression();
-            const right = this.parseExpression();
-            return { type: "BinaryExpression", left, operator: token.value, right } as BinaryExpression;
-        }
-
-        if (token.type === TokenType.SemiColon) {
-            return { type: token.typeName } as ASTNode;
-        }
-
-        if (token.type === TokenType.Equals) {
-            const left = this.parsePrimary();
-            const right = this.parseExpression();
-            return { type: "AssignmentExpression", left, operator: token.value, right } as AssignmentExpression;
-        }
-
-        if (token.type === TokenType.Colon) {
-            const left = this.parsePrimary();
-            const right = this.parseExpression();
-            return { type: "TypeAnnotation", left, operator: token.value, right } as TypeAnnotation;
-        }
-
-        if (token.type === TokenType.Var) {
-            return this.parseVariableDeclaration();
-        }
-
-        if (token.type === TokenType.EOF) {
-            return { type: "EOF" } as ASTNode;
-        }
-
-        throw new Error(`Unexpected token: '${token.value}', type: ${token.type}`);
-    }
 }

@@ -20,7 +20,7 @@ export enum TokenType {
 	SemiColon, // 13 - ;
 	Colon, // 14 - :
 	// Arrow
-	Arrow, // 15 - =>
+	Arrow, // 15 - ->
 	// Unkown
 	Unknown, // 16
 	// Var Keyword
@@ -48,6 +48,7 @@ const simpleTokenToTokenType: { [str: string]: TokenType } = {
 	"}": TokenType.CloseBrace,
 	"[": TokenType.OpenBracket,
 	"]": TokenType.CloseBracket,
+	"->": TokenType.Arrow,
 	",": TokenType.Comma,
 	".": TokenType.Dot,
 	";": TokenType.SemiColon,
