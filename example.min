@@ -18,14 +18,14 @@ new("Cat", {
         set(this.name, name);
     };
 
-    sound = () -> {
+    new("sound", () -> {
         -> "Meow";
-    };
+    });
 
-    eat = (food: PetFood) -> {
+    new("eat", (food: PetFood) -> {
         log("Yum yum!");
-        set(food.portion, food.portion - 1);
-    };
+        set(food.portion, subtract(food.portion, 1));
+    });
 });
 
 new("Dog", {
@@ -35,14 +35,14 @@ new("Dog", {
         set(this.name, name);
     };
 
-    sound = () -> {
+    new("sound", () -> {
         -> "Woof";
-    };
+    });
 
-    eat = (food: PetFood) -> {
+     new("eat", (food: PetFood) -> {
         log("Yum yum!");
-        set(food.portion, food.portion - 1);
-    };
+        set(food.portion, subtract(food.portion, 1));
+    });
 });
 
 new("Pet", or(Cat, Dog));
@@ -116,7 +116,7 @@ new("main", () -> {
     PetEngine.giveFood(cat, catFood);
     PetEngine.giveFood(dog, dogFood);
 
-    if(dogFood.portion >= catFood.portion, {
+    if(greaterThanOrEquals(dogFood.portion, catFood.portion), {
         log("Doggy has more food! Or they have the same amount.");
     },{
         log("Kitty has more food!");

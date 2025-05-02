@@ -749,46 +749,60 @@
     "column": 6
   },
   {
-    "value": "sound",
+    "value": "new",
     "type": 1,
     "typeName": "Identifier",
     "line": 21,
     "column": 5
   },
   {
-    "value": "=",
-    "type": 2,
-    "typeName": "Equals",
+    "value": "(",
+    "type": 5,
+    "typeName": "OpenParentesis",
+    "line": 21,
+    "column": 6
+  },
+  {
+    "value": "sound",
+    "type": 18,
+    "typeName": "String",
     "line": 21,
     "column": 7
+  },
+  {
+    "value": ",",
+    "type": 11,
+    "typeName": "Comma",
+    "line": 21,
+    "column": 10
   },
   {
     "value": "(",
     "type": 5,
     "typeName": "OpenParentesis",
     "line": 21,
-    "column": 9
+    "column": 12
   },
   {
     "value": ")",
     "type": 6,
     "typeName": "CloseParentesis",
     "line": 21,
-    "column": 10
+    "column": 13
   },
   {
     "value": "->",
     "type": 15,
     "typeName": "Arrow",
     "line": 21,
-    "column": 13
+    "column": 16
   },
   {
     "value": "{",
     "type": 7,
     "typeName": "OpenBrace",
     "line": 21,
-    "column": 15
+    "column": 18
   },
   {
     "value": "->",
@@ -819,74 +833,95 @@
     "column": 5
   },
   {
-    "value": ";",
-    "type": 13,
-    "typeName": "SemiColon",
+    "value": ")",
+    "type": 6,
+    "typeName": "CloseParentesis",
     "line": 23,
     "column": 6
   },
   {
-    "value": "eat",
+    "value": ";",
+    "type": 13,
+    "typeName": "SemiColon",
+    "line": 23,
+    "column": 7
+  },
+  {
+    "value": "new",
     "type": 1,
     "typeName": "Identifier",
     "line": 25,
     "column": 5
   },
   {
-    "value": "=",
-    "type": 2,
-    "typeName": "Equals",
+    "value": "(",
+    "type": 5,
+    "typeName": "OpenParentesis",
+    "line": 25,
+    "column": 6
+  },
+  {
+    "value": "eat",
+    "type": 18,
+    "typeName": "String",
     "line": 25,
     "column": 7
+  },
+  {
+    "value": ",",
+    "type": 11,
+    "typeName": "Comma",
+    "line": 25,
+    "column": 10
   },
   {
     "value": "(",
     "type": 5,
     "typeName": "OpenParentesis",
     "line": 25,
-    "column": 9
+    "column": 12
   },
   {
     "value": "food",
     "type": 1,
     "typeName": "Identifier",
     "line": 25,
-    "column": 10
+    "column": 13
   },
   {
     "value": ":",
     "type": 14,
     "typeName": "Colon",
     "line": 25,
-    "column": 11
+    "column": 14
   },
   {
     "value": "PetFood",
     "type": 1,
     "typeName": "Identifier",
     "line": 25,
-    "column": 13
+    "column": 16
   },
   {
     "value": ")",
     "type": 6,
     "typeName": "CloseParentesis",
     "line": 25,
-    "column": 14
+    "column": 17
   },
   {
     "value": "->",
     "type": 15,
     "typeName": "Arrow",
     "line": 25,
-    "column": 17
+    "column": 20
   },
   {
     "value": "{",
     "type": 7,
     "typeName": "OpenBrace",
     "line": 25,
-    "column": 19
+    "column": 22
   },
   {
     "value": "log",
@@ -966,53 +1001,74 @@
     "column": 14
   },
   {
-    "value": "food",
+    "value": "subtract",
     "type": 1,
     "typeName": "Identifier",
     "line": 27,
     "column": 16
   },
   {
-    "value": ".",
-    "type": 12,
-    "typeName": "Dot",
+    "value": "(",
+    "type": 5,
+    "typeName": "OpenParentesis",
     "line": 27,
     "column": 17
   },
   {
-    "value": "portion",
+    "value": "food",
     "type": 1,
     "typeName": "Identifier",
     "line": 27,
     "column": 18
   },
   {
-    "value": "-",
-    "type": 3,
-    "typeName": "Hyphen",
+    "value": ".",
+    "type": 12,
+    "typeName": "Dot",
+    "line": 27,
+    "column": 19
+  },
+  {
+    "value": "portion",
+    "type": 1,
+    "typeName": "Identifier",
     "line": 27,
     "column": 20
+  },
+  {
+    "value": ",",
+    "type": 11,
+    "typeName": "Comma",
+    "line": 27,
+    "column": 21
   },
   {
     "value": "1",
     "type": 0,
     "typeName": "Number",
     "line": 27,
-    "column": 22
+    "column": 23
   },
   {
     "value": ")",
     "type": 6,
     "typeName": "CloseParentesis",
     "line": 27,
-    "column": 23
+    "column": 24
+  },
+  {
+    "value": ")",
+    "type": 6,
+    "typeName": "CloseParentesis",
+    "line": 27,
+    "column": 25
   },
   {
     "value": ";",
     "type": 13,
     "typeName": "SemiColon",
     "line": 27,
-    "column": 24
+    "column": 26
   },
   {
     "value": "}",
@@ -1022,11 +1078,18 @@
     "column": 5
   },
   {
+    "value": ")",
+    "type": 6,
+    "typeName": "CloseParentesis",
+    "line": 28,
+    "column": 6
+  },
+  {
     "value": ";",
     "type": 13,
     "typeName": "SemiColon",
     "line": 28,
-    "column": 6
+    "column": 7
   },
   {
     "value": "}",
@@ -1253,46 +1316,60 @@
     "column": 6
   },
   {
-    "value": "sound",
+    "value": "new",
     "type": 1,
     "typeName": "Identifier",
     "line": 38,
     "column": 5
   },
   {
-    "value": "=",
-    "type": 2,
-    "typeName": "Equals",
+    "value": "(",
+    "type": 5,
+    "typeName": "OpenParentesis",
+    "line": 38,
+    "column": 6
+  },
+  {
+    "value": "sound",
+    "type": 18,
+    "typeName": "String",
     "line": 38,
     "column": 7
+  },
+  {
+    "value": ",",
+    "type": 11,
+    "typeName": "Comma",
+    "line": 38,
+    "column": 10
   },
   {
     "value": "(",
     "type": 5,
     "typeName": "OpenParentesis",
     "line": 38,
-    "column": 9
+    "column": 12
   },
   {
     "value": ")",
     "type": 6,
     "typeName": "CloseParentesis",
     "line": 38,
-    "column": 10
+    "column": 13
   },
   {
     "value": "->",
     "type": 15,
     "typeName": "Arrow",
     "line": 38,
-    "column": 13
+    "column": 16
   },
   {
     "value": "{",
     "type": 7,
     "typeName": "OpenBrace",
     "line": 38,
-    "column": 15
+    "column": 18
   },
   {
     "value": "->",
@@ -1323,74 +1400,95 @@
     "column": 5
   },
   {
-    "value": ";",
-    "type": 13,
-    "typeName": "SemiColon",
+    "value": ")",
+    "type": 6,
+    "typeName": "CloseParentesis",
     "line": 40,
     "column": 6
   },
   {
-    "value": "eat",
+    "value": ";",
+    "type": 13,
+    "typeName": "SemiColon",
+    "line": 40,
+    "column": 7
+  },
+  {
+    "value": "new",
     "type": 1,
     "typeName": "Identifier",
     "line": 42,
-    "column": 5
-  },
-  {
-    "value": "=",
-    "type": 2,
-    "typeName": "Equals",
-    "line": 42,
-    "column": 7
+    "column": 6
   },
   {
     "value": "(",
     "type": 5,
     "typeName": "OpenParentesis",
     "line": 42,
-    "column": 9
+    "column": 7
+  },
+  {
+    "value": "eat",
+    "type": 18,
+    "typeName": "String",
+    "line": 42,
+    "column": 8
+  },
+  {
+    "value": ",",
+    "type": 11,
+    "typeName": "Comma",
+    "line": 42,
+    "column": 11
+  },
+  {
+    "value": "(",
+    "type": 5,
+    "typeName": "OpenParentesis",
+    "line": 42,
+    "column": 13
   },
   {
     "value": "food",
     "type": 1,
     "typeName": "Identifier",
     "line": 42,
-    "column": 10
+    "column": 14
   },
   {
     "value": ":",
     "type": 14,
     "typeName": "Colon",
     "line": 42,
-    "column": 11
+    "column": 15
   },
   {
     "value": "PetFood",
     "type": 1,
     "typeName": "Identifier",
     "line": 42,
-    "column": 13
+    "column": 17
   },
   {
     "value": ")",
     "type": 6,
     "typeName": "CloseParentesis",
     "line": 42,
-    "column": 14
+    "column": 18
   },
   {
     "value": "->",
     "type": 15,
     "typeName": "Arrow",
     "line": 42,
-    "column": 17
+    "column": 21
   },
   {
     "value": "{",
     "type": 7,
     "typeName": "OpenBrace",
     "line": 42,
-    "column": 19
+    "column": 23
   },
   {
     "value": "log",
@@ -1470,53 +1568,74 @@
     "column": 14
   },
   {
-    "value": "food",
+    "value": "subtract",
     "type": 1,
     "typeName": "Identifier",
     "line": 44,
     "column": 16
   },
   {
-    "value": ".",
-    "type": 12,
-    "typeName": "Dot",
+    "value": "(",
+    "type": 5,
+    "typeName": "OpenParentesis",
     "line": 44,
     "column": 17
   },
   {
-    "value": "portion",
+    "value": "food",
     "type": 1,
     "typeName": "Identifier",
     "line": 44,
     "column": 18
   },
   {
-    "value": "-",
-    "type": 3,
-    "typeName": "Hyphen",
+    "value": ".",
+    "type": 12,
+    "typeName": "Dot",
+    "line": 44,
+    "column": 19
+  },
+  {
+    "value": "portion",
+    "type": 1,
+    "typeName": "Identifier",
     "line": 44,
     "column": 20
+  },
+  {
+    "value": ",",
+    "type": 11,
+    "typeName": "Comma",
+    "line": 44,
+    "column": 21
   },
   {
     "value": "1",
     "type": 0,
     "typeName": "Number",
     "line": 44,
-    "column": 22
+    "column": 23
   },
   {
     "value": ")",
     "type": 6,
     "typeName": "CloseParentesis",
     "line": 44,
-    "column": 23
+    "column": 24
+  },
+  {
+    "value": ")",
+    "type": 6,
+    "typeName": "CloseParentesis",
+    "line": 44,
+    "column": 25
   },
   {
     "value": ";",
     "type": 13,
     "typeName": "SemiColon",
     "line": 44,
-    "column": 24
+    "column": 26
   },
   {
     "value": "}",
@@ -1526,11 +1645,18 @@
     "column": 5
   },
   {
+    "value": ")",
+    "type": 6,
+    "typeName": "CloseParentesis",
+    "line": 45,
+    "column": 6
+  },
+  {
     "value": ";",
     "type": 13,
     "typeName": "SemiColon",
     "line": 45,
-    "column": 6
+    "column": 7
   },
   {
     "value": "}",
@@ -4312,32 +4438,46 @@
     "column": 6
   },
   {
-    "value": "dogFood",
+    "value": "greaterThanOrEquals",
     "type": 1,
     "typeName": "Identifier",
     "line": 113,
     "column": 7
   },
   {
-    "value": ".",
-    "type": 12,
-    "typeName": "Dot",
+    "value": "(",
+    "type": 5,
+    "typeName": "OpenParentesis",
     "line": 113,
     "column": 8
   },
   {
-    "value": "portion",
+    "value": "dogFood",
     "type": 1,
     "typeName": "Identifier",
     "line": 113,
     "column": 9
   },
   {
-    "value": ">=",
-    "type": 4,
-    "typeName": "CustomOperator",
+    "value": ".",
+    "type": 12,
+    "typeName": "Dot",
+    "line": 113,
+    "column": 10
+  },
+  {
+    "value": "portion",
+    "type": 1,
+    "typeName": "Identifier",
     "line": 113,
     "column": 11
+  },
+  {
+    "value": ",",
+    "type": 11,
+    "typeName": "Comma",
+    "line": 113,
+    "column": 12
   },
   {
     "value": "catFood",
@@ -4361,18 +4501,25 @@
     "column": 16
   },
   {
+    "value": ")",
+    "type": 6,
+    "typeName": "CloseParentesis",
+    "line": 113,
+    "column": 17
+  },
+  {
     "value": ",",
     "type": 11,
     "typeName": "Comma",
     "line": 113,
-    "column": 17
+    "column": 18
   },
   {
     "value": "{",
     "type": 7,
     "typeName": "OpenBrace",
     "line": 113,
-    "column": 19
+    "column": 20
   },
   {
     "value": "log",

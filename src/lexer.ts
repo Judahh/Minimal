@@ -4,7 +4,7 @@ export enum TokenType {
 	Identifier, // 1
 
 	// Operators
-	Equals, // 2
+	// Equals, // 2
 	Hyphen, // 3
 	CustomOperator, // 4
 	// Grouping
@@ -40,7 +40,7 @@ export enum TokenType {
 
 
 const simpleTokenToTokenType: { [str: string]: TokenType } = {
-	"=": TokenType.Equals,
+	// "=": TokenType.Equals,
 	"-": TokenType.Hyphen,
 	"(": TokenType.OpenParentesis,
 	")": TokenType.CloseParentesis,
@@ -96,7 +96,7 @@ export interface Token {
 function token(value = "", type: TokenType, line: number, column: number, isFinal?: boolean): Token {
     if (isFinal) {
         return { value, type, isFinal, typeName: TokenType[type], line, column };
-    } else if (type == TokenType.CustomOperator || type == TokenType.Equals || type == TokenType.Arrow) {
+    } else if (type == TokenType.CustomOperator || type == TokenType.Arrow) {
         isFinal = false;
         return { value, type, isFinal, typeName: TokenType[type], line, column };
     }
@@ -248,7 +248,7 @@ export function tokenize(sourceCode: string): Token[] {
         // BEGIN PARSING ONE CHARACTER TOKENS
         const tempToken = getTokenType(char, lastToken, line, column);
         if (tempToken.type != TokenType.Unknown) {
-            if (lastToken?.type == TokenType.CustomOperator && (tempToken.type == TokenType.Equals || tempToken.type == TokenType.Arrow || tempToken.type == TokenType.Colon || tempToken.type == TokenType.Dot)) {
+            if (lastToken?.type == TokenType.CustomOperator && (tempToken.type == TokenType.Arrow || tempToken.type == TokenType.Colon || tempToken.type == TokenType.Dot)) {
                 tokens[tokens.length - 1].value += tempToken.value;
                 tokens[tokens.length - 1].type = TokenType.CustomOperator;
                 src.shift();
@@ -299,7 +299,7 @@ export function tokenize(sourceCode: string): Token[] {
             }
         } else {
             if (!isValidChar(char)) {
-                if (lastToken?.type == TokenType.CustomOperator || lastToken?.type == TokenType.Equals || lastToken?.type == TokenType.Arrow) {
+                if (lastToken?.type == TokenType.CustomOperator || lastToken?.type == TokenType.Arrow) {
                     tokens[tokens.length - 1].value += src.shift();
                     tokens[tokens.length - 1].type = TokenType.CustomOperator;
                 } else {
@@ -334,7 +334,7 @@ export function tokenize(sourceCode: string): Token[] {
                     }
                 } else if (isSkippable(char)) {
                     // Skip unneeded chars.
-                    if (lastToken?.type == TokenType.CustomOperator || lastToken?.type == TokenType.Equals || lastToken?.type == TokenType.Arrow) {
+                    if (lastToken?.type == TokenType.CustomOperator || lastToken?.type == TokenType.Arrow) {
                         tokens[tokens.length - 1].isFinal = true;
                     }
                     tokens.push(token(src.shift(), TokenType.Skippable, line, column));
