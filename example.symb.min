@@ -1,21 +1,21 @@
 import("global");
 
-new("PetFood", {
-    (String)new("name");
-    (Unsigned(Number))new("price");
-    (Natural)new("portion");
+PetFood = {
+    name: String;
+    price: Unsigned(Number);
+    portion: Natural;
     (name, price, portion) -> {
-        set(this.name, name);
-        set(this.price, price);
-        set(this.portion, portion);
+        this.name = name;
+        this.price = price;
+        this.portion = portion;
     };
-});
+};
 
-new("Cat", {
-    (String)new("name");
+Cat = {
+    name: String;
 
     (name) -> {
-        set(this.name, name);
+        this.name = name;
     };
 
     sound = () -> {
@@ -24,15 +24,15 @@ new("Cat", {
 
     eat = (food: PetFood) -> {
         log("Yum yum!");
-        set(food.portion, food.portion - 1);
+        food.portion = food.portion - 1;
     };
-});
+};
 
-new("Dog", {
-    (String)new("name");
+Dog = {
+    name: String;
 
     (name) -> {
-        set(this.name, name);
+        this.name = name;
     };
 
     sound = () -> {
@@ -41,52 +41,54 @@ new("Dog", {
 
     eat = (food: PetFood) -> {
         log("Yum yum!");
-        set(food.portion, food.portion - 1);
+        food.portion = food.portion - 1;
     };
-});
+};
 
-new("Pet", or(Cat, Dog));
+Pet = Cat | Dog;
 
-new("PetEngine", {
-    new("generateFood", (pet: Pet) -> {
-        (PetFood)new("petFood");
-
+PetEngine = {
+    generateFood = (pet: Pet) -> {
+        petFood: PetFood;
         if (pet.isInstanceOf(Cat), {
-            set(petFood, PetFood("Fish", 10, 100));
+            petFood = PetFood("Fish", 10, 100);
         },{
-            set(petFood, PetFood("Meat", 20, 200));
+            petFood = PetFood("Meat", 20, 200);
         });
         -> petFood;
-    });
+    };
 
-    new("generateFood2", (pet: Pet) -> {
+    generateFood2 = (pet: Pet) -> {
+        petFood: PetFood;
         if(pet.isInstanceOf(Cat), {
             final.-> PetFood("Fish", 20, 200);
         },{
             final.-> PetFood("Meat", 10, 100);
         });
-    });
+    };
 
-    new("generateFood3", (pet: Pet) -> {
+    generateFood3 = (pet: Pet) -> {
+        petFood: PetFood;
         -> if(pet.isInstanceOf(Cat),
-            PetFood("Fish", 30, 300),
-            PetFood("Meat", 30, 300)
+            PetFood("Fish", 30, 300);
+        ,   PetFood("Meat", 30, 300);
         );
-    });
+    };
 
-    new("generateFood4", (pet: Pet) -> {
-        if(pet.isInstanceOf(Cat), {
+    generateFood4 = (pet: Pet) -> {
+        petFood: PetFood;
+        if(pet.isInstanceOf(Cat), [
             -> PetFood("Fish", 40, 400);
-        },{
+        ],[
             -> PetFood("Meat", 40, 400);
-        });
-    });
+        ]);
+    };
 
-    new("giveFood", (pet: Pet, petFood: PetFood) -> {
+    giveFood = (pet: Pet, petFood: PetFood) -> {
         log("Here is your food, " + pet.name + "!");
         pet.eat(petFood);
-    });
-});
+    };
+};
 
 # Some Initial Comment
 
@@ -97,13 +99,13 @@ new("PetEngine", {
  # - Returns void.
  # - Prints the name, price, and portion of the food.
 ##
-new("main", () -> {
-    new("cat", Cat("Kitty"));
-    new("dog", Dog("Doggy"## Some Double Internal Comment ##)); # Some Comment
+main = () -> {
+    $ cat = Cat("Kitty"); # Optional $ keyword for explicit variable declaration
+    dog = Dog("Doggy"## Some Double Internal Comment ##); # Without optional $ keyword for implicit variable declaration
 
     # Some Comment Over Comment
-    new("catFood", FoodGenerator.generate(cat##blooou##));
-    new("dogFood", FoodGenerator.generate(dog));
+    catFood = FoodGenerator.generate(cat##blooou##);
+    dogFood = FoodGenerator.generate(dog);
 
     log(catFood.name); #Some Comment .f.ewveovkerv : ;}~l^}DPSL}A
     log(catFood.price);
@@ -124,6 +126,4 @@ new("main", () -> {
     log("Doggy has '" + dogFood.portion + "' portions of food.");
     log("Kitty has '" + catFood.portion + "' portions of food.");
     log("Doggy first Letter is '" + 'D' + "'.");
-});
-
-main();
+};
