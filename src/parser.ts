@@ -1,116 +1,116 @@
 import { TokenError } from "./errors";
 import { TokenType, Token } from "./lexer";
 
-interface ASTNode {
+export interface ASTNode {
     type: string;
 }
 
-interface Stmt extends ASTNode{
+export interface Stmt extends ASTNode{
     type: "Statement";
     statement: FunctionCall | FunctionDefinition;
 }
 
 // I'm not sure if I'm going to keep this
-interface Stmts extends ASTNode{
+export interface Stmts extends ASTNode{
     type: "Statements";
     statements: (Stmt | Scope)[];
 }
 
-interface NumberLiteral extends ASTNode {
+export interface NumberLiteral extends ASTNode {
     type: "NumberLiteral";
     value: number;
 }
 
-interface StringLiteral extends ASTNode {
+export interface StringLiteral extends ASTNode {
     type: "StringLiteral";
     value: string;
 }
 
-interface Identifier extends ASTNode {
+export interface Identifier extends ASTNode {
     type: "Identifier";
     name: string;
 }
 
-interface BinaryExpression extends ASTNode {
+export interface BinaryExpression extends ASTNode {
     type: "BinaryExpression";
     left: ASTNode;
     operator: string;
     right: ASTNode;
 }
 
-interface AssignmentExpression extends ASTNode {
+export interface AssignmentExpression extends ASTNode {
     type: "AssignmentExpression";
     left: ASTNode;
     operator: string;
     right: ASTNode;
 }
 
-interface Expr extends ASTNode {  // how to best represent an expression node?
+export interface Expr extends ASTNode {  // how to best represent an expression node?
     type: "Expression";
     value: Expression;
 }
 
-interface Scope extends ASTNode {
+export interface Scope extends ASTNode {
     type: "Scope";
     statements: (Stmt | Scope)[]
 }
 
-interface ScopeExpression extends ASTNode {
+export interface ScopeExpression extends ASTNode {
     type: "ScopeExpression";
     expressions: ASTNode[];
 }
 
-interface BracketExpression extends ASTNode {
+export interface BracketExpression extends ASTNode {
     type: "BracketExpression";
     expressions: ASTNode[];
 }
 
-interface ParamDefinition extends ASTNode {
+export interface ParamDefinition extends ASTNode {
     type: "ParamDefinition";
     name: Identifier;
     varType: Identifier;
 }
 
-interface ParamsDefinition extends ASTNode {
+export interface ParamsDefinition extends ASTNode {
     type: "ParamsDefinition";
     parameters: ParamDefinition[];
 }
 
-interface FunctionParams extends ASTNode {
+export interface FunctionParams extends ASTNode {
     type: "FunctionParams";
     parameters: ParamsDefinition;
 }
 
-interface Param extends ASTNode {
+export interface Param extends ASTNode {
     type: "Param";
     identifier: Identifier;
 }
 
-interface Params extends ASTNode {
+export interface Params extends ASTNode {
     type: "Params";
     params: Param[];
 }
 
-interface FunctionCall extends ASTNode {
+export interface FunctionCall extends ASTNode {
     type: "FunctionCall";
     identifier: Identifier;
     params: Params;
 }
 
-interface FunctionDefinition extends ASTNode {
+export interface FunctionDefinition extends ASTNode {
     type: "FunctionDefinition";
     params: FunctionParams;
     body: Stmt | Scope;
 }
 
-interface TypeAnnotation extends ASTNode {
+export interface TypeAnnotation extends ASTNode {
     type: "TypeAnnotation";
     left: ASTNode;
     operator: string;
     right: ASTNode;
 }
 
-interface EOF extends ASTNode {
+export interface EOF extends ASTNode {
     type: "EOF";
 }
 
