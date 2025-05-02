@@ -8,28 +8,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 1,
     "column": 2
   },
   {
     "value": "global",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 1,
     "column": 3
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 1,
     "column": 6
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 1,
     "column": 7
@@ -43,35 +43,35 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 3,
     "column": 2
   },
   {
     "value": "PetFood",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 3,
     "column": 3
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 3,
     "column": 6
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 3,
     "column": 8
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 4,
     "column": 5
@@ -85,7 +85,7 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 4,
     "column": 7
@@ -99,35 +99,35 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 4,
     "column": 9
   },
   {
     "value": "name",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 4,
     "column": 10
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 4,
     "column": 13
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 4,
     "column": 14
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 5,
     "column": 5
@@ -141,7 +141,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 5,
     "column": 7
@@ -155,14 +155,14 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 5,
     "column": 9
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 5,
     "column": 10
@@ -176,35 +176,35 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 5,
     "column": 12
   },
   {
     "value": "price",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 5,
     "column": 13
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 5,
     "column": 16
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 5,
     "column": 17
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 6,
     "column": 5
@@ -218,7 +218,7 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 6,
     "column": 7
@@ -232,35 +232,35 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 6,
     "column": 9
   },
   {
     "value": "portion",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 6,
     "column": 10
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 6,
     "column": 13
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 6,
     "column": 14
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 7,
     "column": 5
@@ -274,7 +274,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 7,
     "column": 7
@@ -288,7 +288,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 7,
     "column": 10
@@ -302,21 +302,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 7,
     "column": 13
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 7,
     "column": 16
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 7,
     "column": 18
@@ -330,7 +330,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 8,
     "column": 10
@@ -344,7 +344,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 8,
     "column": 12
@@ -358,7 +358,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 8,
     "column": 14
@@ -372,14 +372,14 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 8,
     "column": 17
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 8,
     "column": 18
@@ -393,7 +393,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 9,
     "column": 10
@@ -407,7 +407,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 9,
     "column": 12
@@ -421,7 +421,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 9,
     "column": 14
@@ -435,14 +435,14 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 9,
     "column": 17
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 9,
     "column": 18
@@ -456,7 +456,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 10,
     "column": 10
@@ -470,7 +470,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 10,
     "column": 12
@@ -484,7 +484,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 10,
     "column": 14
@@ -498,49 +498,49 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 10,
     "column": 17
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 10,
     "column": 18
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 11,
     "column": 5
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 11,
     "column": 6
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 12,
     "column": 1
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 12,
     "column": 2
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 12,
     "column": 3
@@ -554,35 +554,35 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 14,
     "column": 2
   },
   {
     "value": "Cat",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 14,
     "column": 3
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 14,
     "column": 6
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 14,
     "column": 8
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 15,
     "column": 5
@@ -596,7 +596,7 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 15,
     "column": 7
@@ -610,35 +610,35 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 15,
     "column": 9
   },
   {
     "value": "name",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 15,
     "column": 10
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 15,
     "column": 13
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 15,
     "column": 14
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 17,
     "column": 5
@@ -652,21 +652,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 17,
     "column": 7
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 17,
     "column": 10
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 17,
     "column": 12
@@ -680,7 +680,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 18,
     "column": 10
@@ -694,7 +694,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 18,
     "column": 12
@@ -708,7 +708,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 18,
     "column": 14
@@ -722,28 +722,28 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 18,
     "column": 17
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 18,
     "column": 18
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 19,
     "column": 5
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 19,
     "column": 6
@@ -757,91 +757,91 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 21,
     "column": 6
   },
   {
     "value": "sound",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 21,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 21,
     "column": 10
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 21,
     "column": 12
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 21,
     "column": 13
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 21,
     "column": 16
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 21,
     "column": 18
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 22,
     "column": 10
   },
   {
     "value": "Meow",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 22,
     "column": 12
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 22,
     "column": 15
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 23,
     "column": 5
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 23,
     "column": 6
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 23,
     "column": 7
@@ -855,28 +855,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 25,
     "column": 6
   },
   {
     "value": "eat",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 25,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 25,
     "column": 10
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 25,
     "column": 12
@@ -890,7 +890,7 @@
   },
   {
     "value": ":",
-    "type": 14,
+    "type": 13,
     "typeName": "Colon",
     "line": 25,
     "column": 14
@@ -904,21 +904,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 25,
     "column": 17
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 25,
     "column": 20
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 25,
     "column": 22
@@ -932,28 +932,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 26,
     "column": 10
   },
   {
     "value": "Yum yum!",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 26,
     "column": 11
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 26,
     "column": 17
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 26,
     "column": 18
@@ -967,7 +967,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 27,
     "column": 10
@@ -981,7 +981,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 27,
     "column": 12
@@ -995,7 +995,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 27,
     "column": 14
@@ -1009,7 +1009,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 27,
     "column": 17
@@ -1023,7 +1023,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 27,
     "column": 19
@@ -1037,7 +1037,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 27,
     "column": 21
@@ -1051,63 +1051,63 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 27,
     "column": 24
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 27,
     "column": 25
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 27,
     "column": 26
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 28,
     "column": 5
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 28,
     "column": 6
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 28,
     "column": 7
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 29,
     "column": 1
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 29,
     "column": 2
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 29,
     "column": 3
@@ -1121,35 +1121,35 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 31,
     "column": 2
   },
   {
     "value": "Dog",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 31,
     "column": 3
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 31,
     "column": 6
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 31,
     "column": 8
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 32,
     "column": 5
@@ -1163,7 +1163,7 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 32,
     "column": 7
@@ -1177,35 +1177,35 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 32,
     "column": 9
   },
   {
     "value": "name",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 32,
     "column": 10
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 32,
     "column": 13
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 32,
     "column": 14
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 34,
     "column": 5
@@ -1219,21 +1219,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 34,
     "column": 7
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 34,
     "column": 10
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 34,
     "column": 12
@@ -1247,7 +1247,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 35,
     "column": 10
@@ -1261,7 +1261,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 35,
     "column": 12
@@ -1275,7 +1275,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 35,
     "column": 14
@@ -1289,28 +1289,28 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 35,
     "column": 17
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 35,
     "column": 18
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 36,
     "column": 5
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 36,
     "column": 6
@@ -1324,91 +1324,91 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 38,
     "column": 6
   },
   {
     "value": "sound",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 38,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 38,
     "column": 10
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 38,
     "column": 12
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 38,
     "column": 13
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 38,
     "column": 16
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 38,
     "column": 18
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 39,
     "column": 10
   },
   {
     "value": "Woof",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 39,
     "column": 12
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 39,
     "column": 15
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 40,
     "column": 5
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 40,
     "column": 6
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 40,
     "column": 7
@@ -1422,28 +1422,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 42,
     "column": 7
   },
   {
     "value": "eat",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 42,
     "column": 8
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 42,
     "column": 11
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 42,
     "column": 13
@@ -1457,7 +1457,7 @@
   },
   {
     "value": ":",
-    "type": 14,
+    "type": 13,
     "typeName": "Colon",
     "line": 42,
     "column": 15
@@ -1471,21 +1471,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 42,
     "column": 18
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 42,
     "column": 21
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 42,
     "column": 23
@@ -1499,28 +1499,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 43,
     "column": 10
   },
   {
     "value": "Yum yum!",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 43,
     "column": 11
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 43,
     "column": 17
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 43,
     "column": 18
@@ -1534,7 +1534,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 44,
     "column": 10
@@ -1548,7 +1548,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 44,
     "column": 12
@@ -1562,7 +1562,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 44,
     "column": 14
@@ -1576,7 +1576,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 44,
     "column": 17
@@ -1590,7 +1590,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 44,
     "column": 19
@@ -1604,7 +1604,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 44,
     "column": 21
@@ -1618,63 +1618,63 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 44,
     "column": 24
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 44,
     "column": 25
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 44,
     "column": 26
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 45,
     "column": 5
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 45,
     "column": 6
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 45,
     "column": 7
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 46,
     "column": 1
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 46,
     "column": 2
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 46,
     "column": 3
@@ -1688,21 +1688,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 48,
     "column": 2
   },
   {
     "value": "Pet",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 48,
     "column": 3
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 48,
     "column": 6
@@ -1716,7 +1716,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 48,
     "column": 9
@@ -1730,7 +1730,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 48,
     "column": 11
@@ -1744,21 +1744,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 48,
     "column": 14
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 48,
     "column": 15
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 48,
     "column": 16
@@ -1772,28 +1772,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 50,
     "column": 2
   },
   {
     "value": "PetEngine",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 50,
     "column": 3
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 50,
     "column": 6
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 50,
     "column": 8
@@ -1807,28 +1807,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 51,
     "column": 6
   },
   {
     "value": "generateFood",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 51,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 51,
     "column": 10
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 51,
     "column": 12
@@ -1842,7 +1842,7 @@
   },
   {
     "value": ":",
-    "type": 14,
+    "type": 13,
     "typeName": "Colon",
     "line": 51,
     "column": 14
@@ -1856,28 +1856,28 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 51,
     "column": 17
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 51,
     "column": 20
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 51,
     "column": 22
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 52,
     "column": 9
@@ -1891,7 +1891,7 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 52,
     "column": 11
@@ -1905,28 +1905,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 52,
     "column": 13
   },
   {
     "value": "petFood",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 52,
     "column": 14
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 52,
     "column": 17
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 52,
     "column": 18
@@ -1940,7 +1940,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 54,
     "column": 11
@@ -1954,7 +1954,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 54,
     "column": 13
@@ -1968,7 +1968,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 54,
     "column": 15
@@ -1982,21 +1982,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 54,
     "column": 17
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 54,
     "column": 18
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 54,
     "column": 20
@@ -2010,7 +2010,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 55,
     "column": 14
@@ -2024,7 +2024,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 55,
     "column": 16
@@ -2038,21 +2038,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 55,
     "column": 19
   },
   {
     "value": "Fish",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 55,
     "column": 20
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 55,
     "column": 23
@@ -2066,7 +2066,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 55,
     "column": 26
@@ -2080,42 +2080,42 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 55,
     "column": 29
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 55,
     "column": 30
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 55,
     "column": 31
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 56,
     "column": 9
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 56,
     "column": 10
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 56,
     "column": 11
@@ -2129,7 +2129,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 57,
     "column": 14
@@ -2143,7 +2143,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 57,
     "column": 16
@@ -2157,21 +2157,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 57,
     "column": 19
   },
   {
     "value": "Meat",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 57,
     "column": 20
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 57,
     "column": 23
@@ -2185,7 +2185,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 57,
     "column": 26
@@ -2199,49 +2199,49 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 57,
     "column": 29
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 57,
     "column": 30
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 57,
     "column": 31
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 58,
     "column": 9
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 58,
     "column": 10
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 58,
     "column": 11
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 59,
     "column": 10
@@ -2255,28 +2255,28 @@
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 59,
     "column": 13
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 60,
     "column": 5
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 60,
     "column": 6
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 60,
     "column": 7
@@ -2290,28 +2290,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 62,
     "column": 6
   },
   {
     "value": "generateFood2",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 62,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 62,
     "column": 11
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 62,
     "column": 13
@@ -2325,7 +2325,7 @@
   },
   {
     "value": ":",
-    "type": 14,
+    "type": 13,
     "typeName": "Colon",
     "line": 62,
     "column": 15
@@ -2339,21 +2339,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 62,
     "column": 18
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 62,
     "column": 21
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 62,
     "column": 23
@@ -2367,7 +2367,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 63,
     "column": 10
@@ -2381,7 +2381,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 63,
     "column": 12
@@ -2395,7 +2395,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 63,
     "column": 14
@@ -2409,21 +2409,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 63,
     "column": 16
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 63,
     "column": 17
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 63,
     "column": 19
@@ -2437,14 +2437,14 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 64,
     "column": 14
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 64,
     "column": 16
@@ -2458,21 +2458,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 64,
     "column": 19
   },
   {
     "value": "Fish",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 64,
     "column": 20
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 64,
     "column": 23
@@ -2486,7 +2486,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 64,
     "column": 26
@@ -2500,35 +2500,35 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 64,
     "column": 29
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 64,
     "column": 30
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 65,
     "column": 9
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 65,
     "column": 10
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 65,
     "column": 11
@@ -2542,14 +2542,14 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 66,
     "column": 14
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 66,
     "column": 16
@@ -2563,21 +2563,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 66,
     "column": 19
   },
   {
     "value": "Meat",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 66,
     "column": 20
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 66,
     "column": 23
@@ -2591,7 +2591,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 66,
     "column": 26
@@ -2605,56 +2605,56 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 66,
     "column": 29
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 66,
     "column": 30
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 67,
     "column": 9
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 67,
     "column": 10
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 67,
     "column": 11
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 68,
     "column": 5
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 68,
     "column": 6
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 68,
     "column": 7
@@ -2668,28 +2668,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 70,
     "column": 6
   },
   {
     "value": "generateFood3",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 70,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 70,
     "column": 11
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 70,
     "column": 13
@@ -2703,7 +2703,7 @@
   },
   {
     "value": ":",
-    "type": 14,
+    "type": 13,
     "typeName": "Colon",
     "line": 70,
     "column": 15
@@ -2717,28 +2717,28 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 70,
     "column": 18
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 70,
     "column": 21
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 70,
     "column": 23
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 71,
     "column": 10
@@ -2752,7 +2752,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 71,
     "column": 13
@@ -2766,7 +2766,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 71,
     "column": 15
@@ -2780,7 +2780,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 71,
     "column": 17
@@ -2794,14 +2794,14 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 71,
     "column": 19
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 71,
     "column": 20
@@ -2815,21 +2815,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 72,
     "column": 14
   },
   {
     "value": "Fish",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 72,
     "column": 15
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 72,
     "column": 18
@@ -2843,7 +2843,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 72,
     "column": 21
@@ -2857,14 +2857,14 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 72,
     "column": 24
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 72,
     "column": 25
@@ -2878,21 +2878,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 73,
     "column": 14
   },
   {
     "value": "Meat",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 73,
     "column": 15
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 73,
     "column": 18
@@ -2906,7 +2906,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 73,
     "column": 21
@@ -2920,42 +2920,42 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 73,
     "column": 24
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 74,
     "column": 9
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 74,
     "column": 10
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 75,
     "column": 5
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 75,
     "column": 6
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 75,
     "column": 7
@@ -2969,28 +2969,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 77,
     "column": 6
   },
   {
     "value": "generateFood4",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 77,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 77,
     "column": 11
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 77,
     "column": 13
@@ -3004,7 +3004,7 @@
   },
   {
     "value": ":",
-    "type": 14,
+    "type": 13,
     "typeName": "Colon",
     "line": 77,
     "column": 15
@@ -3018,21 +3018,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 77,
     "column": 18
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 77,
     "column": 21
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 77,
     "column": 23
@@ -3046,7 +3046,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 78,
     "column": 10
@@ -3060,7 +3060,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 78,
     "column": 12
@@ -3074,7 +3074,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 78,
     "column": 14
@@ -3088,28 +3088,28 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 78,
     "column": 16
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 78,
     "column": 17
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 78,
     "column": 19
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 79,
     "column": 14
@@ -3123,21 +3123,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 79,
     "column": 17
   },
   {
     "value": "Fish",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 79,
     "column": 18
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 79,
     "column": 21
@@ -3151,7 +3151,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 79,
     "column": 24
@@ -3165,42 +3165,42 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 79,
     "column": 27
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 79,
     "column": 28
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 80,
     "column": 9
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 80,
     "column": 10
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 80,
     "column": 11
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 81,
     "column": 14
@@ -3214,21 +3214,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 81,
     "column": 17
   },
   {
     "value": "Meat",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 81,
     "column": 18
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 81,
     "column": 21
@@ -3242,7 +3242,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 81,
     "column": 24
@@ -3256,56 +3256,56 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 81,
     "column": 27
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 81,
     "column": 28
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 82,
     "column": 9
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 82,
     "column": 10
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 82,
     "column": 11
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 83,
     "column": 5
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 83,
     "column": 6
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 83,
     "column": 7
@@ -3319,28 +3319,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 85,
     "column": 6
   },
   {
     "value": "giveFood",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 85,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 85,
     "column": 10
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 85,
     "column": 12
@@ -3354,7 +3354,7 @@
   },
   {
     "value": ":",
-    "type": 14,
+    "type": 13,
     "typeName": "Colon",
     "line": 85,
     "column": 14
@@ -3368,7 +3368,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 85,
     "column": 17
@@ -3382,7 +3382,7 @@
   },
   {
     "value": ":",
-    "type": 14,
+    "type": 13,
     "typeName": "Colon",
     "line": 85,
     "column": 20
@@ -3396,21 +3396,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 85,
     "column": 23
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 85,
     "column": 26
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 85,
     "column": 28
@@ -3424,21 +3424,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 86,
     "column": 10
   },
   {
     "value": "Here is your food, ",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 86,
     "column": 11
   },
   {
     "value": "+",
-    "type": 4,
+    "type": 3,
     "typeName": "CustomOperator",
     "line": 86,
     "column": 23
@@ -3452,7 +3452,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 86,
     "column": 26
@@ -3466,28 +3466,28 @@
   },
   {
     "value": "+",
-    "type": 4,
+    "type": 3,
     "typeName": "CustomOperator",
     "line": 86,
     "column": 29
   },
   {
     "value": "!",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 86,
     "column": 31
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 86,
     "column": 34
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 86,
     "column": 35
@@ -3501,7 +3501,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 87,
     "column": 10
@@ -3515,7 +3515,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 87,
     "column": 12
@@ -3529,70 +3529,70 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 87,
     "column": 14
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 87,
     "column": 15
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 88,
     "column": 5
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 88,
     "column": 6
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 88,
     "column": 7
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 89,
     "column": 1
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 89,
     "column": 2
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 89,
     "column": 3
   },
   {
     "value": "#",
-    "type": 22,
+    "type": 21,
     "typeName": "Comment",
     "line": 91,
     "column": 1
   },
   {
     "value": "#",
-    "type": 22,
+    "type": 21,
     "typeName": "Comment",
     "line": 93,
     "column": 1
@@ -3606,49 +3606,49 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 94,
     "column": 2
   },
   {
     "value": "main",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 94,
     "column": 3
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 94,
     "column": 6
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 94,
     "column": 8
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 94,
     "column": 9
   },
   {
     "value": "->",
-    "type": 15,
+    "type": 14,
     "typeName": "Arrow",
     "line": 94,
     "column": 12
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 94,
     "column": 14
@@ -3662,21 +3662,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 95,
     "column": 6
   },
   {
     "value": "cat",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 95,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 95,
     "column": 10
@@ -3690,35 +3690,35 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 95,
     "column": 13
   },
   {
     "value": "Kitty",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 95,
     "column": 14
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 95,
     "column": 17
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 95,
     "column": 18
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 95,
     "column": 19
@@ -3732,21 +3732,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 96,
     "column": 6
   },
   {
     "value": "dog",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 96,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 96,
     "column": 10
@@ -3760,56 +3760,56 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 96,
     "column": 13
   },
   {
     "value": "Doggy",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 96,
     "column": 14
   },
   {
     "value": "#",
-    "type": 22,
+    "type": 21,
     "typeName": "Comment",
     "line": 96,
     "column": 17
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 96,
     "column": 18
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 96,
     "column": 19
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 96,
     "column": 20
   },
   {
     "value": "#",
-    "type": 22,
+    "type": 21,
     "typeName": "Comment",
     "line": 96,
     "column": 22
   },
   {
     "value": "#",
-    "type": 22,
+    "type": 21,
     "typeName": "Comment",
     "line": 98,
     "column": 5
@@ -3823,21 +3823,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 99,
     "column": 6
   },
   {
     "value": "catFood",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 99,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 99,
     "column": 10
@@ -3851,7 +3851,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 99,
     "column": 13
@@ -3865,7 +3865,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 99,
     "column": 15
@@ -3879,28 +3879,28 @@
   },
   {
     "value": "#",
-    "type": 22,
+    "type": 21,
     "typeName": "Comment",
     "line": 99,
     "column": 17
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 99,
     "column": 18
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 99,
     "column": 19
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 99,
     "column": 20
@@ -3914,21 +3914,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 100,
     "column": 6
   },
   {
     "value": "dogFood",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 100,
     "column": 7
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 100,
     "column": 10
@@ -3942,7 +3942,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 100,
     "column": 13
@@ -3956,7 +3956,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 100,
     "column": 15
@@ -3970,21 +3970,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 100,
     "column": 17
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 100,
     "column": 18
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 100,
     "column": 19
@@ -3998,7 +3998,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 102,
     "column": 6
@@ -4012,7 +4012,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 102,
     "column": 8
@@ -4026,21 +4026,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 102,
     "column": 10
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 102,
     "column": 11
   },
   {
     "value": "#",
-    "type": 22,
+    "type": 21,
     "typeName": "Comment",
     "line": 102,
     "column": 13
@@ -4054,7 +4054,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 103,
     "column": 6
@@ -4068,7 +4068,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 103,
     "column": 8
@@ -4082,14 +4082,14 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 103,
     "column": 10
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 103,
     "column": 11
@@ -4103,7 +4103,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 104,
     "column": 6
@@ -4117,7 +4117,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 104,
     "column": 8
@@ -4131,21 +4131,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 104,
     "column": 10
   },
   {
     "value": "#",
-    "type": 22,
+    "type": 21,
     "typeName": "Comment",
     "line": 104,
     "column": 11
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 104,
     "column": 12
@@ -4159,7 +4159,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 106,
     "column": 6
@@ -4173,7 +4173,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 106,
     "column": 8
@@ -4187,14 +4187,14 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 106,
     "column": 10
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 106,
     "column": 11
@@ -4208,7 +4208,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 107,
     "column": 6
@@ -4222,7 +4222,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 107,
     "column": 8
@@ -4236,14 +4236,14 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 107,
     "column": 10
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 107,
     "column": 11
@@ -4257,7 +4257,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 108,
     "column": 6
@@ -4271,7 +4271,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 108,
     "column": 8
@@ -4285,14 +4285,14 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 108,
     "column": 10
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 108,
     "column": 11
@@ -4306,7 +4306,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 110,
     "column": 6
@@ -4320,7 +4320,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 110,
     "column": 8
@@ -4334,7 +4334,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 110,
     "column": 10
@@ -4348,14 +4348,14 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 110,
     "column": 13
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 110,
     "column": 14
@@ -4369,7 +4369,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 111,
     "column": 6
@@ -4383,7 +4383,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 111,
     "column": 8
@@ -4397,7 +4397,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 111,
     "column": 10
@@ -4411,14 +4411,14 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 111,
     "column": 13
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 111,
     "column": 14
@@ -4432,7 +4432,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 113,
     "column": 6
@@ -4446,7 +4446,7 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 113,
     "column": 8
@@ -4460,7 +4460,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 113,
     "column": 10
@@ -4474,7 +4474,7 @@
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 113,
     "column": 12
@@ -4488,7 +4488,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 113,
     "column": 15
@@ -4502,21 +4502,21 @@
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 113,
     "column": 17
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 113,
     "column": 18
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 113,
     "column": 20
@@ -4530,49 +4530,49 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 114,
     "column": 10
   },
   {
     "value": "Doggy has more food! Or they have the same amount.",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 114,
     "column": 11
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 114,
     "column": 34
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 114,
     "column": 35
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 115,
     "column": 5
   },
   {
     "value": ",",
-    "type": 11,
+    "type": 10,
     "typeName": "Comma",
     "line": 115,
     "column": 6
   },
   {
     "value": "{",
-    "type": 7,
+    "type": 6,
     "typeName": "OpenBrace",
     "line": 115,
     "column": 7
@@ -4586,49 +4586,49 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 116,
     "column": 10
   },
   {
     "value": "Kitty has more food!",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 116,
     "column": 11
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 116,
     "column": 21
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 116,
     "column": 22
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 117,
     "column": 5
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 117,
     "column": 6
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 117,
     "column": 7
@@ -4642,21 +4642,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 118,
     "column": 6
   },
   {
     "value": "Doggy has '",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 118,
     "column": 7
   },
   {
     "value": "+",
-    "type": 4,
+    "type": 3,
     "typeName": "CustomOperator",
     "line": 118,
     "column": 15
@@ -4670,7 +4670,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 118,
     "column": 18
@@ -4684,28 +4684,28 @@
   },
   {
     "value": "+",
-    "type": 4,
+    "type": 3,
     "typeName": "CustomOperator",
     "line": 118,
     "column": 21
   },
   {
     "value": "' portions of food.",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 118,
     "column": 23
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 118,
     "column": 33
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 118,
     "column": 34
@@ -4719,21 +4719,21 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 119,
     "column": 6
   },
   {
     "value": "Kitty has '",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 119,
     "column": 7
   },
   {
     "value": "+",
-    "type": 4,
+    "type": 3,
     "typeName": "CustomOperator",
     "line": 119,
     "column": 15
@@ -4747,7 +4747,7 @@
   },
   {
     "value": ".",
-    "type": 12,
+    "type": 11,
     "typeName": "Dot",
     "line": 119,
     "column": 18
@@ -4761,28 +4761,28 @@
   },
   {
     "value": "+",
-    "type": 4,
+    "type": 3,
     "typeName": "CustomOperator",
     "line": 119,
     "column": 21
   },
   {
     "value": "' portions of food.",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 119,
     "column": 23
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 119,
     "column": 33
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 119,
     "column": 34
@@ -4796,77 +4796,77 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 120,
     "column": 6
   },
   {
     "value": "Doggy first Letter is '",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 120,
     "column": 7
   },
   {
     "value": "+",
-    "type": 4,
+    "type": 3,
     "typeName": "CustomOperator",
     "line": 120,
     "column": 19
   },
   {
     "value": "D",
-    "type": 20,
+    "type": 19,
     "typeName": "CharOrString",
     "line": 120,
     "column": 21
   },
   {
     "value": "+",
-    "type": 4,
+    "type": 3,
     "typeName": "CustomOperator",
     "line": 120,
     "column": 25
   },
   {
     "value": "'.",
-    "type": 18,
+    "type": 17,
     "typeName": "String",
     "line": 120,
     "column": 27
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 120,
     "column": 31
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 120,
     "column": 32
   },
   {
     "value": "}",
-    "type": 8,
+    "type": 7,
     "typeName": "CloseBrace",
     "line": 121,
     "column": 1
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 121,
     "column": 2
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 121,
     "column": 3
@@ -4880,28 +4880,28 @@
   },
   {
     "value": "(",
-    "type": 5,
+    "type": 4,
     "typeName": "OpenParentesis",
     "line": 123,
     "column": 2
   },
   {
     "value": ")",
-    "type": 6,
+    "type": 5,
     "typeName": "CloseParentesis",
     "line": 123,
     "column": 3
   },
   {
     "value": ";",
-    "type": 13,
+    "type": 12,
     "typeName": "SemiColon",
     "line": 123,
     "column": 4
   },
   {
     "value": "",
-    "type": 24,
+    "type": 23,
     "typeName": "EOF",
     "line": 123,
     "column": 5

@@ -1,3 +1,4 @@
+import { TokenError } from "./errors";
 import { TokenType, Token } from "./lexer";
 
 interface ASTNode {
@@ -205,10 +206,10 @@ export class Parser {
     private parseFunctionCall(): FunctionCall {
         const identifier = this.consume();
         if (identifier.type !== TokenType.Identifier) {
-            throw new Error("wroong");
+            throw new TokenError("wroong", identifier);
         }
         if (!this.match(TokenType.OpenParentesis)) {
-            throw new Error("wroong");
+            throw new TokenError("wroong", identifier);
         }
         const params = this.parseParams();
         if (!this.check(TokenType.CloseParentesis)) {
@@ -242,7 +243,7 @@ export class Parser {
         }
         const type = this.consume();
         if (type.type != TokenType.Identifier) {
-            throw new Error("wrooong");
+            throw new TokenError("wrooong: ", [name, type]);
         }
 
         return {type: "ParamDefinition", name: {type: "Identifier", name: name.value}, varType: {type: "Identifier", name: type.value}} as ParamDefinition
@@ -264,7 +265,7 @@ export class Parser {
     private parseParam(): Param {
         const token = this.consume();
         if (!(token.type == TokenType.Identifier)) {
-            throw new Error("wroong");
+            throw new TokenError("wrooong" , token);
         }
         return {type: "Param", identifier: {type: "Identifier", name: token.value}} as Param
     }
