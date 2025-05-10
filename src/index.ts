@@ -11,12 +11,15 @@ function main(args: string[]) {
     const outputT = args[1] || file + ".tokens.json";
     const outputA = args[1] || file + ".ast.json";
     const sourceCode = fs.readFileSync(file, "utf-8");
+
     const tokens = tokenize(sourceCode);
     console.log(tokens);
+    fs.writeFileSync(outputT, JSON.stringify(tokens, null, 2));
+
     const parser = new Parser(tokens);
     const ast = parser.parse();
     console.log(JSON.stringify(ast, null, 2));
-    fs.writeFileSync(outputT, JSON.stringify(tokens, null, 2));
+    
     fs.writeFileSync(outputA, JSON.stringify(ast, null, 2));
 }
 
