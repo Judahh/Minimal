@@ -1,0 +1,41 @@
+name: Test
+
+on:
+  pull_request:
+    branches:
+      - "*" # matches every branch
+      - "*/*" # matches every branch containing a single '/'
+  push:
+    branches:
+      - master
+      - main
+#     - devel
+#     - develop
+#     - development
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@main
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org
+      - name: Checkout
+        uses: actions/checkout@main
+      - name: BUILD
+        uses: judahh/nodeBuild@main
+        with:
+          node_version: ${{ matrix.node-version }}
+      - name: Copy file example.min to dist folder
+        run: |
+          cp example.min dist/
+      - name: RUN npm start 
+        run: |
+          npm start example.min
