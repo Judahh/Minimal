@@ -665,27 +665,27 @@ new("someFunction", () -> {
 
 ```minimal
 (Enum)new("Color", {
-    RED,
-    GREEN,
-    BLUE
+    RED;
+    GREEN;
+    BLUE;
 });
 or
 (Enum)new("Color", {
-    RED = 1,
-    GREEN = 2,
-    BLUE = 3
+    RED = 1;
+    GREEN = 2;
+    BLUE = 3;
 });
 or
 (Enum)new("Color", {
-    RED = 1,
-    GREEN,
-    BLUE
+    RED = 1;
+    GREEN;
+    BLUE;
 });
 or
 (Enum)new("Color", {
-    RED = 'r',
-    GREEN = 'g',
-    BLUE = 'b'
+    RED = 'r';
+    GREEN = 'g';
+    BLUE = 'b';
 });
 ```
 

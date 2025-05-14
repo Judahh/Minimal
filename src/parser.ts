@@ -262,9 +262,14 @@ export class Parser {
         return {type: "FunctionParams", parameters: params} as FunctionParams
     }
 
+    private isLiteral(type: TokenType): boolean {
+        return type === TokenType.Number || type === TokenType.String || type === TokenType.Char || type === TokenType.TemplateString;
+    }
+
     private parseParam(): Param {
         const token = this.consume();
-        if (!(token.type == TokenType.Identifier)) {
+        // Must add check to complex types like function types, classes, arrays, structs, enums, etc.
+        if (!(token.type == TokenType.Identifier || this.isLiteral(token.type))) {
             throw new TokenError("wrooong" , token);
         }
         return {type: "Param", identifier: {type: "Identifier", name: token.value}} as Param
