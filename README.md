@@ -538,7 +538,7 @@ log(numberExample2); # logs 6
 ```minimal
 Like a class but without variables (Does not have constructor, and cannot be instantiated, just used as an object)
 new("sampleEngine", {
-    protected init = () -> {
+    init = () -> {
         log('Engine initialized');
     };
     start = () -> {
@@ -549,6 +549,7 @@ new("sampleEngine", {
         log('Sum a:', a, ' and  b:', b);
         -> sum(a, b); # return is ->
     };
+    protect(init); # hides the init function externally, making it protected
 });
 
 # its possible to merge a engine with a struct and it will become a class
@@ -701,7 +702,7 @@ Syntax:
 
 ```minimal
 new("SampleClass", {
-    private x: Number = 5;
+    x: Number = 5;
     y: Const(Number) = 10;
     w: Number = 10;
 
@@ -714,6 +715,8 @@ new("SampleClass", {
     value = () -> {
         -> x;
     };
+
+    hide(x); # hides the x variable, making it private
 });
 
 new("SampleClassChild", extends(SampleClass, { 
@@ -731,8 +734,10 @@ new("SampleClass2", (z?: Number) -> {
     sampleFunctionThatReturnsTen = () -> {
         -> 10;
     };
-    private x: Number = z || 5;
+    x: Number = z || 5;
     y: Const(Number) = 10;
+
+    hide(x); # hides the x variable, making it private
     -> this;
 };
 
