@@ -33,7 +33,7 @@ jobs:
         uses: judahh/nodeBuild@main
         with:
           node_version: ${{ matrix.node-version }}
-      - name: Copy file example.min to dist folder
+      - name: Copy file min files to dist folder
         run: |
           cp *.min dist/
       - name: Compile example.min
