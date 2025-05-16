@@ -5,14 +5,14 @@ export interface ASTNode {
     type: string;
 }
 
-export interface Stmt extends ASTNode{
+export interface Stmt extends ASTNode {
     type: "Statement";
     statement: FunctionCall | FunctionDefinition;
 }
 
 // I'm not sure if I'm going to keep this
 // Whats the difference between Statements and a Scope?
-export interface Stmts extends ASTNode{
+export interface Stmts extends ASTNode {
     type: "Statements";
     statements: (Stmt | Scope)[];
 }
@@ -68,7 +68,12 @@ export interface AssignmentExpression extends ASTNode {
     right: ASTNode;
 }
 
-export interface Expr extends ASTNode {  // how to best represent an expression node?
+// how to best represent an expression node?
+// Some references:
+// - https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl02.html#the-abstract-syntax-tree-ast
+// - https://clang.llvm.org/docs/IntroductionToTheClangAST.html
+// - https://clang.llvm.org/extra/doxygen/structclang_1_1clangd_1_1ASTNode.html
+export interface Expr extends ASTNode {
     type: "Expression";
     value: Expression;
 }
@@ -169,22 +174,22 @@ export class Parser {
         }
         return ast;
     }
-// error messages are still very much subject to change
-// also, some flattening of some of the node structures would probably go a long way
+    // error messages are still very much subject to change
+    // also, some flattening of some of the node structures would probably go a long way
 
     private parseStatement(): Stmt {
         let statement;
-        if (this.check(TokenType.Identifier)){  // provisional, needs better handling
+        if (this.check(TokenType.Identifier)) {  // provisional, needs better handling
             statement = this.parseFunctionCall();
         }
-        else{
+        else {
             statement = this.parseFunctionDefinition(); // at the present moment, statements may only be function calls or function definitions
         }
-        if (!this.check(TokenType.SemiColon)){
+        if (!this.check(TokenType.SemiColon)) {
             throw new Error("Expected ';' after statement");
         }
         this.advance();
-        return {type: "Statement", statement: statement} as Stmt
+        return { type: "Statement", statement: statement } as Stmt
     }
 
     // I've defined scope to be a block scope and nothing else. A global scope is not a scope. Neither is the body of a function if the user does not employ braces,
@@ -192,20 +197,20 @@ export class Parser {
     // -> Maybe is a good idea to have a global scope, because it can be referencied. This is not JS. It does not need the same behavior.
     private parseScope(): Scope {
         let statements: (Stmt | Scope)[] = []
-        if (!this.match(TokenType.OpenBrace)){
+        if (!this.match(TokenType.OpenBrace)) {
             throw new Error("missing opening brace");
         }
-        do{
-            if (this.check(TokenType.OpenBrace)){
+        do {
+            if (this.check(TokenType.OpenBrace)) {
                 statements.push(this.parseScope());
             }
-            this.parseStatement();        
-        } while(!this.isAtEnd && !this.check(TokenType.CloseBrace))
+            this.parseStatement();
+        } while (!this.isAtEnd && !this.check(TokenType.CloseBrace))
         if (this.isAtEnd()) {
             throw new Error("Unexpected EOF");
         }
         this.advance();
-        return {type: "Scope", statements: statements} as Scope;
+        return { type: "Scope", statements: statements } as Scope;
     }
 
     // Remember a function definition does not need to has parameters or arrow.
@@ -216,16 +221,16 @@ export class Parser {
     private parseFunctionDefinition(): FunctionDefinition {
         let params = this.parseFunctionParams();
         let body: (Expr | Scope)
-        if (!this.check(TokenType.Arrow)){
+        if (!this.check(TokenType.Arrow)) {
             throw new Error(`unexpected token: ${this.peek()}`);
         }
         this.advance();
         if (this.check(TokenType.OpenBrace))
             body = this.parseScope();
-        else{
+        else {
             body = this.parseExpression();
         }
-        return {type: "FunctionDefinition", params: params, body: body} as FunctionDefinition
+        return { type: "FunctionDefinition", params: params, body: body } as FunctionDefinition
     }
 
     private parseFunctionCall(): FunctionCall {
@@ -242,7 +247,7 @@ export class Parser {
         }
         this.advance();
 
-        return {identifier: {type: "Identifier", name: identifier.value}, params: params} as FunctionCall
+        return { identifier: { type: "Identifier", name: identifier.value }, params: params } as FunctionCall
     }
 
 
@@ -250,20 +255,20 @@ export class Parser {
         const params: ParamDefinition[] = []
         do {
             params.push(this.parseParamDefinition());
-            if (!this.check(TokenType.Comma) && !this.check(TokenType.CloseParenthesis)){
+            if (!this.check(TokenType.Comma) && !this.check(TokenType.CloseParenthesis)) {
                 throw new Error("expected ',' after param definition");
             }
-        } while(this.check(TokenType.Comma) && this.advance());
-        return {parameters: params} as ParamsDefinition
+        } while (this.check(TokenType.Comma) && this.advance());
+        return { parameters: params } as ParamsDefinition
 
     }
 
     private parseParamDefinition(): ParamDefinition {
-        if (!this.check(TokenType.Identifier)){
+        if (!this.check(TokenType.Identifier)) {
             throw new Error("expected parameter");
         }
         const name = this.consume();
-        if (!this.match(TokenType.Colon)){
+        if (!this.match(TokenType.Colon)) {
             throw new Error("expected type declaration after parameter");
         }
         const type = this.consume();
@@ -271,7 +276,7 @@ export class Parser {
             throw new TokenError("wrooong: ", [name, type]);
         }
 
-        return {type: "ParamDefinition", name: {type: "Identifier", name: name.value}, varType: {type: "Identifier", name: type.value}} as ParamDefinition
+        return { type: "ParamDefinition", name: { type: "Identifier", name: name.value }, varType: { type: "Identifier", name: type.value } } as ParamDefinition
     }
 
     private parseFunctionParams(): FunctionParams {
@@ -281,10 +286,10 @@ export class Parser {
             this.advance();
         }
         params = this.parseParamsDefinition();
-        if (unclosedParenthesis && !this.match(TokenType.CloseParenthesis)){
+        if (unclosedParenthesis && !this.match(TokenType.CloseParenthesis)) {
             throw new Error("unclosed parenthesis")
         }
-        return {type: "FunctionParams", parameters: params} as FunctionParams
+        return { type: "FunctionParams", parameters: params } as FunctionParams
     }
 
     private isLiteral(type: TokenType): boolean {
@@ -292,13 +297,13 @@ export class Parser {
     }
 
     private parseParam(): Param {
-        const token = this.consume();        
-        if(token.type == TokenType.Identifier) {
-            return {type: "Param", content: {type: "Identifier", name: token.value}} as Param;
+        const token = this.consume();
+        if (token.type == TokenType.Identifier) {
+            return { type: "Param", content: { type: "Identifier", name: token.value } } as Param;
         }
 
         if (this.isLiteral(token.type)) {
-            return {type: "Param", content: {type: TokenType[token.type] + "Literal", name: token.value}} as Param;    
+            return { type: "Param", content: { type: TokenType[token.type] + "Literal", name: token.value } } as Param;
         }
 
         // Must add check to complex types like function types, classes, arrays, structs, enums, etc.
@@ -315,7 +320,7 @@ export class Parser {
             // array
         }
 
-        throw new TokenError("wrooong" , token);
+        throw new TokenError("wrooong", token);
     }
 
     private parseParams(): Params {
@@ -323,13 +328,13 @@ export class Parser {
         while (this.match(TokenType.Comma)) {
             params.push(this.parseParam());
         }
-        return {type: "Params", params: params} as Params;
+        return { type: "Params", params: params } as Params;
     }
-    
+
     // an expression is probably more than that, but it'll do for now.
     private parseExpression(): Expr {
         let funcCall = this.parseFunctionCall();
-        return {type: "Expression", value: funcCall};
+        return { type: "Expression", value: funcCall };
     }
 
 
