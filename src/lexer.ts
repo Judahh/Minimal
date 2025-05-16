@@ -11,8 +11,8 @@ export enum TokenType {
 	Hyphen, // 5
 	CustomOperator, // 6
 	// Grouping
-	OpenParentesis, // 7 - (
-	CloseParentesis, // 8 - )
+	OpenParenthesis, // 7 - (
+	CloseParenthesis, // 8 - )
 	OpenBrace, // 9 - {
 	CloseBrace, // 10 - }
 	OpenBracket, // 11 - [
@@ -41,8 +41,8 @@ export enum TokenType {
 const simpleTokenToTokenType: { [str: string]: TokenType } = {
 	// "=": TokenType.Equals,
 	"-": TokenType.Hyphen,
-	"(": TokenType.OpenParentesis,
-	")": TokenType.CloseParentesis,
+	"(": TokenType.OpenParenthesis,
+	")": TokenType.CloseParenthesis,
 	"{": TokenType.OpenBrace,
 	"}": TokenType.CloseBrace,
 	"[": TokenType.OpenBracket,
