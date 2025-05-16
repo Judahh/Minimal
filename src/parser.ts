@@ -52,8 +52,7 @@ export interface Identifier extends ASTNode {
     name: string;
 }
 
-// Probably not needed, because there is no default operator
-// the closest is the TypeAnnotation
+// Remember this is a custom operator and must have the operator definition and precedence
 export interface BinaryExpression extends ASTNode {
     type: "BinaryExpression";
     left: ASTNode;
@@ -303,7 +302,7 @@ export class Parser {
         // a scope can be just an expression, so we need to check for that
 
         if (token.type == TokenType.OpenParenthesis) {
-            // function type
+            // function type, or just separation for a binary expression or expression
         }
 
         if (token.type == TokenType.OpenBracket) {
