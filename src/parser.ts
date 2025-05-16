@@ -11,9 +11,15 @@ export interface Stmt extends ASTNode{
 }
 
 // I'm not sure if I'm going to keep this
+// Whats the difference between Statements and a Scope?
 export interface Stmts extends ASTNode{
     type: "Statements";
     statements: (Stmt | Scope)[];
+}
+
+export interface Scope extends ASTNode {
+    type: "Scope";
+    statements: (Stmt | Scope)[]
 }
 
 export interface NumberLiteral extends ASTNode {
@@ -21,9 +27,24 @@ export interface NumberLiteral extends ASTNode {
     value: number;
 }
 
+export interface CharLiteral extends ASTNode {
+    type: "CharLiteral";
+    value: string;
+}
+
 export interface StringLiteral extends ASTNode {
     type: "StringLiteral";
     value: string;
+}
+
+export interface TemplateStringLiteral extends ASTNode {
+    type: "TemplateStringLiteral";
+    value: string;
+}
+
+export interface ArrayLiteral extends ASTNode {
+    type: "ArrayLiteral";
+    elements: (NumberLiteral | CharLiteral | StringLiteral | TemplateStringLiteral | Identifier)[];
 }
 
 export interface Identifier extends ASTNode {
@@ -31,6 +52,8 @@ export interface Identifier extends ASTNode {
     name: string;
 }
 
+// Probably not needed, because there is no default operator
+// the closest is the TypeAnnotation
 export interface BinaryExpression extends ASTNode {
     type: "BinaryExpression";
     left: ASTNode;
@@ -38,6 +61,7 @@ export interface BinaryExpression extends ASTNode {
     right: ASTNode;
 }
 
+// Is this needed? Because the assignment is made by a function call
 export interface AssignmentExpression extends ASTNode {
     type: "AssignmentExpression";
     left: ASTNode;
@@ -50,16 +74,12 @@ export interface Expr extends ASTNode {  // how to best represent an expression 
     value: Expression;
 }
 
-export interface Scope extends ASTNode {
-    type: "Scope";
-    statements: (Stmt | Scope)[]
-}
-
 export interface ScopeExpression extends ASTNode {
     type: "ScopeExpression";
     expressions: ASTNode[];
 }
 
+// What is a bracket expression? Is it an array literal?
 export interface BracketExpression extends ASTNode {
     type: "BracketExpression";
     expressions: ASTNode[];
@@ -83,7 +103,7 @@ export interface FunctionParams extends ASTNode {
 
 export interface Param extends ASTNode {
     type: "Param";
-    identifier: Identifier;
+    content: Identifier | NumberLiteral | CharLiteral | StringLiteral;
 }
 
 export interface Params extends ASTNode {
@@ -208,11 +228,11 @@ export class Parser {
         if (identifier.type !== TokenType.Identifier) {
             throw new TokenError("wroong", identifier);
         }
-        if (!this.match(TokenType.OpenParentesis)) {
+        if (!this.match(TokenType.OpenParenthesis)) {
             throw new TokenError("wroong", identifier);
         }
         const params = this.parseParams();
-        if (!this.check(TokenType.CloseParentesis)) {
+        if (!this.check(TokenType.CloseParenthesis)) {
             throw new Error(`unexpected token: '${this.peek()?.value}'`);
         }
         this.advance();
@@ -225,7 +245,7 @@ export class Parser {
         const params: ParamDefinition[] = []
         do {
             params.push(this.parseParamDefinition());
-            if (!this.check(TokenType.Comma) && !this.check(TokenType.CloseParentesis)){
+            if (!this.check(TokenType.Comma) && !this.check(TokenType.CloseParenthesis)){
                 throw new Error("expected ',' after param definition");
             }
         } while(this.check(TokenType.Comma) && this.advance());
@@ -251,12 +271,12 @@ export class Parser {
 
     private parseFunctionParams(): FunctionParams {
         let params;
-        let unclosedParenthesis = this.check(TokenType.OpenParentesis);
+        let unclosedParenthesis = this.check(TokenType.OpenParenthesis);
         if (unclosedParenthesis) {
             this.advance();
         }
         params = this.parseParamsDefinition();
-        if (unclosedParenthesis && !this.match(TokenType.CloseParentesis)){
+        if (unclosedParenthesis && !this.match(TokenType.CloseParenthesis)){
             throw new Error("unclosed parenthesis")
         }
         return {type: "FunctionParams", parameters: params} as FunctionParams
@@ -267,12 +287,30 @@ export class Parser {
     }
 
     private parseParam(): Param {
-        const token = this.consume();
-        // Must add check to complex types like function types, classes, arrays, structs, enums, etc.
-        if (!(token.type == TokenType.Identifier || this.isLiteral(token.type))) {
-            throw new TokenError("wrooong" , token);
+        const token = this.consume();        
+        if(token.type == TokenType.Identifier) {
+            return {type: "Param", content: {type: "Identifier", name: token.value}} as Param;
         }
-        return {type: "Param", identifier: {type: "Identifier", name: token.value}} as Param
+
+        if (this.isLiteral(token.type)) {
+            return {type: "Param", content: {type: TokenType[token.type] + "Literal", name: token.value}} as Param;    
+        }
+
+        // Must add check to complex types like function types, classes, arrays, structs, enums, etc.
+        if (token.type == TokenType.OpenBrace) {
+            // scope, class, dict, struct or enum
+        }
+        // a scope can be just an expression, so we need to check for that
+
+        if (token.type == TokenType.OpenParenthesis) {
+            // function type
+        }
+
+        if (token.type == TokenType.OpenBracket) {
+            // array
+        }
+
+        throw new TokenError("wrooong" , token);
     }
 
     private parseParams(): Params {

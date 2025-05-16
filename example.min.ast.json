@@ -11,8 +11,8 @@
         "params": [
           {
             "type": "Param",
-            "identifier": {
-              "type": "Identifier",
+            "content": {
+              "type": "StringLiteral",
               "name": "Hello World!"
             }
           }
@@ -32,22 +32,22 @@
         "params": [
           {
             "type": "Param",
-            "identifier": {
-              "type": "Identifier",
+            "content": {
+              "type": "StringLiteral",
               "name": "Hello"
             }
           },
           {
             "type": "Param",
-            "identifier": {
-              "type": "Identifier",
+            "content": {
+              "type": "CharLiteral",
               "name": " "
             }
           },
           {
             "type": "Param",
-            "identifier": {
-              "type": "Identifier",
+            "content": {
+              "type": "StringLiteral",
               "name": "World!"
             }
           }
@@ -67,22 +67,22 @@
         "params": [
           {
             "type": "Param",
-            "identifier": {
-              "type": "Identifier",
+            "content": {
+              "type": "NumberLiteral",
               "name": "1"
             }
           },
           {
             "type": "Param",
-            "identifier": {
-              "type": "Identifier",
+            "content": {
+              "type": "NumberLiteral",
               "name": "2"
             }
           },
           {
             "type": "Param",
-            "identifier": {
-              "type": "Identifier",
+            "content": {
+              "type": "NumberLiteral",
               "name": "3"
             }
           }
