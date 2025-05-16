@@ -1,0 +1,93 @@
+[
+  {
+    "type": "Statement",
+    "statement": {
+      "identifier": {
+        "type": "Identifier",
+        "name": "log"
+      },
+      "params": {
+        "type": "Params",
+        "params": [
+          {
+            "type": "Param",
+            "identifier": {
+              "type": "Identifier",
+              "name": "Hello World!"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "Statement",
+    "statement": {
+      "identifier": {
+        "type": "Identifier",
+        "name": "log"
+      },
+      "params": {
+        "type": "Params",
+        "params": [
+          {
+            "type": "Param",
+            "identifier": {
+              "type": "Identifier",
+              "name": "Hello"
+            }
+          },
+          {
+            "type": "Param",
+            "identifier": {
+              "type": "Identifier",
+              "name": " "
+            }
+          },
+          {
+            "type": "Param",
+            "identifier": {
+              "type": "Identifier",
+              "name": "World!"
+            }
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "Statement",
+    "statement": {
+      "identifier": {
+        "type": "Identifier",
+        "name": "log"
+      },
+      "params": {
+        "type": "Params",
+        "params": [
+          {
+            "type": "Param",
+            "identifier": {
+              "type": "Identifier",
+              "name": "1"
+            }
+          },
+          {
+            "type": "Param",
+            "identifier": {
+              "type": "Identifier",
+              "name": "2"
+            }
+          },
+          {
+            "type": "Param",
+            "identifier": {
+              "type": "Identifier",
+              "name": "3"
+            }
+          }
+        ]
+      }
+    }
+  }
+]

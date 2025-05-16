@@ -24,9 +24,11 @@ functionCall ::= [(<typeParams>)]<functionName>(<params>) ;
 
 statement ::= <functionCall | systemFunctionCall> ;
 
-statements ::= statement [ ; statements ]* ;
+statements ::= statement [ ; statements ]* | scope;
 
-scope ::= { <statements> } | <statement> ;
+expression ::= functionCall;
+
+scope ::= { <statements> };
 
 paramDefinition ::= <value> : <type> ;
 
@@ -34,7 +36,7 @@ paramsDefinition ::= paramDefinition [ , paramDefinition ]* ;
 
 fuctionParams ::= paramDefinition | (paramsDefinition) ;
 
-functionDefinition ::=  fuctionParams -> <scope> ;
+functionDefinition ::=  fuctionParams -> expression | <scope> ;
 
 newFunction = [(typeParam)]new(<name>[, <value>]) ;
 
