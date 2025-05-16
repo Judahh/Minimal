@@ -189,6 +189,7 @@ export class Parser {
 
     // I've defined scope to be a block scope and nothing else. A global scope is not a scope. Neither is the body of a function if the user does not employ braces,
     // in which case it's being treated as an expression. This is consistent with the JS design and behavior.
+    // -> Maybe is a good idea to have a global scope, because it can be referencied. This is not JS. It does not need the same behavior.
     private parseScope(): Scope {
         let statements: (Stmt | Scope)[] = []
         if (!this.match(TokenType.OpenBrace)){
@@ -207,6 +208,11 @@ export class Parser {
         return {type: "Scope", statements: statements} as Scope;
     }
 
+    // Remember a function definition does not need to has parameters or arrow.
+    // I can be just a scope or a expression (see control functions like loop and if).
+    // And it can be used as a parameter.
+    // It may be easier to think as function definition, scope and a single expression as the same. 
+    // Or one enclosing another. Like: function definition >= scope >= single expression
     private parseFunctionDefinition(): FunctionDefinition {
         let params = this.parseFunctionParams();
         let body: (Expr | Scope)
