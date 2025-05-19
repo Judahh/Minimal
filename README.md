@@ -39,36 +39,36 @@ default(0)
 ##### Boolean
 0 or 1
 
-##### Natural(size:default(Natural, 32), growable: default(Boolean, 1))
+##### Natural(default(Natural, 32) size, (default(Boolean, 1)) growable)
 1,2,...
 
-##### Whole(size:default(Natural, 32), growable: default(Boolean, 1))
+##### Whole(default(Natural, 32) size, (default(Boolean, 1)) growable)
 0,1,2,...
 
-##### Integer(size:default(Natural, 32), growable: default(Boolean, 1))
+##### Integer(default(Natural, 32) size, (default(Boolean, 1)) growable)
 ...,-2,-1,0,1,2,...
 
-##### Rational(pSize:default(Natural, 32),qSize:default(Natural, 32), growable: default(Boolean, 1))
+##### Rational((default(Natural, 32)) pSize, (default(Natural, 32)) qSize, (default(Boolean, 1)) growable)
 Integer/Whole
 
 ##### Real
 Integer.Whole
 
-###### Float(sizeMultiplier:default(Integer, 1), growable: default(Boolean, 1)) | Float(size:default(Natural, 32), mantissaSize:default(Natural, 23), growable: default(Boolean, 1))
+###### Float((default(Integer, 1)) sizeMultiplier, (default(Boolean, 1)) growable) or Float((default(Natural, 32)) size, (default(Natural, 23)) mantissaSize, (default(Boolean, 1)) growable)
 
-###### Number(integerSize:default(Natural, 32), decimalSize:default(Natural, 32), growable: default(Boolean, 1)) | Number(options: NumberOptions)
+###### Number((default(Natural, 32)) integerSize, (default(Natural, 32)) decimalSize, (default(Boolean, 1)) growable) or Number((NumberOptions) options)
 
-#### (default(Type,Auto))Array(size?:Natural) (if it does not have a size it's growable)
+#### (default(Type,Auto))Array((optional(Natural)) growable) (if it does not have a size it's growable)
 
 literal: [1, 3, 4, 5]
 
 #### Text Types
 
-##### Char(encoding:default(String, "ascii"))
+##### Char((default(String, "ascii")) encoding)
 
 literal: 'c'
 
-##### String(encoding:default(String, "ascii"))
+##### String((default(String, "ascii")) encoding)
 
 It's a special type of Array (Array(Char)) that represents a sequence of characters.
 literal: "string" or `string`
@@ -86,9 +86,24 @@ It's a type to indicates a constant variable.
 It's possible to define a type that can be any of a set of types, and it's possible to aggregate more types into an existing umbrella type.
 
 ```
-Real:Type = Float | Number;
-Numeric:Type = Boolean | Natural | Whole | Integer | Rational | Real;
-Text:Type = Char | String;
+(Type) Real : or(Float, Number);
+(Type) Numeric : or(Boolean , Natural , Whole , Integer , Rational , Real);
+(Type) Text : or(Char , String);
+```
+
+### Variable instatiation:
+
+```
+[<Type>] <variableName> [: <value>];
+```
+
+Example:
+
+```
+(Integer | String) a : 2;
+(Integer) b : 3;
+c : 4;
+d;
 ```
 
 ### Function:
@@ -189,7 +204,7 @@ logarithm(<value>, <base>);
 
 Syntax:
 ```
-equalType: Type = "same" | "strict" | "loose" | "truthy"; # same: same address in memory, strict: checks type and value, loose: checks value, truthy: checks if both are truthy
+(Type) equalType : or("same", "strict", "loose", "truthy"); # same: same address in memory, strict: checks type and value, loose: checks value, truthy: checks if both are truthy
 equals(<value1>, <value2>[, <equalType>]);
 notEquals(<value1>, <value2>[, <equalType>]);
 greaterThan(<value1>, <value2>[, <equalType>]);
@@ -210,6 +225,7 @@ Example:
     new("x", 5);
     new("y", 6);
     set(x, y);
+    k : 7;
 }
 set(x, 7); # x is not defined
 
@@ -330,7 +346,7 @@ loop(iterates(a), e -> {
 }); # for of like loop
 
 (Number)new("a", [1,2,3,4,5]);
-loop(iterates(a), e: Number -> {
+loop(iterates(a), (Number) e -> {
     log('Iteration: ', e);
 }); # for of like loop
 
@@ -370,7 +386,7 @@ or
 
 try({
     log('try block');
-}, (e: Error)->{
+}, ((Error) e)->{
     log('catch block');
 });
 
@@ -378,7 +394,7 @@ or
 
 try({
     log('try block');
-}).catch((e: Error)->{
+}).catch(((Error) e)->{
     log('catch block');
 });
 
@@ -386,9 +402,9 @@ or
 
 try({
     log('try block');
-}).catch((e: SomeError)->{
+}).catch(((SomeError) e)->{
     log('catch block');
-}).catch((e: AnotherError)->{
+}).catch(((AnotherError) e)->{
     log('another catch block');
 });
 ```
@@ -413,9 +429,9 @@ Some error
 Code: 500
 Stack trace:
     at someFunction (file:line:column)
-    where (x = 1, y = 2)
+    using (x : 1, y : 2)
     at someOtherFunction (file:line:column)
-    where (z = 2)
+    using (z : 2)
     at main (file:line:column)
 
 
@@ -428,7 +444,7 @@ Some error
 Code: 404
 Stack trace:
     at someFunction (file:line:column)
-    where (x: Number = 1, y = 2)
+    using (x: Number : 1, y : 2)
     at main (file:line:column)
 
 
@@ -440,7 +456,7 @@ Some error
 Code: 400
 Stack trace:
     at someFunction (file:line:column)
-    where (x = 1, y = 2)
+    using (x : 1, y : 2)
     at main (file:line:column)
 
 new("someFunction", (x,y) -> {
@@ -453,12 +469,12 @@ Some error
 Code: 404
 Stack trace:
     at someFunction (file:line:column)
-    where (x = 1, y = 2)
+    using (x : 1, y : 2)
     at main (file:line:column)
 
 Hide Secret Values
 
-new("someFunction", (x: Secret, y: Secret(Number), z) -> {
+new("someFunction", ((Secret) x, (Secret(Number)) y, z) -> {
     throw(Exception('Some error', 404));
 });
 
@@ -468,7 +484,7 @@ Some error
 Code: 404
 Stack trace:
     at someFunction (file:line:column)
-    where (x: Secret, y: Secret(Number), z = 3)
+    using (x: Secret, y: Secret(Number), z : 3)
     at main (file:line:column)
 
 ```
@@ -487,13 +503,13 @@ functionBody: { <statementsWithReturn> } | <expression> ;
 Example:
 
 ```minimal
-((a: Number, b: Number) -> Number)new("sum", (a: Number, b: Number) -> {
+(((Number) a, (Number) b) -> Number)new("sum", ((Number) a, (Number) b) -> {
     log('Sum a:', a, ' and b:', b);
     -> sum(a, b); # return is ->
 });
-new("sub", (a: Number, b: Number) -> subtract(a,b));
+new("sub", ((Number) a, (Number) b) -> subtract(a,b));
 
-new("mult", (a: Number, b: Number)->multiply(a,b));
+new("mult", ((Number) a, (Number) b)->multiply(a,b));
 ```
 
 ## Struct
@@ -502,19 +518,19 @@ new("mult", (a: Number, b: Number)->multiply(a,b));
 Like a class but without functions (but can have constructor)
 If it does not have a constructor must have all variables initialized and cannot be instantiated
 new("sampleStruct", {
-    x: Number = 5;
-    y: Const(Number) = 10;
+    (Number) x : 5;
+    (Const(Number)) y : 10;
 });
 or
 If it has a constructor it can have variables not initialized but must be instantiated
 new("SampleStruct", {
-    x: Number;
-    y: Const(Number);
-    (x: Number, y: Number) -> {
+    (Number) x;
+    (Const(Number)) y;
+    ((Number) x, (Number) y) -> {
         set(this.x, x);
         set(this.y, y);
     };
-    inc = (a: Number) -> {
+    inc : ((Number) a) -> {
         set(a, sum(a, 1));
         -> a; # return is ->
     };
@@ -538,14 +554,14 @@ log(numberExample2); # logs 6
 ```minimal
 Like a class but without variables (Does not have constructor, and cannot be instantiated, just used as an object)
 new("sampleEngine", {
-    init = () -> {
+    init : () -> {
         log('Engine initialized');
     };
-    start = () -> {
+    start : () -> {
         this.init();
         log('Engine started');
     };
-    sum = (a: Number, b: Number) -> {
+    sum : ((Number) a, (Number) b) -> {
         log('Sum a:', a, ' and  b:', b);
         -> sum(a, b); # return is ->
     };
@@ -665,29 +681,29 @@ new("someFunction", () -> {
 ## Enum
 
 ```minimal
-(Enum)new("Color", {
-    RED;
-    GREEN;
-    BLUE;
-});
+(Enum)new("Color", [
+    RED,
+    GREEN,
+    BLUE
+]);
 or
-(Enum)new("Color", {
-    RED = 1;
-    GREEN = 2;
-    BLUE = 3;
-});
+(Enum)new("Color", [
+    RED : 1,
+    GREEN : 2,
+    BLUE : 3,
+]);
 or
-(Enum)new("Color", {
-    RED = 1;
-    GREEN;
-    BLUE;
-});
+(Enum)new("Color", [
+    RED : 1,
+    GREEN,
+    BLUE,
+}];
 or
-(Enum)new("Color", {
-    RED = 'r';
-    GREEN = 'g';
-    BLUE = 'b';
-});
+(Enum)new("Color", [
+    RED : 'r',
+    GREEN : 'g',
+    BLUE : 'b'
+]);
 ```
 
 ## Classe
@@ -702,17 +718,17 @@ Syntax:
 
 ```minimal
 new("SampleClass", {
-    x: Number = 5;
-    y: Const(Number) = 10;
-    w: Number = 10;
+    (Number) x: 5;
+    (Const(Number)) y : 10;
+    (Number) w : 10;
 
-    (x: Number) -> { set(this.x, x); }; # constructor
+    ((Number) x) -> { set(this.x, x); }; # constructor
 
-    sum = () -> {
+    sum: () -> {
         -> sum(x,y,w);
     };
 
-    value = () -> {
+    value : () -> {
         -> x;
     };
 
@@ -720,7 +736,7 @@ new("SampleClass", {
 });
 
 new("SampleClassChild", extends(SampleClass, { 
-    (x: Number, w: Number) -> { # new constructor signature option
+    ((Number) x, (Number) w) -> { # new constructor signature option
         set(this.x, x);
         set(this.w, w);
     };
@@ -730,12 +746,12 @@ new("SampleClassChild", extends(SampleClass, {
 ### Function Oriented Class
 
 ```minimal
-new("SampleClass2", (z?: Number) -> {
-    sampleFunctionThatReturnsTen = () -> {
+new("SampleClass2", ((or(Number, undefined, null)) z) -> {
+    sampleFunctionThatReturnsTen : () -> {
         -> 10;
     };
-    x: Number = z || 5;
-    y: Const(Number) = 10;
+    (Number) x : or(z, 5);
+    (Const(Number)) y : 10;
 
     hide(x); # hides the x variable, making it private
     -> this;
@@ -759,26 +775,26 @@ Example:
 
 ```minimal
 new("Person", { # is a Type
-     name: String;
-     age: Number;
+    (String) name;
+    (Number) age;
 });
 
 new("Robot", {
-    id: Number;
+    (Number) id;
 });
 
 new("Worker", and(Person,{ # extends Person
-     job: String;
+    (String) job;
 }));
 
 new("Thinker", or(Person,Robot)); # Thinker can be a Person or a Robot
 
 (Human)new("Person", { # Class Human implements Person
-      (name: String, age: Number) -> {
-                this.name = name;
-                this.age = age;
+      ((String) name, (Number) age) -> {
+        this.name : name;
+        this.age : age;
       }
-      eat = () -> log('eat');
+      eat : () -> log('eat');
 });
 ```
 
@@ -787,63 +803,59 @@ new("Thinker", or(Person,Robot)); # Thinker can be a Person or a Robot
 ### Operand Definition
 
 ```minimal
-global.(a: Number, '<', b: Number) -> {
+global.((Number) a, '<', (Number) b) -> {
     -> lessThan(a, b);
 };
 
-global.(a: Number, '>', b: Number) -> {
+global.((Number) a, '>', (Number) b) -> {
     -> greaterThan(a, b);
 };
 
-global.(a: Number, '<=', b: Number) -> {
+global.((Number) a, '<=', (Number) b) -> {
     -> lessThanOrEquals(a, b);
 };
 
-global.(a: Number, '>=', b: Number) -> {
+global.((Number) a, '>=', (Number) b) -> {
     -> greaterThanOrEquals(a, b);
 };
 
-global.(a: Number, '?=', b: Number) -> {
+global.((Number) a, '=', (Number) b) -> {
     -> equals(a, b);
 };
 
-global.(a: Number, '=', b: Number) -> {
-    -> exists(a) ? set(a.name, b) : new(a.name, b, typeOf(a));
-};
-
-global.(a: Number, '->', b: Number) -> {
+global.((Number) a, '->', (Number) b) -> {
     -> exists(a) ? points(a.name, b) : new(a.name, b, Pointer);
 };
 
-global.(a: Number, '+', b: Number) -> { # The literal string shows the symbol(s) used as operator
+global.((Number) a, '+', (Number) b) -> { # The literal string shows the symbol(s) used as operator
     -> sum(a + b);
 };
 
-global.(a: SampleClass, '+', b: SampleClass) -> { # The literal string shows the symbol(s) used as operator
+global.((SampleClass) a, '+', (SampleClass) b) -> { # The literal string shows the symbol(s) used as operator
     -> SampleClass(a.value() + b.value());
 };
 
-global.(a: SampleClass, '+', b: Numeric) -> {
+global.((SampleClass) a, '+', (Numeric) b) -> {
     -> SampleClass(a.value() + b);
 };
 
-global.(a: Numeric, '+', b: SampleClass) -> {
+global.((Numeric) a, '+', (SampleClass) b) -> {
     -> SampleClass(a + b.value());
 };
 
-global.('|', a: SampleClass, '|') -> {
+global.('|', (SampleClass) a, '|') -> {
     -> if(a.value() > 0, a.value(), -a.value());
 };
 
-global.(a: Number, '=', o: Operand, b: Number) -> {
+global.((Number) a, '=', (Operand) o, (Number) b) -> {
     -> a = a o b;
 };
 
-global.(c: Any, '?', t: Scope, f: Scope) -> {
+global.((Any) c, '?', (Scope) t, '˜', (Scope) f) -> {
     -> if(c, t, f);
 };
 
-new("result", x < y ? { -> x } : y);
+new("result", x < y ? { -> x } ˜ y);
 
 x < y ? log('x is less than y') : {
     log('x is greater than or equal to y');
@@ -853,31 +865,31 @@ x < y ? log('x is less than y') : {
 ### Operand Usage
 
 ```minimal
-sampleClass = SampleClass(6);
-sampleClass2 = SampleClass(7);
-log((sampleClass + sampleClass2).value); # logs 13 (usage of global.(a: SampleClass, '+', b: SampleClass))
-log((sampleClass + 5).value); # logs 11 (usage of global.(a: SampleClass, '+', b: Numeric))
-sampleClass3 = SampleClass(-5);
-log(|sampleClass3|); # logs 5 (usage of global.('|', a: SampleClass, '|'))
+sampleClass : SampleClass(6);
+sampleClass2 : SampleClass(7);
+log((sampleClass + sampleClass2).value); # logs 13 (usage of global.((SampleClass) a, '+', (SampleClass) b))
+log((sampleClass + 5).value); # logs 11 (usage of global.((SampleClass) a, '+', (Numeric) b))
+sampleClass3 : SampleClass(-5);
+log(|sampleClass3|); # logs 5 (usage of global.('|', (SampleClass) a, '|'))
 ```
 
 
 ### Operand Precedence
 
 ```minimal
-numberPlusNumber = global.(a:Number,'+',b:Number) ->{
+numberPlusNumber : global.((Number) a,'+',(Number) b) ->{
       ->Number.sum(a,b);
 };
 
-numberTimesNumber = global.(a:Number,'*',b:Number) ->{
+numberTimesNumber : global.((Number) a,'*',(Number) b) ->{
       ->Number.mul(a,b);
 };
 
-numberDivideNumber = global.(a:Number,'/',b:Number) ->{
+numberDivideNumber : global.((Number) a,'/',(Number) b) ->{
       ->Number.div(a,b);
 };
 
-global.precedence+=[ # Order evaluated left to right for the same level
+global.precedence+:[ # Order evaluated left to right for the same level
       [numberTimesNumber,numberDivideNumber], # higher level
       numberPlusNumber # lower level
 ];
@@ -901,11 +913,11 @@ is a reference to the current function, it can be used to access the current fun
 ## Instantiation
 
 ```minimal
-numberExample = Number(5);
+numberExample : Number(5);
 numberExampleReferece -> numberExample;
-numberExampleClone = numberExample;
-functionExample = ()->{};
-classExample = {
+numberExampleClone : numberExample;
+functionExample : ()->{};
+classExample : {
   () -> {};
 };
 
