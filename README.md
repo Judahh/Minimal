@@ -522,6 +522,11 @@ new("sampleStruct", {
     (Const(Number)) y : 10;
 });
 or
+sampleStruct : {
+    (Number) x : 5;
+    (Const(Number)) y : 10;
+};
+or
 If it has a constructor it can have variables not initialized but must be instantiated
 new("SampleStruct", {
     (Number) x;
@@ -535,6 +540,20 @@ new("SampleStruct", {
         -> a; # return is ->
     };
 });
+or
+sampleStruct : {
+    (Number) x;
+    (Const(Number)) y;
+    ((Number) x, (Number) y) -> {
+        set(this.x, x);
+        this.y: y;
+    };
+    inc : ((Number) a) -> {
+        a: sum(a, 1);
+        -> a; # return is ->
+    };
+};
+
 new("sampleStruct", SampleStruct(5, 10));
 
 log(sampleStruct.x); # logs 5
@@ -554,7 +573,7 @@ log(numberExample2); # logs 6
 ```minimal
 Like a class but without variables (Does not have constructor, and cannot be instantiated, just used as an object)
 new("sampleEngine", {
-    init : () -> {
+    (protected()) init : () -> {
         log('Engine initialized');
     };
     start : () -> {
@@ -565,7 +584,6 @@ new("sampleEngine", {
         log('Sum a:', a, ' and  b:', b);
         -> sum(a, b); # return is ->
     };
-    protect(init); # hides the init function externally, making it protected
 });
 
 # its possible to merge a engine with a struct and it will become a class
@@ -718,7 +736,7 @@ Syntax:
 
 ```minimal
 new("SampleClass", {
-    (Number) x: 5;
+    (private(Number)) x: 5;
     (Const(Number)) y : 10;
     (Number) w : 10;
 
@@ -731,9 +749,23 @@ new("SampleClass", {
     value : () -> {
         -> x;
     };
-
-    hide(x); # hides the x variable, making it private
 });
+or
+SampleClass : {
+    (private(Number)) x: 5;
+    (Const(Number)) y : 10;
+    (Number) w : 10;
+
+    ((Number) x) -> { set(this.x, x); }; # constructor
+
+    sum: () -> {
+        -> sum(x,y,w);
+    };
+
+    value : () -> {
+        -> x;
+    };
+};
 
 new("SampleClassChild", extends(SampleClass, { 
     ((Number) x, (Number) w) -> { # new constructor signature option
@@ -741,6 +773,13 @@ new("SampleClassChild", extends(SampleClass, {
         set(this.w, w);
     };
 }));
+or
+SampleClassChild : extends(SampleClass, { 
+    ((Number) x, (Number) w) -> { # new constructor signature option
+        set(this.x, x);
+        set(this.w, w);
+    };
+});
 ```
 
 ### Function Oriented Class
@@ -750,10 +789,19 @@ new("SampleClass2", ((or(Number, undefined, null)) z) -> {
     sampleFunctionThatReturnsTen : () -> {
         -> 10;
     };
-    (Number) x : or(z, 5);
+    (private(Number)) x : or(z, 5);
     (Const(Number)) y : 10;
 
-    hide(x); # hides the x variable, making it private
+    -> this;
+};
+or
+SampleClass2 : ((or(Number, undefined, null)) z) -> {
+    sampleFunctionThatReturnsTen : () -> {
+        -> 10;
+    };
+    (private(Number)) x : or(z, 5);
+    (Const(Number)) y : 10;
+
     -> this;
 };
 
