@@ -100,7 +100,7 @@ It's possible to define a type that can be any of a set of types, and it's possi
 Example:
 
 ```
-(Integer | String) a : 2;
+(or(Integer, String)) a : 2;
 (Integer) b : 3;
 c : 4;
 d;
@@ -847,15 +847,19 @@ global.('|', (SampleClass) a, '|') -> {
     -> if(a.value() > 0, a.value(), -a.value());
 };
 
+global.('!', (Numeric) a) -> {
+    -> not(a);
+};
+
 global.((Number) a, '=', (Operand) o, (Number) b) -> {
     -> a = a o b;
 };
 
-global.((Any) c, '?', (Scope) t, '˜', (Scope) f) -> {
+global.((Any) c, '?', (Scope) t, '!', (Scope) f) -> {
     -> if(c, t, f);
 };
 
-new("result", x < y ? { -> x } ˜ y);
+new("result", x < y ? { -> x } ! y);
 
 x < y ? log('x is less than y') : {
     log('x is greater than or equal to y');
