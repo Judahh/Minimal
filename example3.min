@@ -1,0 +1,129 @@
+import("global");
+
+PetFood : {
+    (String) name;
+    (Unsigned(Number)) price;
+    (Natural) portion;
+    (name, price, portion) -> {
+        this.name : name;
+        this.price : price;
+        set(this.portion, portion);
+    };
+};
+
+Cat : {
+    (String)new("name");
+
+    (name) -> {
+        this.name : name;
+    };
+
+    sound : () -> {
+        -> "Meow";
+    };
+
+    new("eat", (food: PetFood) -> {
+        log("Yum yum!");
+        set(food.portion, subtract(food.portion, 1));
+    });
+};
+
+Dog : {
+    (String) name;
+
+    (name) -> {
+        this.name : name;
+    };
+
+    sound : () -> {
+        -> "Woof";
+    };
+
+    eat : (food: PetFood) -> {
+        log("Yum yum!");
+        food.portion : subtract(food.portion, 1);
+    };
+};
+
+Pet : or(Cat, Dog);
+
+PetEngine : {
+    generateFood : (pet: Pet) -> {
+        (PetFood) petFood;
+
+        if (pet.isInstanceOf(Cat), {
+            petFood : PetFood("Fish", 10, 100);
+        },{
+            set(petFood, PetFood("Meat", 20, 200));
+        });
+        -> petFood;
+    };
+
+    generateFood2 : (pet: Pet) -> {
+        if(pet.isInstanceOf(Cat), {
+            final.-> PetFood("Fish", 20, 200);
+        },{
+            final.-> PetFood("Meat", 10, 100);
+        });
+    };
+
+    new("generateFood3", (pet: Pet) -> {
+        -> if(pet.isInstanceOf(Cat),
+            PetFood("Fish", 30, 300),
+            PetFood("Meat", 30, 300)
+        );
+    });
+
+    new("generateFood4", (pet: Pet) -> {
+        if(pet.isInstanceOf(Cat), {
+            -> PetFood("Fish", 40, 400);
+        },{
+            -> PetFood("Meat", 40, 400);
+        });
+    });
+
+    giveFood : (pet: Pet, petFood: PetFood) -> {
+        log("Here is your food, " , pet.name , "!");
+        pet.eat(petFood);
+    };
+});
+
+# Some Initial Comment
+
+##
+ # A simple example of a pet engine that generates food for pets and feeds them.
+ # The engine can generate food for both cats and dogs.
+ #
+ # - Returns void.
+ # - Prints the name, price, and portion of the food.
+##
+main : () -> {
+    (Cat) cat : Cat("Kitty");
+    dog : Dog("Doggy"## Some Double Internal Comment ##); # Some Comment
+
+    # Some Comment Over Comment
+    catFood : FoodGenerator.generate(cat##blooou##);
+    new("dogFood", FoodGenerator.generate(dog));
+
+    log(catFood.name); #Some Comment .f.ewveovkerv : ;}~l^}DPSL}A
+    log(catFood.price);
+    log(catFood.portion)### #Some Tripple Internal Comment ###;
+
+    log(dogFood.name);
+    log(dogFood.price);
+    log(dogFood.portion);
+
+    PetEngine.giveFood(cat, catFood);
+    PetEngine.giveFood(dog, dogFood);
+
+    if(greaterThanOrEquals(dogFood.portion, catFood.portion), {
+        log("Doggy has more food! Or they have the same amount.");
+    },{
+        log("Kitty has more food!");
+    });
+    log(`Doggy has '{ dogFood.portion , }' portions of food.`);
+    log("Kitty has '" , catFood.portion , "' portions of food.");
+    log(`Doggy first Letter is '{ 'D' }'.`);
+});
+
+main();

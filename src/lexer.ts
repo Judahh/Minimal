@@ -1,60 +1,60 @@
 export enum TokenType {
 	// Literal Types
-	Number, // 0
-	Identifier, // 1
+	Identifier, // 0
+	Number, // 1
+	String, // 2
+	TemplateString, // 3
+	Char, // 4
 
 	// Operators
-	Equals, // 2
-	Hyphen, // 3
-	CustomOperator, // 4
+	// Equals, // 5
+	Hyphen, // 5
+	CustomOperator, // 6
 	// Grouping
-	OpenParentesis, // 5 - (
-	CloseParentesis, // 6 - )
-	OpenBrace, // 7 - {
-	CloseBrace, // 8 - }
-	OpenBracket, // 9 - [
-	CloseBracket, // 10 - ]
+	OpenParenthesis, // 7 - (
+	CloseParenthesis, // 8 - )
+	OpenBrace, // 9 - {
+	CloseBrace, // 10 - }
+	OpenBracket, // 11 - [
+	CloseBracket, // 12 - ]
 	// Punctuation
-	Comma, // 11 - ,
-	Dot, // 12 - .
-	SemiColon, // 13 - ;
-	Colon, // 14 - :
+	Comma, // 13 - ,
+	Dot, // 14 - .
+	SemiColon, // 15 - ;
+	Colon, // 16 - :
 	// Arrow
-	Arrow, // 15 - =>
+	Arrow, // 17 - ->
 	// Unkown
-	Unknown, // 16
+	Unknown, // 18
 	// Var Keyword
-	Var, // 17
-	// Literal Types
-	String, // 18
-	TemplateString, // 19
-	CharOrString, // 20
+	Var, // 19
 	// Skippable
-	Skippable, // 21
+	Skippable, // 20
 	// Comment
-	Comment, // 22
+	Comment, // 21
 	// Escape
-	Escape, // 23
-	EOF, // 24
+	Escape, // 22
+	EOF, // 23
 }
 
 
 const simpleTokenToTokenType: { [str: string]: TokenType } = {
-	"=": TokenType.Equals,
+	// "=": TokenType.Equals,
 	"-": TokenType.Hyphen,
-	"(": TokenType.OpenParentesis,
-	")": TokenType.CloseParentesis,
+	"(": TokenType.OpenParenthesis,
+	")": TokenType.CloseParenthesis,
 	"{": TokenType.OpenBrace,
 	"}": TokenType.CloseBrace,
 	"[": TokenType.OpenBracket,
 	"]": TokenType.CloseBracket,
+	"->": TokenType.Arrow,
 	",": TokenType.Comma,
 	".": TokenType.Dot,
 	";": TokenType.SemiColon,
 	":": TokenType.Colon,
 	"\"": TokenType.String,
 	"`": TokenType.TemplateString,
-	"'": TokenType.CharOrString,
+	"'": TokenType.Char,
 	"#": TokenType.Comment,
 	"\\": TokenType.Escape,
 	"$": TokenType.Var,
@@ -95,7 +95,7 @@ export interface Token {
 function token(value = "", type: TokenType, line: number, column: number, isFinal?: boolean): Token {
     if (isFinal) {
         return { value, type, isFinal, typeName: TokenType[type], line, column };
-    } else if (type == TokenType.CustomOperator || type == TokenType.Equals || type == TokenType.Arrow) {
+    } else if (type == TokenType.CustomOperator || type == TokenType.Arrow) {
         isFinal = false;
         return { value, type, isFinal, typeName: TokenType[type], line, column };
     }
@@ -167,12 +167,12 @@ function groupLiteralTokens(tokens: Token[]): Token[] {
 	// Group every token between the first and last literal token.
 	// Example: [ { value: ':', type: 13 }, { value: 'PetFood', type: 1 }, { value: '"', type: TokenType.String }, { value: ",", type: TokenType.Comma }, { value: "World", type: TokenType.Identifier }, { value: ''', type: TokenType.Char }, { value: '"', type: TokenType.String } ] -> [ { value: ':', type: 13 }, { value: 'PetFood', type: 1 }, { value: '",World\'"', type: TokenType.String } ]
 	let newTokens: Token[] = JSON.parse(JSON.stringify(tokens));
-	let currentType: TokenType.TemplateString | TokenType.String | TokenType.CharOrString | undefined = undefined;
+	let currentType: TokenType.TemplateString | TokenType.String | TokenType.Char | undefined = undefined;
 	let current: Token | undefined = undefined;
 	let count: number = 0;
 	for (let i = 0; i < newTokens.length; i++) {
 		const t = newTokens[i];
-		if (t.type == TokenType.String || t.type == TokenType.TemplateString || t.type == TokenType.CharOrString) {
+		if (t.type == TokenType.String || t.type == TokenType.TemplateString || t.type == TokenType.Char) {
 			if (count == 0) {
 				current = t;
 				currentType = t.type;
@@ -198,7 +198,7 @@ function groupLiteralTokens(tokens: Token[]): Token[] {
 	}
 	// remove single character string and char tokens.
 	newTokens.forEach((t, i) => {
-		if (t.type == TokenType.String || t.type == TokenType.TemplateString || t.type == TokenType.CharOrString) {
+		if (t.type == TokenType.String || t.type == TokenType.TemplateString || t.type == TokenType.Char) {
 			if (t.value.length == 1) {
 				newTokens.splice(i, 1);
 			}
@@ -206,7 +206,7 @@ function groupLiteralTokens(tokens: Token[]): Token[] {
 	});
 	newTokens = newTokens.map((t, i) => {
 		// remove first and last character from string and char tokens.
-		if (t.type == TokenType.String || t.type == TokenType.TemplateString || t.type == TokenType.CharOrString) {
+		if (t.type == TokenType.String || t.type == TokenType.TemplateString || t.type == TokenType.Char) {
 			t.value = t.value.slice(1, t.value.length - 1);
 		}
 		return t;
@@ -247,7 +247,7 @@ export function tokenize(sourceCode: string): Token[] {
         // BEGIN PARSING ONE CHARACTER TOKENS
         const tempToken = getTokenType(char, lastToken, line, column);
         if (tempToken.type != TokenType.Unknown) {
-            if (lastToken?.type == TokenType.CustomOperator && (tempToken.type == TokenType.Equals || tempToken.type == TokenType.Arrow || tempToken.type == TokenType.Colon || tempToken.type == TokenType.Dot)) {
+            if (lastToken?.type == TokenType.CustomOperator && (tempToken.type == TokenType.Arrow || tempToken.type == TokenType.Colon || tempToken.type == TokenType.Dot)) {
                 tokens[tokens.length - 1].value += tempToken.value;
                 tokens[tokens.length - 1].type = TokenType.CustomOperator;
                 src.shift();
@@ -298,7 +298,7 @@ export function tokenize(sourceCode: string): Token[] {
             }
         } else {
             if (!isValidChar(char)) {
-                if (lastToken?.type == TokenType.CustomOperator || lastToken?.type == TokenType.Equals || lastToken?.type == TokenType.Arrow) {
+                if (lastToken?.type == TokenType.CustomOperator || lastToken?.type == TokenType.Arrow) {
                     tokens[tokens.length - 1].value += src.shift();
                     tokens[tokens.length - 1].type = TokenType.CustomOperator;
                 } else {
@@ -333,7 +333,7 @@ export function tokenize(sourceCode: string): Token[] {
                     }
                 } else if (isSkippable(char)) {
                     // Skip unneeded chars.
-                    if (lastToken?.type == TokenType.CustomOperator || lastToken?.type == TokenType.Equals || lastToken?.type == TokenType.Arrow) {
+                    if (lastToken?.type == TokenType.CustomOperator || lastToken?.type == TokenType.Arrow) {
                         tokens[tokens.length - 1].isFinal = true;
                     }
                     tokens.push(token(src.shift(), TokenType.Skippable, line, column));
