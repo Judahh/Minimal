@@ -2,12 +2,16 @@ import { tokenize } from "./lexer";
 import fs from "fs";
 import { Parser } from "./parser";
 
+function isMinimal(filename: string) {
+    return filename.endsWith(".minimal") || filename.endsWith(".min") || filename.endsWith(".mon") || filename.includes(".bmon") || filename.includes(".mona") || filename.includes(".bmona");
+}
+
 // use main function to run the lexer, using args as source code
 function main(args: string[]) {
     // get arg as the source code file
     const outputs = args.filter((arg) => {
         // check if arg is a directory
-        const out = !arg.includes(".") && !(arg.endsWith(".min") || arg.endsWith(".mon") || arg.includes("*"));
+        const out = !arg.includes(".") && !(isMinimal(arg) || arg.includes("*"));
         try {
             if (fs.lstatSync(arg).isDirectory()) {
                 return false;
@@ -18,7 +22,7 @@ function main(args: string[]) {
         return out;
     });
     args = args.filter((arg) => {
-        return (arg.endsWith(".min") || arg.endsWith(".mon") || arg.includes("*")) && !arg.includes(".symb.");
+        return (isMinimal(arg) || arg.includes("*")) && !arg.includes(".symb.");
     });
     console.log("args");
     console.log(args);

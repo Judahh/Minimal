@@ -986,3 +986,13 @@ log(functionExample.variableName); # logs functionExample
 log(classExample.typeName); # logs Object
 log(classExample.variableName); # logs classExample
 ```
+
+## Files:
+
+.minimal = minimal source file
+.min = minimal source file
+
+.mon = minimal object file
+.bmon = minimal binary object file
+.mona = minimal object file with actions
+.bmona = minimal binary object file with actions 
