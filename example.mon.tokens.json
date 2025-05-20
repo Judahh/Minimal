@@ -1,0 +1,513 @@
+[
+  {
+    "value": "[",
+    "type": 11,
+    "typeName": "OpenBracket",
+    "line": 1,
+    "column": 1
+  },
+  {
+    "value": "{",
+    "type": 9,
+    "typeName": "OpenBrace",
+    "line": 2,
+    "column": 5
+  },
+  {
+    "value": "a",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 3,
+    "column": 9
+  },
+  {
+    "value": ":",
+    "type": 16,
+    "typeName": "Colon",
+    "line": 3,
+    "column": 10
+  },
+  {
+    "value": "1",
+    "type": 1,
+    "typeName": "Number",
+    "line": 3,
+    "column": 12
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 3,
+    "column": 13
+  },
+  {
+    "value": "b",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 4,
+    "column": 9
+  },
+  {
+    "value": ":",
+    "type": 16,
+    "typeName": "Colon",
+    "line": 4,
+    "column": 10
+  },
+  {
+    "value": "c",
+    "type": 4,
+    "typeName": "Char",
+    "line": 4,
+    "column": 12
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 4,
+    "column": 15
+  },
+  {
+    "value": "c",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 5,
+    "column": 9
+  },
+  {
+    "value": ":",
+    "type": 16,
+    "typeName": "Colon",
+    "line": 5,
+    "column": 10
+  },
+  {
+    "value": "casa",
+    "type": 2,
+    "typeName": "String",
+    "line": 5,
+    "column": 12
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 5,
+    "column": 15
+  },
+  {
+    "value": "d",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 6,
+    "column": 9
+  },
+  {
+    "value": ":",
+    "type": 16,
+    "typeName": "Colon",
+    "line": 6,
+    "column": 10
+  },
+  {
+    "value": "1",
+    "type": 1,
+    "typeName": "Number",
+    "line": 6,
+    "column": 12
+  },
+  {
+    "value": ".",
+    "type": 14,
+    "typeName": "Dot",
+    "line": 6,
+    "column": 13
+  },
+  {
+    "value": "2",
+    "type": 1,
+    "typeName": "Number",
+    "line": 6,
+    "column": 14
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 6,
+    "column": 15
+  },
+  {
+    "value": "e",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 7,
+    "column": 9
+  },
+  {
+    "value": ":",
+    "type": 16,
+    "typeName": "Colon",
+    "line": 7,
+    "column": 10
+  },
+  {
+    "value": "DateTime",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 7,
+    "column": 12
+  },
+  {
+    "value": "(",
+    "type": 7,
+    "typeName": "OpenParenthesis",
+    "line": 7,
+    "column": 13
+  },
+  {
+    "value": "2023",
+    "type": 1,
+    "typeName": "Number",
+    "line": 7,
+    "column": 14
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 7,
+    "column": 15
+  },
+  {
+    "value": "10",
+    "type": 1,
+    "typeName": "Number",
+    "line": 7,
+    "column": 17
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 7,
+    "column": 18
+  },
+  {
+    "value": "1",
+    "type": 1,
+    "typeName": "Number",
+    "line": 7,
+    "column": 20
+  },
+  {
+    "value": ")",
+    "type": 8,
+    "typeName": "CloseParenthesis",
+    "line": 7,
+    "column": 21
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 7,
+    "column": 22
+  },
+  {
+    "value": "f",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 8,
+    "column": 9
+  },
+  {
+    "value": ":",
+    "type": 16,
+    "typeName": "Colon",
+    "line": 8,
+    "column": 10
+  },
+  {
+    "value": "DateTime",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 8,
+    "column": 12
+  },
+  {
+    "value": "(",
+    "type": 7,
+    "typeName": "OpenParenthesis",
+    "line": 8,
+    "column": 13
+  },
+  {
+    "value": "2023",
+    "type": 1,
+    "typeName": "Number",
+    "line": 8,
+    "column": 14
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 8,
+    "column": 15
+  },
+  {
+    "value": "10",
+    "type": 1,
+    "typeName": "Number",
+    "line": 8,
+    "column": 17
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 8,
+    "column": 18
+  },
+  {
+    "value": "1",
+    "type": 1,
+    "typeName": "Number",
+    "line": 8,
+    "column": 20
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 8,
+    "column": 21
+  },
+  {
+    "value": "12",
+    "type": 1,
+    "typeName": "Number",
+    "line": 8,
+    "column": 23
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 8,
+    "column": 24
+  },
+  {
+    "value": "0",
+    "type": 1,
+    "typeName": "Number",
+    "line": 8,
+    "column": 26
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 8,
+    "column": 27
+  },
+  {
+    "value": "0",
+    "type": 1,
+    "typeName": "Number",
+    "line": 8,
+    "column": 29
+  },
+  {
+    "value": ")",
+    "type": 8,
+    "typeName": "CloseParenthesis",
+    "line": 8,
+    "column": 30
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 8,
+    "column": 31
+  },
+  {
+    "value": "g",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 9,
+    "column": 9
+  },
+  {
+    "value": ":",
+    "type": 16,
+    "typeName": "Colon",
+    "line": 9,
+    "column": 10
+  },
+  {
+    "value": "{",
+    "type": 9,
+    "typeName": "OpenBrace",
+    "line": 9,
+    "column": 12
+  },
+  {
+    "value": "h",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 10,
+    "column": 13
+  },
+  {
+    "value": ":",
+    "type": 16,
+    "typeName": "Colon",
+    "line": 10,
+    "column": 14
+  },
+  {
+    "value": "1",
+    "type": 1,
+    "typeName": "Number",
+    "line": 10,
+    "column": 16
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 10,
+    "column": 17
+  },
+  {
+    "value": "i",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 11,
+    "column": 13
+  },
+  {
+    "value": ":",
+    "type": 16,
+    "typeName": "Colon",
+    "line": 11,
+    "column": 14
+  },
+  {
+    "value": "j",
+    "type": 4,
+    "typeName": "Char",
+    "line": 11,
+    "column": 16
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 11,
+    "column": 19
+  },
+  {
+    "value": "}",
+    "type": 10,
+    "typeName": "CloseBrace",
+    "line": 12,
+    "column": 9
+  },
+  {
+    "value": "}",
+    "type": 10,
+    "typeName": "CloseBrace",
+    "line": 13,
+    "column": 5
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 13,
+    "column": 6
+  },
+  {
+    "value": "{",
+    "type": 9,
+    "typeName": "OpenBrace",
+    "line": 14,
+    "column": 5
+  },
+  {
+    "value": "j",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 15,
+    "column": 9
+  },
+  {
+    "value": ":",
+    "type": 16,
+    "typeName": "Colon",
+    "line": 15,
+    "column": 10
+  },
+  {
+    "value": "1",
+    "type": 1,
+    "typeName": "Number",
+    "line": 15,
+    "column": 12
+  },
+  {
+    "value": "/",
+    "type": 6,
+    "typeName": "CustomOperator",
+    "line": 15,
+    "column": 13
+  },
+  {
+    "value": "12",
+    "type": 1,
+    "typeName": "Number",
+    "line": 15,
+    "column": 14
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 15,
+    "column": 15
+  },
+  {
+    "value": "}",
+    "type": 10,
+    "typeName": "CloseBrace",
+    "line": 16,
+    "column": 5
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 16,
+    "column": 6
+  },
+  {
+    "value": "]",
+    "type": 12,
+    "typeName": "CloseBracket",
+    "line": 17,
+    "column": 1
+  },
+  {
+    "value": "",
+    "type": 23,
+    "typeName": "EOF",
+    "line": 17,
+    "column": 2
+  }
+]
