@@ -1,4 +1,5 @@
 import("global");
+import("string");
 
 PetFood : {
     (String) name;
@@ -24,7 +25,7 @@ Cat : {
 
     new("eat", (food: PetFood) -> {
         log("Yum yum!");
-        set(food.portion, subtract(food.portion, 1));
+        set(food.portion, food.portion - 1);
     });
 };
 
@@ -41,7 +42,7 @@ Dog : {
 
     eat : (food: PetFood) -> {
         log("Yum yum!");
-        food.portion : subtract(food.portion, 1);
+        food.portion : food.portion - 1;
     };
 };
 
@@ -121,9 +122,9 @@ main : () -> {
     },{
         log("Kitty has more food!");
     });
-    log(`Doggy has '{ dogFood.portion , }' portions of food.`);
-    log("Kitty has '" , catFood.portion , "' portions of food.");
-    log(`Doggy first Letter is '{ 'D' }'.`);
+    log("Doggy has '" + dogFood.portion + "' portions of food.");
+    log("Kitty has '" + catFood.portion + "' portions of food.");
+    log("Doggy first Letter is '" + 'D' + "'.");
 });
 
 main();

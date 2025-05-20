@@ -58,7 +58,7 @@ Integer.Whole
 
 ###### Number((default(Natural, 32)) integerSize, (default(Natural, 32)) decimalSize, (default(Boolean, 1)) growable) or Number((NumberOptions) options)
 
-#### (default(Type,Auto))Array((optional(Natural)) growable) (if it does not have a size it's growable)
+#### (default(Type,Auto))Array((optional(Natural)) sie) (if it does not have a size it's growable)
 
 literal: [1, 3, 4, 5]
 

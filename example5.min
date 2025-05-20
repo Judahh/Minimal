@@ -1,0 +1,49 @@
+# Test Arrays, Enums, Structs
+Array a : [1, "qwe", 3];
+(Number)Array b : [1, 2, 3];
+c : [1, 2, 3];
+
+log(a[0], b[1], c[2], a[1]);
+
+new("sampleStruct", {
+    (Number) x : 5;
+    (Const(Number)) y : 10;
+});
+
+(struct) sampleStruct2 : {
+    (Number) x : 5;
+    (Const(Number)) y : 10;
+};
+
+log(sampleStruct.x, sampleStruct.y, sampleStruct2.x, sampleStruct2.y);
+
+(Enum)new("Color", [
+    RED,
+    GREEN,
+    BLUE
+]);
+
+Color2 : [
+    RED : 1,
+    GREEN : 2,
+    BLUE : 3,
+];
+
+(Enum)new("Color3", [
+    RED : 1,
+    GREEN,
+    BLUE,
+}];
+
+(Enum) Color4 : [
+    RED : 'r',
+    GREEN : 'g',
+    BLUE : 'b'
+];
+
+log(Color.RED, Color.GREEN, Color.BLUE);
+log(Color2.RED, Color2.GREEN, Color2.BLUE);
+log(Color3.RED, Color3.GREEN, Color3.BLUE);
+log(Color4.RED, Color4.GREEN, Color4.BLUE);
+
+log(Color.name(Color.RED));

@@ -1,0 +1,7 @@
+Global.(a: String, '+', b: String) => {
+    => math.sum(a, b);
+};
+
+Global.(a: String, '+', b: Numeric) => {
+    => array.concat(a, b);
+};
