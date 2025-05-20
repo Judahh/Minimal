@@ -9,7 +9,7 @@
   {
     "value": "(",
     "type": 7,
-    "typeName": "OpenParentesis",
+    "typeName": "OpenParenthesis",
     "line": 1,
     "column": 2
   },
@@ -23,7 +23,7 @@
   {
     "value": ")",
     "type": 8,
-    "typeName": "CloseParentesis",
+    "typeName": "CloseParenthesis",
     "line": 1,
     "column": 9
   },
@@ -44,7 +44,7 @@
   {
     "value": "(",
     "type": 7,
-    "typeName": "OpenParentesis",
+    "typeName": "OpenParenthesis",
     "line": 2,
     "column": 2
   },
@@ -86,7 +86,7 @@
   {
     "value": ")",
     "type": 8,
-    "typeName": "CloseParentesis",
+    "typeName": "CloseParenthesis",
     "line": 2,
     "column": 17
   },
@@ -107,7 +107,7 @@
   {
     "value": "(",
     "type": 7,
-    "typeName": "OpenParentesis",
+    "typeName": "OpenParenthesis",
     "line": 3,
     "column": 2
   },
@@ -149,7 +149,7 @@
   {
     "value": ")",
     "type": 8,
-    "typeName": "CloseParentesis",
+    "typeName": "CloseParenthesis",
     "line": 3,
     "column": 10
   },

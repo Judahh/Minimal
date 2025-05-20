@@ -36,9 +36,6 @@ jobs:
       - name: Copy file min files to dist folder
         run: |
           cp *.min dist/
-      - name: Compile example.min
+      - name: Compile all min/mon files
         run: |
-          npm start example.min
-      - name: Compile example2.min
-        run: |
-          npm start example2.min
+          npm start *
