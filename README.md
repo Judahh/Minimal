@@ -996,3 +996,7 @@ log(classExample.variableName); # logs classExample
 .bmon = minimal binary object file
 .mona = minimal object file with actions
 .bmona = minimal binary object file with actions 
+
+## Flow:
+
+minimal -> tokens -> AST -> LLVM -> binary
