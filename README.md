@@ -991,6 +991,7 @@ log(classExample.variableName); # logs classExample
 
 .minimal = minimal source file
 .min = minimal source file
+.mn = minimal source file
 
 .mon = minimal object file
 .bmon = minimal binary object file
