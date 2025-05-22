@@ -989,21 +989,20 @@ log(classExample.variableName); # logs classExample
 
 ## Files:
 
-.minimal = minimal source file
+### File Extensions:
 
-.min = minimal source file
+#### Source Files:
 
-.mn = minimal source file
+ - .minimal = minimal source file
+ - .min = minimal source file
+ - .mn = minimal source file
 
+#### Object Files:
 
-
-.mon = minimal object file
-
-.bmon = minimal binary object file
-
-.mona = minimal object file with actions
-
-.bmona = minimal binary object file with actions
+ - .mon = minimal object file
+ - .bmon = minimal binary object file
+ - .mona = minimal object file with actions
+ - .bmona = minimal binary object file with actions
 
 
 ## Compile Flow:

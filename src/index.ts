@@ -61,5 +61,6 @@ function build(file: string, output: string) {
     fs.writeFileSync(outputA, JSON.stringify(ast, null, 2));
 }
 
+console.log('BUILD');
 // run main function
 main(process.argv.slice(2));
