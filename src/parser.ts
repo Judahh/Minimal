@@ -1,346 +1,206 @@
-import { TokenError } from "./errors";
-import { TokenType, Token } from "./lexer";
-
-export interface ASTNode {
-    type: string;
-}
-
-export interface Stmt extends ASTNode {
-    type: "Statement";
-    statement: FunctionCall | FunctionDefinition;
-}
-
-// I'm not sure if I'm going to keep this
-// Whats the difference between Statements and a Scope?
-export interface Stmts extends ASTNode {
-    type: "Statements";
-    statements: (Stmt | Scope)[];
-}
-
-export interface Scope extends ASTNode {
-    type: "Scope";
-    statements: (Stmt | Scope)[]
-}
-
-export interface NumberLiteral extends ASTNode {
-    type: "NumberLiteral";
-    value: number;
-}
-
-export interface CharLiteral extends ASTNode {
-    type: "CharLiteral";
-    value: string;
-}
-
-export interface StringLiteral extends ASTNode {
-    type: "StringLiteral";
-    value: string;
-}
-
-export interface TemplateStringLiteral extends ASTNode {
-    type: "TemplateStringLiteral";
-    value: string;
-}
-
-export interface ArrayLiteral extends ASTNode {
-    type: "ArrayLiteral";
-    elements: (NumberLiteral | CharLiteral | StringLiteral | TemplateStringLiteral | Identifier)[];
-}
-
-export interface Identifier extends ASTNode {
-    type: "Identifier";
-    name: string;
-}
-
-// Remember this is a custom operator and must have the operator definition and precedence
-export interface BinaryExpression extends ASTNode {
-    type: "BinaryExpression";
-    left: ASTNode;
-    operator: string;
-    right: ASTNode;
-}
-
-// Is this needed? Because the assignment is made by a function call
-export interface AssignmentExpression extends ASTNode {
-    type: "AssignmentExpression";
-    left: ASTNode;
-    operator: string;
-    right: ASTNode;
-}
-
-// how to best represent an expression node?
-// Some references:
-// - https://llvm.org/docs/tutorial/MyFirstLanguageFrontend/LangImpl02.html#the-abstract-syntax-tree-ast
-// - https://clang.llvm.org/docs/IntroductionToTheClangAST.html
-// - https://clang.llvm.org/extra/doxygen/structclang_1_1clangd_1_1ASTNode.html
-export interface Expr extends ASTNode {
-    type: "Expression";
-    value: Expression;
-}
-
-export interface ScopeExpression extends ASTNode {
-    type: "ScopeExpression";
-    expressions: ASTNode[];
-}
-
-// What is a bracket expression? Is it an array literal?
-export interface BracketExpression extends ASTNode {
-    type: "BracketExpression";
-    expressions: ASTNode[];
-}
-
-export interface ParamDefinition extends ASTNode {
-    type: "ParamDefinition";
-    name: Identifier;
-    varType: Identifier;
-}
-
-export interface ParamsDefinition extends ASTNode {
-    type: "ParamsDefinition";
-    parameters: ParamDefinition[];
-}
-
-export interface FunctionParams extends ASTNode {
-    type: "FunctionParams";
-    parameters: ParamsDefinition;
-}
-
-export interface Param extends ASTNode {
-    type: "Param";
-    content: Identifier | NumberLiteral | CharLiteral | StringLiteral;
-}
-
-export interface Params extends ASTNode {
-    type: "Params";
-    params: Param[];
-}
-
-export interface FunctionCall extends ASTNode {
-    type: "FunctionCall";
-    identifier: Identifier;
-    params: Params;
-}
-
-export interface FunctionDefinition extends ASTNode {
-    type: "FunctionDefinition";
-    params: FunctionParams;
-    body: Stmt | Scope;
-}
-
-export interface TypeAnnotation extends ASTNode {
-    type: "TypeAnnotation";
-    left: ASTNode;
-    operator: string;
-    right: ASTNode;
-}
-
-export interface EOF extends ASTNode {
-    type: "EOF";
-}
-
-export type Expression = FunctionCall | FunctionDefinition | NumberLiteral | Identifier | BinaryExpression | AssignmentExpression | ScopeExpression | BracketExpression;
+import { TokenError, ParseError } from "./errors";
+import { Token, TokenType } from "./lexer";
+import { ASTNode, Scope, FunctionCall, NumberLiteral, StringLiteral, CharLiteral, TemplateStringLiteral, Identifier, FunctionDefinition, Param, ParamDefinition, Expression, BinaryExpression, AssignmentExpression, ScopeExpression, ArrayLiteral, EOF } from "./aST";
 
 export class Parser {
     private tokens: Token[];
-    private current = 0;
-    private parentesisCount = 0;
-    private braceCount = 0;
-    private bracketCount = 0;
+    private current: number = 0;
 
     constructor(tokens: Token[]) {
         this.tokens = tokens;
     }
 
-    private peek(): Token | null {
-        return this.tokens[this.current] || null;
-    }
-
-    private consume(): Token {
-        return this.tokens[this.current++];
-    }
-
-    private match(type: TokenType): boolean {
-        if (this.peek()?.type === type) {
-            this.consume();
-            return true;
-        }
-        return false;
-    }
-
-    parse(): ASTNode[] {
+    public parse(): ASTNode[] {
         const ast: ASTNode[] = [];
         while (!this.isAtEnd()) {
             ast.push(this.parseStatement());
         }
+        ast.push({ type: "EOF" } as EOF);
         return ast;
     }
-    // error messages are still very much subject to change
-    // also, some flattening of some of the node structures would probably go a long way
 
-    private parseStatement(): Stmt {
-        let statement;
-        if (this.check(TokenType.Identifier)) {  // provisional, needs better handling
-            statement = this.parseFunctionCall();
-        }
-        else {
-            statement = this.parseFunctionDefinition(); // at the present moment, statements may only be function calls or function definitions
-        }
-        if (!this.check(TokenType.SemiColon)) {
-            throw new Error("Expected ';' after statement");
-        }
-        this.advance();
-        return { type: "Statement", statement: statement } as Stmt
-    }
-
-    // I've defined scope to be a block scope and nothing else. A global scope is not a scope. Neither is the body of a function if the user does not employ braces,
-    // in which case it's being treated as an expression. This is consistent with the JS design and behavior.
-    // -> Maybe is a good idea to have a global scope, because it can be referencied. This is not JS. It does not need the same behavior.
-    private parseScope(): Scope {
-        let statements: (Stmt | Scope)[] = []
-        if (!this.match(TokenType.OpenBrace)) {
-            throw new Error("missing opening brace");
-        }
-        do {
-            if (this.check(TokenType.OpenBrace)) {
-                statements.push(this.parseScope());
+    private parseStatement(): ASTNode {
+        if (this.check(TokenType.OpenBrace)) {
+            return this.parseScope();
+        } else if (this.check(TokenType.Identifier)) {
+            const lookahead = this.tokens[this.current + 1];
+            if (lookahead && lookahead.type === TokenType.OpenParenthesis) {
+                return this.parseFunctionCall();
             }
-            this.parseStatement();
-        } while (!this.isAtEnd && !this.check(TokenType.CloseBrace))
-        if (this.isAtEnd()) {
-            throw new Error("Unexpected EOF");
+            return this.parseExpression();
+        } else if (this.isLiteral(this.peek()?.type)) {
+            return this.parseExpression();
+        } else {
+            throw new ParseError("Unrecognized statement", this.peek());
         }
-        this.advance();
-        return { type: "Scope", statements: statements } as Scope;
     }
 
-    // Remember a function definition does not need to has parameters or arrow.
-    // I can be just a scope or a expression (see control functions like loop and if).
-    // And it can be used as a parameter.
-    // It may be easier to think as function definition, scope and a single expression as the same. 
-    // Or one enclosing another. Like: function definition >= scope >= single expression
-    private parseFunctionDefinition(): FunctionDefinition {
-        let params = this.parseFunctionParams();
-        let body: (Expr | Scope)
-        if (!this.check(TokenType.Arrow)) {
-            throw new Error(`unexpected token: ${this.peek()}`);
+    private parseScope(): Scope {
+        this.match(TokenType.OpenBrace);
+        const statements: (ASTNode)[] = [];
+
+        while (!this.isAtEnd() && !this.check(TokenType.CloseBrace)) {
+            statements.push(this.parseStatement());
         }
-        this.advance();
-        if (this.check(TokenType.OpenBrace))
-            body = this.parseScope();
-        else {
-            body = this.parseExpression();
+
+        if (!this.match(TokenType.CloseBrace)) {
+            throw new ParseError("Unclosed scope", this.peek());
         }
-        return { type: "FunctionDefinition", params: params, body: body } as FunctionDefinition
+
+        return { type: "Scope", statements };
     }
 
     private parseFunctionCall(): FunctionCall {
-        const identifier = this.consume();
-        if (identifier.type !== TokenType.Identifier) {
-            throw new TokenError("wroong", identifier);
-        }
-        if (!this.match(TokenType.OpenParenthesis)) {
-            throw new TokenError("wroong", identifier);
-        }
+        const identifier = this.consume(TokenType.Identifier);
         const params = this.parseParams();
-        if (!this.check(TokenType.CloseParenthesis)) {
-            throw new Error(`unexpected token: '${this.peek()?.value}'`);
-        }
-        this.advance();
-
-        return { identifier: { type: "Identifier", name: identifier.value }, params: params } as FunctionCall
+        return {
+            type: "FunctionCall",
+            identifier: { type: "Identifier", name: identifier.value },
+            params
+        };
     }
 
-
-    private parseParamsDefinition(): ParamsDefinition {
-        const params: ParamDefinition[] = []
-        do {
-            params.push(this.parseParamDefinition());
-            if (!this.check(TokenType.Comma) && !this.check(TokenType.CloseParenthesis)) {
-                throw new Error("expected ',' after param definition");
+    private parseParams(): Param[] {
+        const params: Param[] = [];
+        if (this.match(TokenType.OpenParenthesis)) {
+            while (!this.isAtEnd() && !this.check(TokenType.CloseParenthesis)) {
+                params.push(this.parseParam());
+                this.match(TokenType.Comma);
             }
-        } while (this.check(TokenType.Comma) && this.advance());
-        return { parameters: params } as ParamsDefinition
-
-    }
-
-    private parseParamDefinition(): ParamDefinition {
-        if (!this.check(TokenType.Identifier)) {
-            throw new Error("expected parameter");
+            if (!this.match(TokenType.CloseParenthesis)) {
+                throw new ParseError("Unclosed parameter list", this.peek());
+            }
         }
-        const name = this.consume();
-        if (!this.match(TokenType.Colon)) {
-            throw new Error("expected type declaration after parameter");
-        }
-        const type = this.consume();
-        if (type.type != TokenType.Identifier) {
-            throw new TokenError("wrooong: ", [name, type]);
-        }
-
-        return { type: "ParamDefinition", name: { type: "Identifier", name: name.value }, varType: { type: "Identifier", name: type.value } } as ParamDefinition
-    }
-
-    private parseFunctionParams(): FunctionParams {
-        let params;
-        let unclosedParenthesis = this.check(TokenType.OpenParenthesis);
-        if (unclosedParenthesis) {
-            this.advance();
-        }
-        params = this.parseParamsDefinition();
-        if (unclosedParenthesis && !this.match(TokenType.CloseParenthesis)) {
-            throw new Error("unclosed parenthesis")
-        }
-        return { type: "FunctionParams", parameters: params } as FunctionParams
-    }
-
-    private isLiteral(type: TokenType): boolean {
-        return type === TokenType.Number || type === TokenType.String || type === TokenType.Char || type === TokenType.TemplateString;
+        return params;
     }
 
     private parseParam(): Param {
-        const token = this.consume();
-        if (token.type == TokenType.Identifier) {
-            return { type: "Param", content: { type: "Identifier", name: token.value } } as Param;
+        if (this.check(TokenType.OpenParenthesis)) {
+            return { type: "Param", content: this.parseExpression() };
+        } else if (this.check(TokenType.OpenBrace)) {
+            return { type: "Param", content: this.parseScope() };
+        } else if (this.check(TokenType.Identifier)) {
+            const token = this.consume(TokenType.Identifier);
+            return { type: "Param", content: { type: "Identifier", name: token.value } };
+        } else if (this.isLiteral(this.peek()?.type)) {
+            const literal = this.tokenToLiteral(this.consume());
+            return { type: "Param", content: literal };
         }
-
-        if (this.isLiteral(token.type)) {
-            return { type: "Param", content: { type: TokenType[token.type] + "Literal", name: token.value } } as Param;
-        }
-
-        // Must add check to complex types like function types, classes, arrays, structs, enums, etc.
-        if (token.type == TokenType.OpenBrace) {
-            // scope, class, dict, struct or enum
-        }
-        // a scope can be just an expression, so we need to check for that
-
-        if (token.type == TokenType.OpenParenthesis) {
-            // function type, or just separation for a binary expression or expression
-        }
-
-        if (token.type == TokenType.OpenBracket) {
-            // array
-        }
-
-        throw new TokenError("wrooong", token);
+        throw new ParseError("Unexpected token in parameter", this.peek());
     }
 
-    private parseParams(): Params {
-        let params = [this.parseParam()];
-        while (this.match(TokenType.Comma)) {
-            params.push(this.parseParam());
+    private parseFunctionDefinition(): FunctionDefinition {
+        this.match(TokenType.Function);
+        const identifier = this.consume(TokenType.Identifier);
+        const params = this.parseParamsDefinition();
+        const body = this.parseScope();
+
+        return {
+            type: "FunctionDefinition",
+            identifier: { type: "Identifier", name: identifier.value },
+            params,
+            body
+        };
+    }
+
+    private parseParamsDefinition(): ParamDefinition[] {
+        const params: ParamDefinition[] = [];
+        if (this.match(TokenType.OpenParenthesis)) {
+            while (!this.isAtEnd() && !this.check(TokenType.CloseParenthesis)) {
+                const param = this.parseParamDefinition();
+                params.push(param);
+                this.match(TokenType.Comma);
+            }
+            if (!this.match(TokenType.CloseParenthesis)) {
+                throw new ParseError("Unclosed parameter definition list", this.peek());
+            }
         }
-        return { type: "Params", params: params } as Params;
+        return params;
     }
 
-    // an expression is probably more than that, but it'll do for now.
-    private parseExpression(): Expr {
-        let funcCall = this.parseFunctionCall();
-        return { type: "Expression", value: funcCall };
+    private parseParamDefinition(): ParamDefinition {
+        const nameToken = this.consume(TokenType.Identifier);
+        let typeAnnotation: string | undefined;
+
+        if (this.match(TokenType.Colon)) {
+            const typeToken = this.consume(TokenType.Identifier);
+            typeAnnotation = typeToken.value;
+        }
+
+        return {
+            type: "ParamDefinition",
+            identifier: { type: "Identifier", name: nameToken.value },
+            annotation: typeAnnotation
+        };
     }
 
+    private parseExpression(): Expression {
+        if (this.check(TokenType.Identifier)) {
+            const lookahead = this.tokens[this.current + 1];
+            if (lookahead && lookahead.type === TokenType.OpenParenthesis) {
+                return this.parseFunctionCall();
+            } else {
+                const token = this.consume(TokenType.Identifier);
+                return { type: "Identifier", name: token.value };
+            }
+        } else if (this.isLiteral(this.peek()?.type)) {
+            return this.tokenToLiteral(this.consume());
+        } else if (this.check(TokenType.OpenParenthesis)) {
+            this.advance();
+            const expr = this.parseExpression();
+            if (!this.match(TokenType.CloseParenthesis)) {
+                throw new ParseError("Unclosed parenthesis in expression", this.peek());
+            }
+            return expr;
+        } else if (this.check(TokenType.OpenBrace)) {
+            return this.parseScopeExpression();
+        }
+        throw new ParseError("Unrecognized expression", this.peek());
+    }
+
+    private parseScopeExpression(): ScopeExpression {
+        const scope = this.parseScope();
+        return {
+            type: "ScopeExpression",
+            scope
+        };
+    }
+
+    private tokenToLiteral(token: Token): NumberLiteral | CharLiteral | StringLiteral | TemplateStringLiteral {
+        switch (token.type) {
+            case TokenType.Number:
+                return { type: "NumberLiteral", value: Number(token.value) };
+            case TokenType.String:
+                return { type: "StringLiteral", value: token.value };
+            case TokenType.Char:
+                return { type: "CharLiteral", value: token.value };
+            case TokenType.TemplateString:
+                return { type: "TemplateStringLiteral", value: token.value };
+            default:
+                throw new ParseError("Unknown literal", token);
+        }
+    }
+
+    private consume(expectedType: TokenType): Token {
+        if (this.check(expectedType)) {
+            return this.advance();
+        }
+        throw new ParseError(`Expected token type ${expectedType}`, this.peek());
+    }
+
+    private match(...types: TokenType[]): boolean {
+        for (const type of types) {
+            if (this.check(type)) {
+                this.advance();
+                return true;
+            }
+        }
+        return false;
+    }
 
     private check(type: TokenType): boolean {
         if (this.isAtEnd()) return false;
-        return this.peek()?.type === type;
+        return this.peek().type === type;
     }
 
     private advance(): Token {
@@ -349,12 +209,21 @@ export class Parser {
     }
 
     private isAtEnd(): boolean {
-        return this.peek()?.type === TokenType.EOF;
+        return this.peek().type === TokenType.EOF;
+    }
+
+    private peek(): Token {
+        return this.tokens[this.current];
     }
 
     private previous(): Token {
         return this.tokens[this.current - 1];
     }
 
-
+    private isLiteral(type: TokenType | undefined): boolean {
+        return type === TokenType.Number ||
+               type === TokenType.String ||
+               type === TokenType.Char ||
+               type === TokenType.TemplateString;
+    }
 }
