@@ -23,7 +23,7 @@ Cat : {
         -> "Meow";
     };
 
-    new("eat", (food: PetFood) -> {
+    new("eat", (PetFood food) -> {
         log("Yum yum!");
         set(food.portion, food.portion - 1);
     });
@@ -40,7 +40,7 @@ Dog : {
         -> "Woof";
     };
 
-    eat : (food: PetFood) -> {
+    eat : (PetFood food) -> {
         log("Yum yum!");
         food.portion : food.portion - 1;
     };
@@ -49,7 +49,7 @@ Dog : {
 Pet : or(Cat, Dog);
 
 PetEngine : {
-    generateFood : (pet: Pet) -> {
+    generateFood : (Pet pet) -> {
         (PetFood) petFood;
 
         if (pet.isInstanceOf(Cat), {
@@ -60,7 +60,7 @@ PetEngine : {
         -> petFood;
     };
 
-    generateFood2 : (pet: Pet) -> {
+    generateFood2 : (Pet pet) -> {
         if(pet.isInstanceOf(Cat), {
             final.-> PetFood("Fish", 20, 200);
         },{
@@ -68,14 +68,14 @@ PetEngine : {
         });
     };
 
-    new("generateFood3", (pet: Pet) -> {
+    new("generateFood3", (Pet pet) -> {
         -> if(pet.isInstanceOf(Cat),
             PetFood("Fish", 30, 300),
             PetFood("Meat", 30, 300)
         );
     });
 
-    new("generateFood4", (pet: Pet) -> {
+    new("generateFood4", (Pet pet) -> {
         if(pet.isInstanceOf(Cat), {
             -> PetFood("Fish", 40, 400);
         },{
@@ -83,7 +83,7 @@ PetEngine : {
         });
     });
 
-    giveFood : (pet: Pet, petFood: PetFood) -> {
+    giveFood : (Pet pet, PetFood petFood) -> {
         log("Here is your food, " , pet.name , "!");
         pet.eat(petFood);
     };
