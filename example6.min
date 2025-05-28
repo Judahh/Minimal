@@ -1,0 +1,44 @@
+log(`Hello World!`);
+e: 'World';
+greeting: `Hello`;
+fullGreeting: `{greeting} {e}!`;
+log(`Hello {e}!`);
+log(fullGreeting);
+
+multiline: ```This is a multiline
+                string
+                with some empty lines
+                and some text
+                in between
+                and some more text
+                and some more empty lines
+                and {fullGreeting}
+```;
+log(multiline);
+
+log(```This is a multiline
+        string
+        with some empty lines
+        and some text
+        in between
+        and some more text
+        and some more empty lines
+        and ${fullGreeting}
+```);
+
+log("This is a multiline
+string
+with some empty lines
+and some text");
+
+log("""This is a multiline
+        string
+        with some empty lines
+        and some text"""
+);
+
+multiline: """This is a multiline
+        string
+        with some empty lines
+        and some text""";
+log(multiline);
