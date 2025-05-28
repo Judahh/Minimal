@@ -9,7 +9,7 @@ export enum TokenType {
 	// Operators
 	// Equals, // 5
 	Hyphen, // 5
-	CustomOperator, // 6
+	Operator, // 6
 	// Grouping
 	OpenParenthesis, // 7 - (
 	CloseParenthesis, // 8 - )
@@ -95,7 +95,7 @@ export interface Token {
 function token(value = "", type: TokenType, line: number, column: number, isFinal?: boolean): Token {
     if (isFinal) {
         return { value, type, isFinal, typeName: TokenType[type], line, column };
-    } else if (type == TokenType.CustomOperator || type == TokenType.Arrow) {
+    } else if (type == TokenType.Operator || type == TokenType.Arrow) {
         isFinal = false;
         return { value, type, isFinal, typeName: TokenType[type], line, column };
     }
@@ -123,6 +123,25 @@ function isInt(str: string) {
 	const c = str.charCodeAt(0);
 	const bounds = ["0".charCodeAt(0), "9".charCodeAt(0)];
 	return c >= bounds[0] && c <= bounds[1];
+}
+
+function isReal(char: string): boolean {
+    return char >= '0' && char <= '9' || char === '.';
+}
+
+function isEscapeChar(char: string): boolean {
+    return char === '\\';
+}
+
+const MULTI_CHAR_OPERATORS = ['==', '!=', '>=', '<=', '&&', '||', '++', '--', '+=', '-=', '*=', '/=', '%='];
+
+function getMultiCharOperator(src: string[]): string | null {
+    for (const op of MULTI_CHAR_OPERATORS) {
+        if (src.slice(0, op.length).join('') === op) {
+            return op;
+        }
+    }
+    return null;
 }
 
 function isHex(str: string) {
@@ -226,138 +245,128 @@ function removeSkippableTokens(tokens: Token[]): Token[] {
  * - Does not modify the incoming string.
  */
 export function tokenize(sourceCode: string): Token[] {
-    const tokens = new Array<Token>();
-    const src = sourceCode.split("");
-    let lastToken: Token | undefined = undefined;
+    const tokens: Token[] = [];
+    const src = sourceCode.split('');
     let line = 1;
     let column = 1;
+    let lastToken: Token | undefined = undefined;
 
-    // produce tokens until the EOF is reached.
     while (src.length > 0) {
-        const char = src[0];
+        let char = src.shift()!;
+        let startLine = line;
+        let startColumn = column;
 
-        // Handle new lines
-        if (char === "\n") {
+        if (char === '\n') {
             line++;
             column = 1;
-            src.shift();
+        } else {
+            column++;
+        }
+
+        if (isSkippable(char)) {
+            tokens.push(token(char, TokenType.Skippable, startLine, startColumn));
+            lastToken = tokens[tokens.length - 1];
             continue;
         }
 
-        // BEGIN PARSING ONE CHARACTER TOKENS
-        const tempToken = getTokenType(char, lastToken, line, column);
-        if (tempToken.type != TokenType.Unknown) {
-            if (lastToken?.type == TokenType.CustomOperator && (tempToken.type == TokenType.Arrow || tempToken.type == TokenType.Colon || tempToken.type == TokenType.Dot)) {
-                tokens[tokens.length - 1].value += tempToken.value;
-                tokens[tokens.length - 1].type = TokenType.CustomOperator;
-                src.shift();
-            } else if (tempToken.type == TokenType.Arrow) {
-                // remove the last token and replace it with the arrow token.
-                tokens.pop();
-                tokens.push(token(tempToken.value, tempToken.type, line, column));
-                src.shift();
-            } else {
-                tokens.push(token(tempToken.value, tempToken.type, line, column));
-                src.shift();
-                if (tempToken.type == TokenType.Comment) {
-                    let counter = 1;
-                    while (src.length > 0 && getTokenType(src[0], undefined, line, column).type == TokenType.Comment) {
-                        counter++;
-                        src.shift();
-                    }
-                    if (counter == 1) {
-                        while (src.length > 0 && src[0] != "\n") {
-                            tempToken.value += src[0];
-                            src.shift();
-                        }
-                        // remove total tokens. from the beginning.
-                        tempToken.value = tempToken.value.slice(1, tempToken.value.length);
-                    } else {
-                        const total = counter;
-                        let backCounter = counter;
-                        while (src.length > 0 && counter > 0) {
-                            if (getTokenType(src[0], undefined, line, column).type == TokenType.Comment) {
-                                backCounter--;
-                            } else {
-                                backCounter = counter;
-                            }
-                            tempToken.value += src[0];
-                            src.shift();
-                            if (backCounter == 0) {
-                                counter = 0;
-                                tempToken.isInternal = true;
-                            }
-                        }
-                        // remove total tokens. from the beginning.
-                        tempToken.value = tempToken.value.slice(total - 1, tempToken.value.length);
-                        // remove total tokens from the end.
-                        tempToken.value = tempToken.value.slice(0, tempToken.value.length - total);
-                    }
-                    tempToken.value = tempToken.value.trim();
-                }
+        if (char === '#' && src[0] !== undefined) {
+            let commentValue = char;
+            while (src[0] !== '\n' && src.length > 0) {
+                commentValue += src.shift();
+                column++;
             }
-        } else {
-            if (!isValidChar(char)) {
-                if (lastToken?.type == TokenType.CustomOperator || lastToken?.type == TokenType.Arrow) {
-                    tokens[tokens.length - 1].value += src.shift();
-                    tokens[tokens.length - 1].type = TokenType.CustomOperator;
-                } else {
-                    tokens.push(token(src.shift(), TokenType.CustomOperator, line, column));
-                }
-            } else {
-                // Handle numeric literals -> Integers
-                if (isInt(char)) {
-                    let num = "";
-                    while (src.length > 0 && isInt(src[0])) {
-                        num += src.shift();
-                    }
-
-                    // append new numeric token.
-                    tokens.push(token(num, TokenType.Number, line, column));
-                } // Handle Identifier & Keyword Tokens.
-                else if (isAlpha(char)) {
-                    let ident = "";
-                    while (src.length > 0 && isAlpha(src[0])) {
-                        ident += src.shift();
-                    }
-
-                    // CHECK FOR RESERVED KEYWORDS
-                    let reserved: TokenType | undefined = KEYWORDS[ident];
-                    // If value is not undefined then the identifier is
-                    // recognized keyword
-                    if (reserved) {
-                        tokens.push(token(ident, reserved, line, column));
-                    } else {
-                        // Unrecognized name must mean user defined symbol.
-                        tokens.push(token(ident, TokenType.Identifier, line, column));
-                    }
-                } else if (isSkippable(char)) {
-                    // Skip unneeded chars.
-                    if (lastToken?.type == TokenType.CustomOperator || lastToken?.type == TokenType.Arrow) {
-                        tokens[tokens.length - 1].isFinal = true;
-                    }
-                    tokens.push(token(src.shift(), TokenType.Skippable, line, column));
-                } // Handle unrecognized characters.
-                // TODO: Implement better errors and error recovery.
-                else {
-                    console.error(
-                        "Unrecognized character found in source: ",
-                        char.charCodeAt(0),
-                        char
-                    );
-                    // Exit the program.
-                    return [];
-                }
-            }
+            tokens.push(token(commentValue, TokenType.Comment, startLine, startColumn));
+            lastToken = tokens[tokens.length - 1];
+            continue;
         }
+
+        // Multi-character operators
+        const multiOp = getMultiCharOperator([char, ...src]);
+        if (multiOp) {
+            for (let i = 1; i < multiOp.length; i++) {
+                src.shift();
+                column++;
+            }
+            tokens.push(token(multiOp, TokenType.Operator, startLine, startColumn));
+            lastToken = tokens[tokens.length - 1];
+            continue;
+        }
+
+        if (simpleTokenToTokenType[char]) {
+            const simpleTok = getTokenType(char, lastToken, startLine, startColumn);
+            tokens.push(simpleTok);
+            lastToken = simpleTok;
+            continue;
+        }
+
+        // Numbers (integers and floats)
+        if (isInt(char) || (char === '.' && isInt(src[0]))) {
+            let numberValue = char;
+            let dotCount = char === '.' ? 1 : 0;
+            while (src.length > 0 && isReal(src[0])) {
+                const nextChar = src.shift()!;
+                if (nextChar === '.') dotCount++;
+                numberValue += nextChar;
+                column++;
+            }
+            if (dotCount > 1) {
+                throw new Error(`Invalid number with multiple decimal points at ${startLine}:${startColumn}`);
+            }
+            tokens.push(token(numberValue, TokenType.Number, startLine, startColumn));
+            lastToken = tokens[tokens.length - 1];
+            continue;
+        }
+
+        // Strings, chars, template strings
+        if (char === '"' || char === "'" || char === '`') {
+            const closingChar = char;
+            let strValue = char;
+            let escaped = false;
+            while (src.length > 0) {
+                const nextChar = src.shift()!;
+                column++;
+                strValue += nextChar;
+                if (escaped) {
+                    escaped = false;
+                    continue;
+                }
+                if (isEscapeChar(nextChar)) {
+                    escaped = true;
+                    continue;
+                }
+                if (nextChar === closingChar) break;
+            }
+            if (strValue[strValue.length - 1] !== closingChar) {
+                throw new Error(`Unterminated string at ${startLine}:${startColumn}`);
+            }
+            let tokType = TokenType.String;
+            if (char === "'") tokType = TokenType.Char;
+            if (char === '`') tokType = TokenType.TemplateString;
+
+            tokens.push(token(strValue, tokType, startLine, startColumn));
+            lastToken = tokens[tokens.length - 1];
+            continue;
+        }
+
+        // Identifiers and keywords
+        if (isAlpha(char)) {
+            let ident = char;
+            while (src.length > 0 && (isAlpha(src[0]) || isInt(src[0]))) {
+                ident += src.shift();
+                column++;
+            }
+            const keywordType = KEYWORDS[ident];
+            const tokType = keywordType !== undefined ? keywordType : TokenType.Identifier;
+            tokens.push(token(ident, tokType, startLine, startColumn));
+            lastToken = tokens[tokens.length - 1];
+            continue;
+        }
+
+        // Fallback: unknown tokens
+        tokens.push(token(char, TokenType.Unknown, startLine, startColumn));
         lastToken = tokens[tokens.length - 1];
-        column++;
     }
 
-    tokens.push(token("", TokenType.EOF, line, column));
-
-    return removeSkippableTokens(groupLiteralTokens(tokens).map((t, i) => {
-        delete t.isFinal;
-        return t;
-    }));
+    tokens.push(token('EOF', TokenType.EOF, line, column));
+    return removeSkippableTokens(groupLiteralTokens(tokens));
 }

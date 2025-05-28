@@ -1,0 +1,170 @@
+[
+  {
+    "value": "log",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 1,
+    "column": 1
+  },
+  {
+    "value": "(",
+    "type": 7,
+    "typeName": "OpenParenthesis",
+    "line": 1,
+    "column": 4
+  },
+  {
+    "value": "Hello World!",
+    "type": 2,
+    "typeName": "String",
+    "line": 1,
+    "column": 5
+  },
+  {
+    "value": ")",
+    "type": 8,
+    "typeName": "CloseParenthesis",
+    "line": 1,
+    "column": 19
+  },
+  {
+    "value": ";",
+    "type": 15,
+    "typeName": "SemiColon",
+    "line": 1,
+    "column": 20
+  },
+  {
+    "value": "log",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 2,
+    "column": 1
+  },
+  {
+    "value": "(",
+    "type": 7,
+    "typeName": "OpenParenthesis",
+    "line": 2,
+    "column": 4
+  },
+  {
+    "value": "Hello",
+    "type": 2,
+    "typeName": "String",
+    "line": 2,
+    "column": 5
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 2,
+    "column": 12
+  },
+  {
+    "value": " ",
+    "type": 4,
+    "typeName": "Char",
+    "line": 2,
+    "column": 14
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 2,
+    "column": 17
+  },
+  {
+    "value": "World!",
+    "type": 2,
+    "typeName": "String",
+    "line": 2,
+    "column": 19
+  },
+  {
+    "value": ")",
+    "type": 8,
+    "typeName": "CloseParenthesis",
+    "line": 2,
+    "column": 27
+  },
+  {
+    "value": ";",
+    "type": 15,
+    "typeName": "SemiColon",
+    "line": 2,
+    "column": 28
+  },
+  {
+    "value": "log",
+    "type": 0,
+    "typeName": "Identifier",
+    "line": 3,
+    "column": 1
+  },
+  {
+    "value": "(",
+    "type": 7,
+    "typeName": "OpenParenthesis",
+    "line": 3,
+    "column": 4
+  },
+  {
+    "value": "1",
+    "type": 1,
+    "typeName": "Number",
+    "line": 3,
+    "column": 5
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 3,
+    "column": 6
+  },
+  {
+    "value": "2",
+    "type": 1,
+    "typeName": "Number",
+    "line": 3,
+    "column": 8
+  },
+  {
+    "value": ",",
+    "type": 13,
+    "typeName": "Comma",
+    "line": 3,
+    "column": 9
+  },
+  {
+    "value": "3",
+    "type": 1,
+    "typeName": "Number",
+    "line": 3,
+    "column": 11
+  },
+  {
+    "value": ")",
+    "type": 8,
+    "typeName": "CloseParenthesis",
+    "line": 3,
+    "column": 12
+  },
+  {
+    "value": ";",
+    "type": 15,
+    "typeName": "SemiColon",
+    "line": 3,
+    "column": 13
+  },
+  {
+    "value": "EOF",
+    "type": 23,
+    "typeName": "EOF",
+    "line": 3,
+    "column": 14
+  }
+]

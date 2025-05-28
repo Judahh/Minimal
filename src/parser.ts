@@ -1,4 +1,4 @@
-import { TokenError, ParseError } from "./errors";
+import { ParseError } from "./errors";
 import { Token, TokenType } from "./lexer";
 import { ASTNode, Scope, FunctionCall, NumberLiteral, StringLiteral, CharLiteral, TemplateStringLiteral, Identifier, FunctionDefinition, Param, ParamDefinition, Expression, BinaryExpression, AssignmentExpression, ScopeExpression, ArrayLiteral, EOF } from "./aST";
 
@@ -83,14 +83,14 @@ export class Parser {
             const token = this.consume(TokenType.Identifier);
             return { type: "Param", content: { type: "Identifier", name: token.value } };
         } else if (this.isLiteral(this.peek()?.type)) {
-            const literal = this.tokenToLiteral(this.consume());
+            const literal = this.tokenToLiteral(this.consume(TokenType.Identifier));
             return { type: "Param", content: literal };
         }
         throw new ParseError("Unexpected token in parameter", this.peek());
     }
 
     private parseFunctionDefinition(): FunctionDefinition {
-        this.match(TokenType.Function);
+        this.match(TokenType.OpenBrace);
         const identifier = this.consume(TokenType.Identifier);
         const params = this.parseParamsDefinition();
         const body = this.parseScope();
@@ -144,7 +144,7 @@ export class Parser {
                 return { type: "Identifier", name: token.value };
             }
         } else if (this.isLiteral(this.peek()?.type)) {
-            return this.tokenToLiteral(this.consume());
+            return this.tokenToLiteral(this.consume(TokenType.Identifier));
         } else if (this.check(TokenType.OpenParenthesis)) {
             this.advance();
             const expr = this.parseExpression();
@@ -185,7 +185,7 @@ export class Parser {
         if (this.check(expectedType)) {
             return this.advance();
         }
-        throw new ParseError(`Expected token type ${expectedType}`, this.peek());
+        throw new ParseError(`Expected token type ${expectedType} ${TokenType[expectedType]}`, this.peek());
     }
 
     private match(...types: TokenType[]): boolean {

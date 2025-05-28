@@ -124,6 +124,10 @@ main : () -> {
     log(`Doggy has '{ dogFood.portion , }' portions of food.`);
     log("Kitty has '" , catFood.portion , "' portions of food.");
     log(`Doggy first Letter is '{ 'D' }'.`);
+
+    floatingPoint : 3.14;
+    log("Floating Point Number: ", floatingPoint);
+    log("End of the pet food example.");
 });
 
 main();

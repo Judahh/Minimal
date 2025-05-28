@@ -1,7 +1,7 @@
 import { Token, TokenType } from "./lexer";
-import { ASTNode } from "./parser";
+import { ASTNode } from "./aST";
 
-export class TokenError extends Error {
+export class ParseError extends Error {
     static tokenMessage(token: Token): string {
         return `${token.typeName}:${TokenType[token.type]}:${token.type}:${token.value} at line ${token.line}, column ${token.column}`;
     }
@@ -9,16 +9,16 @@ export class TokenError extends Error {
     static toMessage(message: string, tokens: Token[] | Token): string {
         let newMessage = message;
         if (Array.isArray(tokens)) {
-            newMessage += "\n" + tokens.map(token => TokenError.tokenMessage(token)).join("\n");
+            newMessage += "\n" + tokens.map(token => ParseError.tokenMessage(token)).join("\n");
         } else {
-            newMessage += "\n" + TokenError.tokenMessage(tokens);
+            newMessage += "\n" + ParseError.tokenMessage(tokens);
         }
         return newMessage;
     }
 
     constructor(message: string, tokens: Token[] | Token) {
-        super(TokenError.toMessage(message, tokens));
-        this.name = "TokenError";
+        super(ParseError.toMessage(message, tokens));
+        this.name = "ParseError";
         
     }
 }
