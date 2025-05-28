@@ -1,77 +1,77 @@
 # Minimal language Global module
 
-Global.(a: Numeric, '+', b: Numeric) => {
-    => math.sum(a, b);
+Global.(a: Numeric, '+', b: Numeric) -> {
+    -> math.sum(a, b);
 };
 
-Global.(a: Array, '+', b: Array) => {
-    => array.concat(a, b);
+Global.(a: Array, '+', b: Array) -> {
+    -> array.concat(a, b);
 };
 
-Global.(a: Numeric, '-', b: Numeric) => {
-    => math.sub(a, b);
+Global.(a: Numeric, '-', b: Numeric) -> {
+    -> math.sub(a, b);
 };
 
-Global.(a: Numeric, '*', b: Numeric) => {
-    => math.multiply(a, b);
+Global.(a: Numeric, '*', b: Numeric) -> {
+    -> math.multiply(a, b);
 };
 
-Global.(a: Numeric, '/', b: Numeric) => {
-    => math.divide(a, b);
+Global.(a: Numeric, '/', b: Numeric) -> {
+    -> math.divide(a, b);
 };
 
-Global.(a: Numeric, '^', b: Numeric) => {
-    => math.pow(a, b);
+Global.(a: Numeric, '^', b: Numeric) -> {
+    -> math.pow(a, b);
 };
 
-Global.(a: Numeric, '%', b: Numeric) => {
-    => math.remainder(a, b);
+Global.(a: Numeric, '%', b: Numeric) -> {
+    -> math.remainder(a, b);
 };
 
-Global.(a: Numeric, '>', b: Numeric) => {
-    => math.greater(a, b);
+Global.(a: Numeric, '>', b: Numeric) -> {
+    -> math.greater(a, b);
 };
 
-Global.(a: Numeric, '<', b: Numeric) => {
-    => math.less(a, b);
+Global.(a: Numeric, '<', b: Numeric) -> {
+    -> math.less(a, b);
 };
 
-Global.(a: Numeric, '>=', b: Numeric) => {
-    => math.greaterOrEqual(a, b);
+Global.(a: Numeric, '>=', b: Numeric) -> {
+    -> math.greaterOrEqual(a, b);
 };
 
-Global.(a: Numeric, '<=', b: Numeric) => {
-    => math.lessOrEqual(a, b);
+Global.(a: Numeric, '<=', b: Numeric) -> {
+    -> math.lessOrEqual(a, b);
 };
 
-Global.(a: Numeric, '==', b: Numeric) => {
-    => math.equal(a, b);
+Global.(a: Numeric, '==', b: Numeric) -> {
+    -> math.equal(a, b);
 };
 
-Global.(a: Numeric, '===', b: Numeric) => {
-    => math.strictEqual(a, b);
+Global.(a: Numeric, '===', b: Numeric) -> {
+    -> math.strictEqual(a, b);
 };
 
-Global.(a: Array, '==', b: Array) => {
-    => array.equal(a, b);
+Global.(a: Array, '==', b: Array) -> {
+    -> array.equal(a, b);
 };
 
-Global.(a: Array, '===', b: Array) => {
-    => array.strictEqual(a, b);
+Global.(a: Array, '===', b: Array) -> {
+    -> array.strictEqual(a, b);
 };
 
-Global.(a: Numeric, '!=', b: Numeric) => {
-    => math.notEqual(a, b);
+Global.(a: Numeric, '!=', b: Numeric) -> {
+    -> math.notEqual(a, b);
 };
 
-Global.(a: Numeric, '!==', b: Numeric) => {
-    => math.strictNotEqual(a, b);
+Global.(a: Numeric, '!==', b: Numeric) -> {
+    -> math.strictNotEqual(a, b);
 };
 
-Global.(a: Array, '!=', b: Array) => {
-    => array.notEqual(a, b);
+Global.(a: Array, '!=', b: Array) -> {
+    -> array.notEqual(a, b);
 };
 
-Global.(a: Array, '!==', b: Array) => {
-    => array.strictNotEqual(a, b);
+Global.(a: Array, '!==', b: Array) -> {
+    -> array.strictNotEqual(a, b);
 };
