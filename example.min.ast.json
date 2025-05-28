@@ -1,93 +1,81 @@
 [
   {
-    "type": "Statement",
-    "statement": {
-      "identifier": {
-        "type": "Identifier",
-        "name": "log"
-      },
-      "params": {
-        "type": "Params",
-        "params": [
-          {
-            "type": "Param",
-            "content": {
-              "type": "StringLiteral",
-              "name": "Hello World!"
-            }
-          }
-        ]
+    "type": "FunctionCall",
+    "identifier": {
+      "type": "Identifier",
+      "name": "log"
+    },
+    "params": [
+      {
+        "type": "Param",
+        "content": {
+          "type": "StringLiteral",
+          "value": "Hello World!"
+        }
       }
-    }
+    ]
   },
   {
-    "type": "Statement",
-    "statement": {
-      "identifier": {
-        "type": "Identifier",
-        "name": "log"
+    "type": "FunctionCall",
+    "identifier": {
+      "type": "Identifier",
+      "name": "log"
+    },
+    "params": [
+      {
+        "type": "Param",
+        "content": {
+          "type": "StringLiteral",
+          "value": "Hello"
+        }
       },
-      "params": {
-        "type": "Params",
-        "params": [
-          {
-            "type": "Param",
-            "content": {
-              "type": "StringLiteral",
-              "name": "Hello"
-            }
-          },
-          {
-            "type": "Param",
-            "content": {
-              "type": "CharLiteral",
-              "name": " "
-            }
-          },
-          {
-            "type": "Param",
-            "content": {
-              "type": "StringLiteral",
-              "name": "World!"
-            }
-          }
-        ]
+      {
+        "type": "Param",
+        "content": {
+          "type": "CharLiteral",
+          "value": " "
+        }
+      },
+      {
+        "type": "Param",
+        "content": {
+          "type": "StringLiteral",
+          "value": "World!"
+        }
       }
-    }
+    ]
   },
   {
-    "type": "Statement",
-    "statement": {
-      "identifier": {
-        "type": "Identifier",
-        "name": "log"
+    "type": "FunctionCall",
+    "identifier": {
+      "type": "Identifier",
+      "name": "log"
+    },
+    "params": [
+      {
+        "type": "Param",
+        "content": {
+          "type": "NumberLiteral",
+          "value": 1
+        }
       },
-      "params": {
-        "type": "Params",
-        "params": [
-          {
-            "type": "Param",
-            "content": {
-              "type": "NumberLiteral",
-              "name": "1"
-            }
-          },
-          {
-            "type": "Param",
-            "content": {
-              "type": "NumberLiteral",
-              "name": "2"
-            }
-          },
-          {
-            "type": "Param",
-            "content": {
-              "type": "NumberLiteral",
-              "name": "3"
-            }
-          }
-        ]
+      {
+        "type": "Param",
+        "content": {
+          "type": "NumberLiteral",
+          "value": 2
+        }
+      },
+      {
+        "type": "Param",
+        "content": {
+          "type": "NumberLiteral",
+          "value": 3
+        }
       }
-    }
+    ]
+  },
+  {
+    "type": "EOF"
   }
 ]

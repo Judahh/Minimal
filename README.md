@@ -899,8 +899,8 @@ global.('!', (Numeric) a) -> {
     -> not(a);
 };
 
-global.((Number) a, '=', (Operand) o, (Number) b) -> {
-    -> a = a o b;
+global.((Number) a, (Operand) o, ':',(Number) b) -> {
+    -> a : a o b;
 };
 
 global.((Any) c, '?', (Scope) t, '!', (Scope) f) -> {

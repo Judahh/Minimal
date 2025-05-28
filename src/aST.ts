@@ -57,6 +57,7 @@ export interface ScopeExpression extends ASTNode {
 export interface FunctionCall extends ASTNode {
     type: "FunctionCall";
     identifier: Identifier;
+    caller: Identifier;
     params: Param[];
 }
 
@@ -96,6 +97,7 @@ export type Expression =
     | ScopeExpression
     | BinaryExpression
     | AssignmentExpression
+    | ApplyExpression
     | ArrayLiteral;
 
 // ----------------------
@@ -134,4 +136,15 @@ export interface ArrayLiteral extends ASTNode {
 
 export interface EOF extends ASTNode {
     type: "EOF";
+}
+
+export interface ApplyExpression {
+    type: "ApplyExpression";
+    base: Expression;
+    argument: Expression;
+}
+
+export interface ExpressionStatement {
+    type: "ExpressionStatement";
+    expression: Expression;
 }

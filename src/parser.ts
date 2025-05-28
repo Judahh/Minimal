@@ -19,151 +19,192 @@ export class Parser {
         return ast;
     }
 
+    // private parseStatement(): Statement {
+    //     const expr = this.parseExpression();
+    //     this.consume(TokenType.Semicolon);
+    //     return { type: "ExpressionStatement", expression: expr };
+    // }
+
     private parseStatement(): ASTNode {
         if (this.check(TokenType.OpenBrace)) {
             return this.parseScope();
         } else if (this.check(TokenType.Identifier)) {
             const lookahead = this.tokens[this.current + 1];
-            if (lookahead && lookahead.type === TokenType.OpenParenthesis) {
-                return this.parseFunctionCall();
+            if (lookahead && lookahead.type === TokenType.Colon) {
+                const assignment = this.parseAssignment();
+                this.consumeOptionalSemicolon();
+                return assignment;
             }
-            return this.parseExpression();
+            const expr = this.parseExpression();
+            this.consumeOptionalSemicolon();
+            return expr;
         } else if (this.isLiteral(this.peek()?.type)) {
-            return this.parseExpression();
+            const expr = this.parseExpression();
+            this.consumeOptionalSemicolon();
+            return expr;
+        } else if (this.check(TokenType.OpenParenthesis)) {
+            const expr = this.parseExpression();
+            this.consumeOptionalSemicolon();
+            return expr;
+        } else if (this.check(TokenType.SemiColon)) {
+            // Allow empty statement
+            this.advance();
+            return { type: "EmptyStatement" };
         } else {
             throw new ParseError("Unrecognized statement", this.peek());
         }
     }
+    
+    private consumeOptionalSemicolon(): void {
+        if (this.check(TokenType.SemiColon)) {
+            this.advance();
+        }
+    }
+
+    private parseAssignment(): AssignmentExpression {
+        const identifier = this.consume(TokenType.Identifier);
+        this.consume(TokenType.Colon);
+        const value = this.parseExpression();
+        return {
+            type: "AssignmentExpression",
+            identifier: { type: "Identifier", name: identifier.value },
+            value
+        };
+    }
 
     private parseScope(): Scope {
         this.match(TokenType.OpenBrace);
-        const statements: (ASTNode)[] = [];
-
+        const statements: ASTNode[] = [];
         while (!this.isAtEnd() && !this.check(TokenType.CloseBrace)) {
             statements.push(this.parseStatement());
         }
-
         if (!this.match(TokenType.CloseBrace)) {
             throw new ParseError("Unclosed scope", this.peek());
         }
-
         return { type: "Scope", statements };
     }
 
-    private parseFunctionCall(): FunctionCall {
-        const identifier = this.consume(TokenType.Identifier);
-        const params = this.parseParams();
+    private isOperator(token: Token): boolean {
+        return token.type === TokenType.Identifier && /^[+\-*/<>!=|&]+$/.test(token.lexeme);
+    }
+
+    private parseExpression(): Expression {
+        let expr = this.parsePrimary();
+    
+        while (this.isOperator(this.peek())) {
+            const operator = this.advance().lexeme;
+            const right = this.parsePrimary();
+    
+            expr = {
+                type: "BinaryExpression",
+                left: expr,
+                operator,
+                right
+            };
+        }
+    
+        return expr;
+    }
+
+    private parseOperatorChain(): Expression {
+        let expr = this.parsePrimary();
+
+        while (!this.isAtEnd() && this.isOperatorToken(this.peek())) {
+            const operator = this.advance();
+            const right = this.parsePrimary();
+
+            // Represent all operators as FunctionCall: e.g., '+' => FunctionCall('+', [left, right])
+            expr = {
+                type: "FunctionCall",
+                identifier: { type: "Identifier", name: operator.value },
+                params: [
+                    { type: "Param", content: expr },
+                    { type: "Param", content: right }
+                ]
+            };
+        }
+        return expr;
+    }
+
+    private parsePrimary(): Expression {
+        const token = this.peek();
+    
+        if (this.match(TokenType.OpenParenthesis)) {
+            const expr = this.parseExpression();
+            this.consume(TokenType.CloseParenthesis);
+    
+            // After parenthesis, check for chaining
+            if (this.check(TokenType.Identifier) || this.check(TokenType.OpenParenthesis)) {
+                const right = this.parsePrimary();
+                return {
+                    type: "ApplyExpression",
+                    base: expr,
+                    argument: right
+                };
+            }
+    
+            return expr;
+        }
+    
+        if (this.match(TokenType.Identifier)) {
+            const name = token.lexeme;
+    
+            // If immediately followed by (, treat as function call
+            if (this.check(TokenType.OpenParenthesis)) {
+                return this.parseFunctionCall(name);
+            }
+    
+            return {
+                type: "Identifier",
+                name
+            };
+        }
+    
+        if (this.match(TokenType.String)) {
+            return { type: "StringLiteral", value: token.value };
+        }
+    
+        if (this.match(TokenType.Number)) {
+            return { type: "NumberLiteral", value: Number(token.value) };
+        }
+    
+        throw new ParseError(`Unrecognized primary expression`, token);
+    }
+
+    private parseFunctionCall(name: string): Expression {
+        const args = this.parseParams();
         return {
+            identifier: { type: "Identifier", name },
             type: "FunctionCall",
-            identifier: { type: "Identifier", name: identifier.value },
-            params
+            caller: { type: "Identifier", name },
+            params: args
         };
     }
 
     private parseParams(): Param[] {
         const params: Param[] = [];
-        if (this.match(TokenType.OpenParenthesis)) {
-            while (!this.isAtEnd() && !this.check(TokenType.CloseParenthesis)) {
-                params.push(this.parseParam());
-                this.match(TokenType.Comma);
-            }
-            if (!this.match(TokenType.CloseParenthesis)) {
-                throw new ParseError("Unclosed parameter list", this.peek());
-            }
+    
+        this.consume(TokenType.OpenParenthesis);
+    
+        if (!this.check(TokenType.CloseParenthesis)) {
+            do {
+                const expr = this.parseParam();
+                params.push(expr);
+            } while (this.match(TokenType.Comma));
         }
+    
+        this.consume(TokenType.CloseParenthesis);
         return params;
     }
 
     private parseParam(): Param {
-        if (this.check(TokenType.OpenParenthesis)) {
-            return { type: "Param", content: this.parseExpression() };
-        } else if (this.check(TokenType.OpenBrace)) {
-            return { type: "Param", content: this.parseScope() };
-        } else if (this.check(TokenType.Identifier)) {
-            const token = this.consume(TokenType.Identifier);
-            return { type: "Param", content: { type: "Identifier", name: token.value } };
-        } else if (this.isLiteral(this.peek()?.type)) {
-            const literal = this.tokenToLiteral(this.consume(TokenType.Identifier));
-            return { type: "Param", content: literal };
-        }
-        throw new ParseError("Unexpected token in parameter", this.peek());
-    }
-
-    private parseFunctionDefinition(): FunctionDefinition {
-        this.match(TokenType.OpenBrace);
-        const identifier = this.consume(TokenType.Identifier);
-        const params = this.parseParamsDefinition();
-        const body = this.parseScope();
-
-        return {
-            type: "FunctionDefinition",
-            identifier: { type: "Identifier", name: identifier.value },
-            params,
-            body
-        };
-    }
-
-    private parseParamsDefinition(): ParamDefinition[] {
-        const params: ParamDefinition[] = [];
-        if (this.match(TokenType.OpenParenthesis)) {
-            while (!this.isAtEnd() && !this.check(TokenType.CloseParenthesis)) {
-                const param = this.parseParamDefinition();
-                params.push(param);
-                this.match(TokenType.Comma);
-            }
-            if (!this.match(TokenType.CloseParenthesis)) {
-                throw new ParseError("Unclosed parameter definition list", this.peek());
-            }
-        }
-        return params;
-    }
-
-    private parseParamDefinition(): ParamDefinition {
-        const nameToken = this.consume(TokenType.Identifier);
-        let typeAnnotation: string | undefined;
-
-        if (this.match(TokenType.Colon)) {
-            const typeToken = this.consume(TokenType.Identifier);
-            typeAnnotation = typeToken.value;
-        }
-
-        return {
-            type: "ParamDefinition",
-            identifier: { type: "Identifier", name: nameToken.value },
-            annotation: typeAnnotation
-        };
-    }
-
-    private parseExpression(): Expression {
-        if (this.check(TokenType.Identifier)) {
-            const lookahead = this.tokens[this.current + 1];
-            if (lookahead && lookahead.type === TokenType.OpenParenthesis) {
-                return this.parseFunctionCall();
-            } else {
-                const token = this.consume(TokenType.Identifier);
-                return { type: "Identifier", name: token.value };
-            }
-        } else if (this.isLiteral(this.peek()?.type)) {
-            return this.tokenToLiteral(this.consume(TokenType.Identifier));
-        } else if (this.check(TokenType.OpenParenthesis)) {
-            this.advance();
-            const expr = this.parseExpression();
-            if (!this.match(TokenType.CloseParenthesis)) {
-                throw new ParseError("Unclosed parenthesis in expression", this.peek());
-            }
-            return expr;
-        } else if (this.check(TokenType.OpenBrace)) {
-            return this.parseScopeExpression();
-        }
-        throw new ParseError("Unrecognized expression", this.peek());
+        const expr = this.parseExpression();
+        return { type: "Param", content: expr };
     }
 
     private parseScopeExpression(): ScopeExpression {
         const scope = this.parseScope();
-        return {
-            type: "ScopeExpression",
-            scope
-        };
+        return { type: "ScopeExpression", scope };
     }
 
     private tokenToLiteral(token: Token): NumberLiteral | CharLiteral | StringLiteral | TemplateStringLiteral {
@@ -185,7 +226,7 @@ export class Parser {
         if (this.check(expectedType)) {
             return this.advance();
         }
-        throw new ParseError(`Expected token type ${expectedType} ${TokenType[expectedType]}`, this.peek());
+        throw new ParseError(`Expected token type ${TokenType[expectedType]}`, this.peek());
     }
 
     private match(...types: TokenType[]): boolean {
@@ -222,8 +263,13 @@ export class Parser {
 
     private isLiteral(type: TokenType | undefined): boolean {
         return type === TokenType.Number ||
-               type === TokenType.String ||
-               type === TokenType.Char ||
-               type === TokenType.TemplateString;
+            type === TokenType.String ||
+            type === TokenType.Char ||
+            type === TokenType.TemplateString;
+    }
+
+    private isOperatorToken(token: Token): boolean {
+        // Only ':' is syntactic assignment, all others are user-defined operators
+        return token.type === TokenType.Operator;
     }
 }
